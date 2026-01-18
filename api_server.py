@@ -51,11 +51,11 @@ agent = GOSTFormatterAgent(api_key=api_key)
 
 class SourceRequest(BaseModel):
     """Модель входного источника"""
-    id: int
-    type: str
-    authors: List[str]
-    title: str
-    year: int
+    id: int = 1
+    type: str = "book"
+    authors: Optional[List[str]] = []
+    title: Optional[str] = ""
+    year: Optional[int] = None
     publisher: Optional[str] = None
     city: Optional[str] = None
     pages: Optional[str] = None
@@ -141,13 +141,13 @@ async def health_check():
 async def format_single_source(request: SingleFormatRequest):
     """Форматирует один библиографический источник"""
     try:
-        # Конвертируем в Source
+        # Конвертируем в Source (с дефолтами для None значений)
         source = Source(
-            id=request.source.id,
-            type=request.source.type,
-            authors=request.source.authors,
-            title=request.source.title,
-            year=request.source.year,
+            id=request.source.id or 1,
+            type=request.source.type or "book",
+            authors=request.source.authors or [],
+            title=request.source.title or "",
+            year=request.source.year or 0,
             publisher=request.source.publisher,
             city=request.source.city,
             pages=request.source.pages,
@@ -156,7 +156,7 @@ async def format_single_source(request: SingleFormatRequest):
             issue=request.source.issue,
             doi=request.source.doi,
             url=request.source.url,
-            language=request.source.language
+            language=request.source.language or "ru"
         )
 
         # Определяем стандарт
