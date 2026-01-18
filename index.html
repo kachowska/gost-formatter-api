@@ -615,15 +615,74 @@
         }
 
         // Копирование результата (одиночный)
-        function copySingle() {
+        async function copySingle() {
             const text = document.getElementById('singleOutput').textContent;
-            navigator.clipboard.writeText(text);
+            await copyToClipboard(text, 'singleError');
         }
 
         // Копирование результата (пакет)
-        function copyBulk() {
+        async function copyBulk() {
             const text = document.getElementById('bulkOutput').textContent;
-            navigator.clipboard.writeText(text);
+            await copyToClipboard(text, 'bulkError');
+        }
+
+        // Универсальная функция копирования в буфер обмена с обработкой ошибок
+        async function copyToClipboard(text, errorElementId) {
+            try {
+                // Проверяем доступность Clipboard API
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    await navigator.clipboard.writeText(text);
+                    showSuccessMessage(errorElementId, '✓ Скопировано в буфер обмена');
+                } else {
+                    // Fallback для старых браузеров
+                    fallbackCopyToClipboard(text, errorElementId);
+                }
+            } catch (error) {
+                console.error('Ошибка копирования в буфер обмена:', error);
+                showError(errorElementId, `Ошибка копирования: ${error.message}. Попробуйте выделить текст вручную.`);
+            }
+        }
+
+        // Fallback метод копирования для старых браузеров
+        function fallbackCopyToClipboard(text, errorElementId) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-9999px';
+            textArea.style.top = '0';
+            document.body.appendChild(textArea);
+
+            try {
+                textArea.focus();
+                textArea.select();
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showSuccessMessage(errorElementId, '✓ Скопировано в буфер обмена');
+                } else {
+                    throw new Error('execCommand не поддерживается');
+                }
+            } catch (error) {
+                console.error('Fallback копирование не удалось:', error);
+                showError(errorElementId, 'Копирование не поддерживается в вашем браузере. Выделите текст вручную (Ctrl+C).');
+            } finally {
+                document.body.removeChild(textArea);
+            }
+        }
+
+        // Показать сообщение об успехе (временно)
+        function showSuccessMessage(elementId, message) {
+            const errorEl = document.getElementById(elementId);
+            const originalClass = errorEl.className;
+
+            errorEl.textContent = message;
+            errorEl.className = 'success-message';
+            errorEl.classList.remove('hidden');
+
+            // Автоматически скрыть через 3 секунды
+            setTimeout(() => {
+                errorEl.classList.add('hidden');
+                errorEl.className = originalClass;
+            }, 3000);
         }
 
         // Скачивание результата
