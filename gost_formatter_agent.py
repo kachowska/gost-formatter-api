@@ -448,7 +448,7 @@ class GOSTFormatterAgent:
                     
                     formatted_results.append(FormattedResult(
                         id=result_id,
-                        original=f"{original_source.title}",
+                        original=f"{original_source.authors[0] if original_source.authors else ''} - {original_source.title}",
                         formatted=r.get("formatted", ""),
                         errors_fixed=r.get("errors_fixed", []),
                         confidence=r.get("confidence", 80),
