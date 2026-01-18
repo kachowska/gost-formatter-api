@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ИИ-Агент GOST Formatter - API Integration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        .mode-selector {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .mode-btn {
+            padding: 12px 30px;
+            border: 1px solid #d0d0d0;
+            background: white;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 400;
+            transition: all 0.2s;
+        }
+
+        .mode-btn.active {
+            background: #1a1a1a;
+            color: white;
+            border-color: #1a1a1a;
+        }
+
+        .mode-btn:hover:not(.active) {
+            border-color: #999;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #555;
+        }
+
+        select, textarea, input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d0d0d0;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+
+        select:focus, textarea:focus, input:focus {
+            outline: none;
+            border-color: #999;
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+            font-family: 'Courier New', monospace;
+        }
+
+        .bulk-textarea {
+            min-height: 300px;
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .btn-primary {
+            padding: 14px 32px;
+            background: #1a1a1a;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 400;
+            transition: background 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: #333;
+        }
+
+        .btn-primary:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            padding: 14px 32px;
+            background: white;
+            color: #1a1a1a;
+            border: 1px solid #d0d0d0;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 400;
+        }
+
+        .btn-secondary:hover {
+            border-color: #999;
+        }
+
+        .result-section {
+            margin-top: 30px;
+        }
+
+        .result-box {
+            background: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            min-height: 100px;
+            white-space: pre-wrap;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            padding: 25px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: 400;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #e0e0e0;
+            border-top-color: #1a1a1a;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .error-message {
+            background: #fff0f0;
+            border: 1px solid #ffcccc;
+            padding: 15px;
+            border-radius: 4px;
+            color: #cc0000;
+            margin-top: 20px;
+        }
+
+        .success-message {
+            background: #f0fff0;
+            border: 1px solid #ccffcc;
+            padding: 15px;
+            border-radius: 4px;
+            color: #006600;
+            margin-top: 20px;
+        }
+
+        .api-status {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .api-status.online {
+            background: #00cc00;
+        }
+
+        .api-status.offline {
+            background: #cc0000;
+        }
+
+        .help-text {
+            font-size: 0.85rem;
+            color: #999;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ИИ-Агент GOST Formatter</h1>
+            <p class="subtitle">Автоматическое форматирование библиографических записей по стандартам ГОСТ Р 7.0.100-2018 и ВАК РБ</p>
+            <p class="subtitle" style="margin-top: 10px;">
+                <span class="api-status" id="apiStatus"></span>
+                <span id="apiStatusText">Проверка подключения...</span>
+            </p>
+        </header>
+
+        <!-- Выбор режима -->
+        <div class="mode-selector">
+            <button class="mode-btn active" onclick="switchMode('single')">Один источник</button>
+            <button class="mode-btn" onclick="switchMode('bulk')">Пакетная обработка (50-100)</button>
+        </div>
+
+        <!-- Режим 1: Один источник -->
+        <div id="singleMode">
+            <div class="section">
+                <h2 class="section-title">Форматирование одного источника</h2>
+
+                <div class="form-group">
+                    <label for="standard">Стандарт</label>
+                    <select id="standard">
+                        <option value="GOST_2018">ГОСТ Р 7.0.100-2018 (РФ, Казахстан)</option>
+                        <option value="VAK_RB">ВАК РБ (Беларусь)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="sourceType">Тип источника</label>
+                    <select id="sourceType">
+                        <option value="book">Книга</option>
+                        <option value="article">Статья из журнала</option>
+                        <option value="dissertation">Диссертация</option>
+                        <option value="conference">Статья из конференции</option>
+                        <option value="collection">Статья из сборника</option>
+                        <option value="electronic">Электронный ресурс</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputText">Введите данные источника</label>
+                    <textarea id="inputText" placeholder="Иванов И.И., Петров П.П. Название книги. М.: Наука, 2023. 320 с."></textarea>
+                    <p class="help-text">Введите данные в любом формате - агент автоматически извлечет и отформатирует</p>
+                </div>
+
+                <div class="controls">
+                    <button class="btn-primary" onclick="formatSingle()">Форматировать</button>
+                    <button class="btn-secondary" onclick="clearSingle()">Очистить</button>
+                </div>
+
+                <div class="loading" id="loadingSingle">
+                    <div class="spinner"></div>
+                    <p>Обработка с помощью Claude Haiku 4.5...</p>
+                </div>
+
+                <div id="singleResult" class="hidden">
+                    <div class="result-section">
+                        <h3 class="section-title">Результат</h3>
+                        <div class="result-box" id="singleOutput"></div>
+                        <div class="controls" style="margin-top: 15px;">
+                            <button class="btn-secondary" onclick="copySingle()">Копировать</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="singleError" class="hidden error-message"></div>
+            </div>
+        </div>
+
+        <!-- Режим 2: Пакетная обработка -->
+        <div id="bulkMode" class="hidden">
+            <div class="section">
+                <h2 class="section-title">Пакетная обработка (50-100 источников)</h2>
+
+                <div class="form-group">
+                    <label for="bulkStandard">Стандарт</label>
+                    <select id="bulkStandard">
+                        <option value="GOST_2018">ГОСТ Р 7.0.100-2018 (РФ, Казахстан)</option>
+                        <option value="VAK_RB">ВАК РБ (Беларусь)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="bulkInput">Список источников</label>
+                    <textarea id="bulkInput" class="bulk-textarea" placeholder="Вставьте список источников (каждый с новой строки или нумерованный список):
+
+1. Иванов И.И., Петров П.П. Основы программирования. М.: Наука, 2023. 320 с.
+2. Сидоров С.С. Новые методы анализа // Вестник науки. 2024. Т. 15, № 3. С. 45-52.
+3. ..."></textarea>
+                    <p class="help-text">Поддерживается до 100 источников. Форматирование занимает 15-30 секунд.</p>
+                </div>
+
+                <div class="controls">
+                    <button class="btn-primary" onclick="formatBulk()">Обработать пакетом</button>
+                    <button class="btn-secondary" onclick="clearBulk()">Очистить</button>
+                </div>
+
+                <div class="loading" id="loadingBulk">
+                    <div class="spinner"></div>
+                    <p>Обработка пакета с помощью Claude Haiku 4.5...</p>
+                    <p id="bulkProgress"></p>
+                </div>
+
+                <div id="bulkResult" class="hidden">
+                    <div class="stats">
+                        <div class="stat-card">
+                            <div class="stat-number" id="bulkTotal">0</div>
+                            <div class="stat-label">Обработано</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="bulkErrors">0</div>
+                            <div class="stat-label">Исправлено ошибок</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="bulkTime">0</div>
+                            <div class="stat-label">Секунд</div>
+                        </div>
+                    </div>
+
+                    <div class="result-section">
+                        <h3 class="section-title">Отформатированный список литературы</h3>
+                        <div class="result-box" id="bulkOutput"></div>
+                        <div class="controls" style="margin-top: 15px;">
+                            <button class="btn-secondary" onclick="copyBulk()">Копировать все</button>
+                            <button class="btn-secondary" onclick="downloadBulk()">Скачать .txt</button>
+                            <button class="btn-secondary" onclick="exportBibtex()">Экспорт BibTeX</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="bulkError" class="hidden error-message"></div>
+            </div>
+        </div>
+
+        <!-- Глобальная статистика -->
+        <div class="section">
+            <h2 class="section-title">Статистика сессии</h2>
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalProcessed">0</div>
+                    <div class="stat-label">Всего обработано</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalFixed">0</div>
+                    <div class="stat-label">Всего исправлено</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Конфигурация API
+        const API_BASE_URL = 'http://localhost:8000';
+
+        // Глобальное состояние
+        let currentMode = 'single';
+        let globalStats = {
+            processed: 0,
+            errorsFixed: 0
+        };
+
+        // Проверка доступности API
+        async function checkAPIStatus() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/health`);
+                if (response.ok) {
+                    document.getElementById('apiStatus').className = 'api-status online';
+                    document.getElementById('apiStatusText').textContent = 'API подключен';
+                } else {
+                    throw new Error('API недоступен');
+                }
+            } catch (error) {
+                document.getElementById('apiStatus').className = 'api-status offline';
+                document.getElementById('apiStatusText').textContent = 'API недоступен (запустите сервер)';
+            }
+        }
+
+        // Переключение режима
+        function switchMode(mode) {
+            currentMode = mode;
+
+            // Обновляем кнопки
+            document.querySelectorAll('.mode-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Показываем нужный режим
+            document.getElementById('singleMode').classList.toggle('hidden', mode !== 'single');
+            document.getElementById('bulkMode').classList.toggle('hidden', mode !== 'bulk');
+        }
+
+        // Форматирование одного источника
+        async function formatSingle() {
+            const standard = document.getElementById('standard').value;
+            const sourceType = document.getElementById('sourceType').value;
+            const inputText = document.getElementById('inputText').value.trim();
+
+            if (!inputText) {
+                showError('singleError', 'Введите данные источника');
+                return;
+            }
+
+            // Показываем загрузку
+            document.getElementById('loadingSingle').classList.add('active');
+            document.getElementById('singleResult').classList.add('hidden');
+            hideError('singleError');
+
+            try {
+                // Сначала парсим текст
+                const parseResponse = await fetch(`${API_BASE_URL}/api/parse`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text: inputText })
+                });
+
+                if (!parseResponse.ok) throw new Error('Ошибка парсинга');
+
+                const parseData = await parseResponse.json();
+                if (parseData.sources.length === 0) {
+                    throw new Error('Не удалось распознать источник');
+                }
+
+                const source = parseData.sources[0];
+                source.type = sourceType; // Используем выбранный тип
+
+                // Форматируем
+                const formatResponse = await fetch(`${API_BASE_URL}/api/format/single`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ source, standard })
+                });
+
+                if (!formatResponse.ok) throw new Error('Ошибка форматирования');
+
+                const result = await formatResponse.json();
+
+                // Показываем результат
+                document.getElementById('singleOutput').textContent = result.formatted;
+                document.getElementById('singleResult').classList.remove('hidden');
+
+                // Обновляем статистику
+                updateGlobalStats(1, result.errors_fixed.length);
+
+            } catch (error) {
+                showError('singleError', `Ошибка: ${error.message}`);
+            } finally {
+                document.getElementById('loadingSingle').classList.remove('active');
+            }
+        }
+
+        // Пакетная обработка
+        async function formatBulk() {
+            const standard = document.getElementById('bulkStandard').value;
+            const bulkInput = document.getElementById('bulkInput').value.trim();
+
+            if (!bulkInput) {
+                showError('bulkError', 'Введите список источников');
+                return;
+            }
+
+            // Показываем загрузку
+            document.getElementById('loadingBulk').classList.add('active');
+            document.getElementById('bulkResult').classList.add('hidden');
+            hideError('bulkError');
+
+            try {
+                // Парсим текст
+                document.getElementById('bulkProgress').textContent = 'Шаг 1/2: Распознавание источников...';
+                const parseResponse = await fetch(`${API_BASE_URL}/api/parse`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text: bulkInput })
+                });
+
+                if (!parseResponse.ok) throw new Error('Ошибка парсинга');
+
+                const parseData = await parseResponse.json();
+                const sources = parseData.sources;
+
+                if (sources.length === 0) {
+                    throw new Error('Не удалось распознать источники');
+                }
+
+                if (sources.length > 100) {
+                    throw new Error(`Обнаружено ${sources.length} источников. Максимум: 100.`);
+                }
+
+                // Форматируем пакетом
+                document.getElementById('bulkProgress').textContent = `Шаг 2/2: Форматирование ${sources.length} источников...`;
+                const formatResponse = await fetch(`${API_BASE_URL}/api/format/batch`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ sources, standard, batch_size: 20 })
+                });
+
+                if (!formatResponse.ok) throw new Error('Ошибка форматирования');
+
+                const batchResult = await formatResponse.json();
+
+                // Формируем нумерованный список
+                const formattedList = batchResult.results
+                    .map((r, i) => `${i + 1}. ${r.formatted}`)
+                    .join('\n\n');
+
+                // Показываем результаты
+                document.getElementById('bulkTotal').textContent = batchResult.total;
+                document.getElementById('bulkErrors').textContent =
+                    batchResult.results.reduce((sum, r) => sum + r.errors_fixed.length, 0);
+                document.getElementById('bulkTime').textContent = batchResult.processing_time;
+                document.getElementById('bulkOutput').textContent = formattedList;
+                document.getElementById('bulkResult').classList.remove('hidden');
+
+                // Обновляем глобальную статистику
+                const totalErrors = batchResult.results.reduce((sum, r) => sum + r.errors_fixed.length, 0);
+                updateGlobalStats(batchResult.total, totalErrors);
+
+                // Сохраняем для экспорта
+                window.lastBulkResult = batchResult;
+
+            } catch (error) {
+                showError('bulkError', `Ошибка: ${error.message}`);
+            } finally {
+                document.getElementById('loadingBulk').classList.remove('active');
+            }
+        }
+
+        // Копирование результата (одиночный)
+        function copySingle() {
+            const text = document.getElementById('singleOutput').textContent;
+            navigator.clipboard.writeText(text);
+        }
+
+        // Копирование результата (пакет)
+        function copyBulk() {
+            const text = document.getElementById('bulkOutput').textContent;
+            navigator.clipboard.writeText(text);
+        }
+
+        // Скачивание результата
+        function downloadBulk() {
+            const text = document.getElementById('bulkOutput').textContent;
+            const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'bibliography_gost.txt';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Экспорт в BibTeX
+        async function exportBibtex() {
+            if (!window.lastBulkResult) {
+                showError('bulkError', 'Сначала выполните форматирование');
+                return;
+            }
+
+            try {
+                const standard = document.getElementById('bulkStandard').value;
+                const sources = window.lastBulkResult.results.map(r => ({
+                    id: r.id,
+                    type: 'misc',
+                    title: r.formatted,
+                    year: 2024
+                }));
+
+                const response = await fetch(`${API_BASE_URL}/api/export/bibtex`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ sources, standard })
+                });
+
+                const data = await response.json();
+
+                // Скачиваем
+                const blob = new Blob([data.content], { type: 'text/plain;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'bibliography.bib';
+                a.click();
+                URL.revokeObjectURL(url);
+
+            } catch (error) {
+                showError('bulkError', 'Ошибка экспорта в BibTeX');
+            }
+        }
+
+        // Очистка форм
+        function clearSingle() {
+            document.getElementById('inputText').value = '';
+            document.getElementById('singleResult').classList.add('hidden');
+            hideError('singleError');
+        }
+
+        function clearBulk() {
+            document.getElementById('bulkInput').value = '';
+            document.getElementById('bulkResult').classList.add('hidden');
+            hideError('bulkError');
+        }
+
+        // Обновление глобальной статистики
+        function updateGlobalStats(processed, errorsFixed) {
+            globalStats.processed += processed;
+            globalStats.errorsFixed += errorsFixed;
+            document.getElementById('totalProcessed').textContent = globalStats.processed;
+            document.getElementById('totalFixed').textContent = globalStats.errorsFixed;
+        }
+
+        // Показать ошибку
+        function showError(elementId, message) {
+            const errorEl = document.getElementById(elementId);
+            errorEl.textContent = message;
+            errorEl.classList.remove('hidden');
+        }
+
+        // Скрыть ошибку
+        function hideError(elementId) {
+            document.getElementById(elementId).classList.add('hidden');
+        }
+
+        // Инициализация при загрузке
+        window.addEventListener('load', () => {
+            checkAPIStatus();
+            // Проверяем API каждые 30 секунд
+            setInterval(checkAPIStatus, 30000);
+        });
+    </script>
+</body>
+</html>

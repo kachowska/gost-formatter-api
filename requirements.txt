@@ -1,0 +1,28 @@
+# ИИ-Агент GOST Formatter - Python Dependencies
+# Установка: pip install -r requirements.txt
+
+# Anthropic API для Claude Haiku 4.5
+anthropic>=0.20.0
+
+# FastAPI веб-фреймворк
+fastapi>=0.104.0
+
+# ASGI сервер
+uvicorn[standard]>=0.24.0
+
+# Валидация данных
+pydantic>=2.0.0
+
+# Поддержка файловых загрузок
+python-multipart>=0.0.6
+
+# Асинхронная работа с файлами
+aiofiles>=23.0.0
+
+# Для продакшена
+python-dotenv>=1.0.0  # Для .env файлов
+
+# Опционально: для расширенной функциональности
+# gunicorn>=21.2.0  # Production WSGI сервер
+# redis>=5.0.0  # Для кэширования
+# slowapi>=0.1.9  # Rate limiting
