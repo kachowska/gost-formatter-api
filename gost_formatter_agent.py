@@ -185,7 +185,7 @@ class GOSTFormatterAgent:
             
             result_json = json.loads(clean_text)
         except json.JSONDecodeError as e:
-            self.logger.error("Не удалось распарсить JSON от Claude в format_single; ответ: %s", response_text)
+            self.logger.exception("Не удалось распарсить JSON от Claude в format_single; ответ: %s", response_text)
             raise ValueError(f"Claude вернул некорректный JSON: {e!r}") from e
 
         # Обновляем статистику
@@ -269,7 +269,7 @@ class GOSTFormatterAgent:
                 
                 batch_results = json.loads(clean_text)
             except json.JSONDecodeError as e:
-                self.logger.error("Не удалось распарсить JSON от Claude в format_batch; ответ: %s", response_text[:1000])
+                self.logger.exception("Не удалось распарсить JSON от Claude в format_batch; ответ: %s", response_text[:1000])
                 raise ValueError(f"Claude вернул некорректный JSON: {e!r}") from e
 
             # Конвертируем в FormattedResult
@@ -350,7 +350,7 @@ class GOSTFormatterAgent:
                     
                     batch_results = json.loads(clean_text)
                 except json.JSONDecodeError as e:
-                    self.logger.error("Не удалось распарсить JSON от Claude в async format_batch; ответ: %s", response_text[:1000])
+                    self.logger.exception("Не удалось распарсить JSON от Claude в async format_batch; ответ: %s", response_text[:1000])
                     raise ValueError(f"Claude вернул некорректный JSON: {e!r}") from e
 
                 return [
@@ -448,7 +448,7 @@ class GOSTFormatterAgent:
             
             parsed_data = json.loads(clean_text)
         except json.JSONDecodeError as e:
-            self.logger.error("Не удалось распарсить JSON от Claude в parse_unstructured_text; ответ: %s", response_text)
+            self.logger.exception("Не удалось распарсить JSON от Claude в parse_unstructured_text; ответ: %s", response_text)
             raise ValueError(f"Claude вернул некорректный JSON: {e!r}") from e
 
         # Конвертируем в Source объекты
