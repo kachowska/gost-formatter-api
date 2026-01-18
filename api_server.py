@@ -5,6 +5,8 @@ FastAPI веб-сервис для ИИ-Агента GOST Formatter
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from typing import List, Optional
 import os
@@ -105,7 +107,11 @@ class BatchFormatResponse(BaseModel):
 
 @app.get("/")
 async def root():
-    """Главная страница API"""
+    """Главная страница - веб-интерфейс"""
+    html_path = os.path.join(os.path.dirname(__file__), "index.html")
+    if os.path.exists(html_path):
+        return FileResponse(html_path)
+    # Fallback to JSON if HTML not found
     return {
         "service": "GOST Formatter API",
         "version": "1.0.0",
