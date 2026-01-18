@@ -293,8 +293,8 @@
 
         <!-- Выбор режима -->
         <div class="mode-selector">
-            <button class="mode-btn active" onclick="switchMode('single')">Один источник</button>
-            <button class="mode-btn" onclick="switchMode('bulk')">Пакетная обработка (50-100)</button>
+            <button class="mode-btn active" onclick="switchMode('single', event)">Один источник</button>
+            <button class="mode-btn" onclick="switchMode('bulk', event)">Пакетная обработка (50-100)</button>
         </div>
 
         <!-- Режим 1: Один источник -->
@@ -465,14 +465,14 @@
         }
 
         // Переключение режима
-        function switchMode(mode) {
+        function switchMode(mode, e) {
             currentMode = mode;
 
             // Обновляем кнопки
             document.querySelectorAll('.mode-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
-            event.target.classList.add('active');
+            e.currentTarget.classList.add('active');
 
             // Показываем нужный режим
             document.getElementById('singleMode').classList.toggle('hidden', mode !== 'single');
