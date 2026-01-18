@@ -6,6 +6,7 @@
 
 import json
 import asyncio
+import logging
 from typing import List, Dict, Optional
 from anthropic import Anthropic, AsyncAnthropic
 from dataclasses import dataclass
@@ -57,6 +58,7 @@ class GOSTFormatterAgent:
         self.client = Anthropic(api_key=api_key)
         self.async_client = AsyncAnthropic(api_key=api_key)
         self.model = "claude-haiku-4-5-20251001"
+        self.logger = logging.getLogger(__name__)
 
         # Системный промпт с правилами
         self.system_prompt = self._build_system_prompt()
@@ -166,7 +168,7 @@ class GOSTFormatterAgent:
 
         # Проверяем и логируем ответ Claude
         response_text = response.content[0].text if response.content else ""
-        print(f"🤖 Claude ответ format_single (первые 500 символов): {response_text[:500]}")
+        self.logger.info("Claude ответ format_single (первые 500 символов): %s", response_text[:500])
         
         if not response_text or not response_text.strip():
             raise ValueError("Claude вернул пустой ответ. Проверьте API ключ и баланс кредитов на console.anthropic.com")
@@ -183,9 +185,8 @@ class GOSTFormatterAgent:
             
             result_json = json.loads(clean_text)
         except json.JSONDecodeError as e:
-            print(f"❌ Не удалось распарсить JSON от Claude")
-            print(f"Ответ Claude: {response_text}")
-            raise ValueError(f"Claude вернул некорректный JSON: {str(e)}")
+            self.logger.error("Не удалось распарсить JSON от Claude в format_single; ответ: %s", response_text)
+            raise ValueError(f"Claude вернул некорректный JSON: {e!r}") from e
 
         # Обновляем статистику
         self.stats["processed"] += 1
@@ -252,7 +253,7 @@ class GOSTFormatterAgent:
 
             # Проверяем и логируем ответ Claude
             response_text = response.content[0].text if response.content else ""
-            print(f"🤖 Claude ответ format_batch (первые 300 символов): {response_text[:300]}")
+            self.logger.info("Claude ответ format_batch (первые 300 символов): %s", response_text[:300])
             
             if not response_text or not response_text.strip():
                 raise ValueError("Claude вернул пустой ответ в format_batch")
@@ -268,9 +269,8 @@ class GOSTFormatterAgent:
                 
                 batch_results = json.loads(clean_text)
             except json.JSONDecodeError as e:
-                print(f"❌ Не удалось распарсить JSON от Claude в format_batch")
-                print(f"Ответ Claude: {response_text[:1000]}")
-                raise ValueError(f"Claude вернул некорректный JSON: {str(e)}")
+                self.logger.error("Не удалось распарсить JSON от Claude в format_batch; ответ: %s", response_text[:1000])
+                raise ValueError(f"Claude вернул некорректный JSON: {e!r}") from e
 
             # Конвертируем в FormattedResult
             for r in batch_results:
@@ -334,7 +334,7 @@ class GOSTFormatterAgent:
 
                 # Проверяем и логируем ответ Claude
                 response_text = response.content[0].text if response.content else ""
-                print(f"🤖 Claude async ответ (первые 300 символов): {response_text[:300]}")
+                self.logger.info("Claude async ответ (первые 300 символов): %s", response_text[:300])
                 
                 if not response_text or not response_text.strip():
                     raise ValueError("Claude вернул пустой ответ в async format_batch")
@@ -350,9 +350,8 @@ class GOSTFormatterAgent:
                     
                     batch_results = json.loads(clean_text)
                 except json.JSONDecodeError as e:
-                    print(f"❌ Не удалось распарсить JSON от Claude в async format_batch")
-                    print(f"Ответ Claude: {response_text[:1000]}")
-                    raise ValueError(f"Claude вернул некорректный JSON: {str(e)}")
+                    self.logger.error("Не удалось распарсить JSON от Claude в async format_batch; ответ: %s", response_text[:1000])
+                    raise ValueError(f"Claude вернул некорректный JSON: {e!r}") from e
 
                 return [
                     FormattedResult(
@@ -431,7 +430,7 @@ class GOSTFormatterAgent:
 
         # Проверяем и логируем ответ Claude
         response_text = response.content[0].text if response.content else ""
-        print(f"🤖 Claude ответ (первые 500 символов): {response_text[:500]}")
+        self.logger.info("Claude ответ parse_unstructured_text (первые 500 символов): %s", response_text[:500])
         
         if not response_text or not response_text.strip():
             raise ValueError("Claude вернул пустой ответ. Возможно проблема с API ключом или кредитами.")
@@ -449,9 +448,8 @@ class GOSTFormatterAgent:
             
             parsed_data = json.loads(clean_text)
         except json.JSONDecodeError as e:
-            print(f"❌ Не удалось распарсить JSON от Claude")
-            print(f"Ответ Claude: {response_text}")
-            raise ValueError(f"Claude вернул некорректный JSON: {str(e)}")
+            self.logger.error("Не удалось распарсить JSON от Claude в parse_unstructured_text; ответ: %s", response_text)
+            raise ValueError(f"Claude вернул некорректный JSON: {e!r}") from e
 
         # Конвертируем в Source объекты
         sources = []
