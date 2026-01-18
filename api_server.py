@@ -175,6 +175,10 @@ async def format_single_source(request: SingleFormatRequest):
         )
 
     except Exception as e:
+        import traceback
+        error_trace = traceback.format_exc()
+        print(f"❌ ОШИБКА ФОРМАТИРОВАНИЯ: {str(e)}")
+        print(f"Traceback:\n{error_trace}")
         raise HTTPException(status_code=500, detail=f"Ошибка форматирования: {str(e)}")
 
 
@@ -241,6 +245,10 @@ async def format_batch_sources(request: BatchFormatRequest):
         )
 
     except Exception as e:
+        import traceback
+        error_trace = traceback.format_exc()
+        print(f"❌ ОШИБКА ПАКЕТНОГО ФОРМАТИРОВАНИЯ: {str(e)}")
+        print(f"Traceback:\n{error_trace}")
         raise HTTPException(status_code=500, detail=f"Ошибка: {str(e)}")
 
 
@@ -270,6 +278,10 @@ async def parse_unstructured_text(request: TextParseRequest):
         }
 
     except Exception as e:
+        import traceback
+        error_trace = traceback.format_exc()
+        print(f"❌ ОШИБКА ПАРСИНГА: {str(e)}")
+        print(f"Traceback:\n{error_trace}")
         raise HTTPException(status_code=500, detail=f"Ошибка: {str(e)}")
 
 
