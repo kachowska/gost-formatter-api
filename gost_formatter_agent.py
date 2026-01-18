@@ -370,7 +370,29 @@ class GOSTFormatterAgent:
             messages=[{"role": "user", "content": user_prompt}]
         )
 
-        parsed_data = json.loads(response.content[0].text)
+        # Проверяем и логируем ответ Claude
+        response_text = response.content[0].text if response.content else ""
+        print(f"🤖 Claude ответ (первые 500 символов): {response_text[:500]}")
+        
+        if not response_text or not response_text.strip():
+            raise ValueError("Claude вернул пустой ответ. Возможно проблема с API ключом или кредитами.")
+        
+        # Попытка парсинга JSON
+        try:
+            # Убираем возможные markdown блоки
+            clean_text = response_text.strip()
+            if clean_text.startswith("```"):
+                # Извлекаем JSON из markdown блока
+                clean_text = clean_text.split("```")[1]
+                if clean_text.startswith("json"):
+                    clean_text = clean_text[4:]
+                clean_text = clean_text.strip()
+            
+            parsed_data = json.loads(clean_text)
+        except json.JSONDecodeError as e:
+            print(f"❌ Не удалось распарсить JSON от Claude")
+            print(f"Ответ Claude: {response_text}")
+            raise ValueError(f"Claude вернул некорректный JSON: {str(e)}")
 
         # Конвертируем в Source объекты
         sources = []
