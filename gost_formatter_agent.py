@@ -164,8 +164,28 @@ class GOSTFormatterAgent:
             messages=[{"role": "user", "content": user_prompt}]
         )
 
-        # Парсим ответ
-        result_json = json.loads(response.content[0].text)
+        # Проверяем и логируем ответ Claude
+        response_text = response.content[0].text if response.content else ""
+        print(f"🤖 Claude ответ format_single (первые 500 символов): {response_text[:500]}")
+        
+        if not response_text or not response_text.strip():
+            raise ValueError("Claude вернул пустой ответ. Проверьте API ключ и баланс кредитов на console.anthropic.com")
+        
+        # Попытка парсинга JSON
+        try:
+            # Убираем возможные markdown блоки
+            clean_text = response_text.strip()
+            if clean_text.startswith("```"):
+                clean_text = clean_text.split("```")[1]
+                if clean_text.startswith("json"):
+                    clean_text = clean_text[4:]
+                clean_text = clean_text.strip()
+            
+            result_json = json.loads(clean_text)
+        except json.JSONDecodeError as e:
+            print(f"❌ Не удалось распарсить JSON от Claude")
+            print(f"Ответ Claude: {response_text}")
+            raise ValueError(f"Claude вернул некорректный JSON: {str(e)}")
 
         # Обновляем статистику
         self.stats["processed"] += 1
@@ -230,8 +250,27 @@ class GOSTFormatterAgent:
                 messages=[{"role": "user", "content": user_prompt}]
             )
 
-            # Парсим ответ
-            batch_results = json.loads(response.content[0].text)
+            # Проверяем и логируем ответ Claude
+            response_text = response.content[0].text if response.content else ""
+            print(f"🤖 Claude ответ format_batch (первые 300 символов): {response_text[:300]}")
+            
+            if not response_text or not response_text.strip():
+                raise ValueError("Claude вернул пустой ответ в format_batch")
+            
+            # Попытка парсинга JSON
+            try:
+                clean_text = response_text.strip()
+                if clean_text.startswith("```"):
+                    clean_text = clean_text.split("```")[1]
+                    if clean_text.startswith("json"):
+                        clean_text = clean_text[4:]
+                    clean_text = clean_text.strip()
+                
+                batch_results = json.loads(clean_text)
+            except json.JSONDecodeError as e:
+                print(f"❌ Не удалось распарсить JSON от Claude в format_batch")
+                print(f"Ответ Claude: {response_text[:1000]}")
+                raise ValueError(f"Claude вернул некорректный JSON: {str(e)}")
 
             # Конвертируем в FormattedResult
             for r in batch_results:
@@ -293,7 +332,27 @@ class GOSTFormatterAgent:
                     messages=[{"role": "user", "content": user_prompt}]
                 )
 
-                batch_results = json.loads(response.content[0].text)
+                # Проверяем и логируем ответ Claude
+                response_text = response.content[0].text if response.content else ""
+                print(f"🤖 Claude async ответ (первые 300 символов): {response_text[:300]}")
+                
+                if not response_text or not response_text.strip():
+                    raise ValueError("Claude вернул пустой ответ в async format_batch")
+                
+                # Попытка парсинга JSON
+                try:
+                    clean_text = response_text.strip()
+                    if clean_text.startswith("```"):
+                        clean_text = clean_text.split("```")[1]
+                        if clean_text.startswith("json"):
+                            clean_text = clean_text[4:]
+                        clean_text = clean_text.strip()
+                    
+                    batch_results = json.loads(clean_text)
+                except json.JSONDecodeError as e:
+                    print(f"❌ Не удалось распарсить JSON от Claude в async format_batch")
+                    print(f"Ответ Claude: {response_text[:1000]}")
+                    raise ValueError(f"Claude вернул некорректный JSON: {str(e)}")
 
                 return [
                     FormattedResult(
