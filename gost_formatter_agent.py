@@ -351,10 +351,10 @@ class GOSTFormatterAgent:
                 result_id = r.get("id", batch[idx].id if idx < len(batch) else idx + 1)
                 
                 # Находим оригинальный источник по id или индексу
-                try:
-                    original_source = next(s for s in batch if s.id == result_id)
-                except StopIteration:
-                    original_source = batch[idx] if idx < len(batch) else batch[0]
+                original_source = next(
+                    (s for s in batch if s.id == result_id),
+                    batch[idx] if idx < len(batch) else batch[0]
+                )
                 
                 results.append(FormattedResult(
                     id=result_id,
@@ -441,10 +441,10 @@ class GOSTFormatterAgent:
                     result_id = r.get("id", batch[idx].id if idx < len(batch) else idx + 1)
                     
                     # Находим оригинальный источник по id или индексу
-                    try:
-                        original_source = next(s for s in batch if s.id == result_id)
-                    except StopIteration:
-                        original_source = batch[idx] if idx < len(batch) else batch[0]
+                    original_source = next(
+                        (s for s in batch if s.id == result_id),
+                        batch[idx] if idx < len(batch) else batch[0]
+                    )
                     
                     formatted_results.append(FormattedResult(
                         id=result_id,
