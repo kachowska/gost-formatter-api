@@ -60,6 +60,9 @@ class GOSTFormatterAgent:
         self.model = "claude-haiku-4-5-20251001"
         self.logger = logging.getLogger(__name__)
 
+        # Загружаем справочник примеров ВАК РБ
+        self.vak_rb_reference = self._load_vak_reference()
+
         # Системный промпт с правилами
         self.system_prompt = self._build_system_prompt()
 
@@ -69,6 +72,56 @@ class GOSTFormatterAgent:
             "errors_fixed": 0,
             "avg_confidence": 0
         }
+
+    def _load_vak_reference(self) -> Dict:
+        """Загружает справочник примеров ВАК РБ"""
+        import os
+        reference_path = os.path.join(os.path.dirname(__file__), "vak_rb_reference.json")
+        try:
+            with open(reference_path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except FileNotFoundError:
+            self.logger.warning("VAK RB reference file not found: %s", reference_path)
+            return {"document_types": {}}
+        except json.JSONDecodeError as e:
+            self.logger.error("Error parsing VAK RB reference: %s", e)
+            return {"document_types": {}}
+
+    def _detect_document_type(self, text: str) -> List[str]:
+        """Определяет тип документа по ключевым словам"""
+        text_lower = text.lower()
+        matched_types = []
+        
+        for type_key, type_data in self.vak_rb_reference.get("document_types", {}).items():
+            keywords = type_data.get("keywords", [])
+            for keyword in keywords:
+                if keyword.lower() in text_lower:
+                    matched_types.append(type_key)
+                    break
+        
+        return matched_types if matched_types else ["book_1_3_authors"]  # default
+
+    def _get_relevant_examples(self, text: str, max_examples: int = 6) -> str:
+        """Получает релевантные примеры для форматирования"""
+        detected_types = self._detect_document_type(text)
+        examples_text = []
+        examples_count = 0
+        
+        for doc_type in detected_types:
+            if examples_count >= max_examples:
+                break
+            
+            type_data = self.vak_rb_reference.get("document_types", {}).get(doc_type, {})
+            type_name = type_data.get("name", doc_type)
+            examples = type_data.get("examples", [])
+            
+            for example in examples[:2]:  # Max 2 examples per type
+                if examples_count >= max_examples:
+                    break
+                examples_text.append(f"[{type_name}]\nВВОД: {example['input']}\nВЫВОД: {example['output']}")
+                examples_count += 1
+        
+        return "\n\n".join(examples_text)
 
     def _build_system_prompt(self) -> str:
         """Создает системный промпт с полными правилами"""
@@ -151,8 +204,17 @@ class GOSTFormatterAgent:
             FormattedResult с отформатированной записью
         """
         # Формируем запрос
+        source_text = f"{source.authors[0] if source.authors else ''} {source.title}"
+        
+        # Добавляем примеры для ВАК РБ
+        examples_section = ""
+        if standard == Standard.VAK_RB:
+            examples = self._get_relevant_examples(source_text, max_examples=4)
+            if examples:
+                examples_section = f"\n\nПРИМЕРЫ ПРАВИЛЬНОГО ФОРМАТИРОВАНИЯ ПО ВАК РБ:\n{examples}\n"
+        
         user_prompt = f"""Отформатируй библиографический источник по стандарту {standard.value}.
-
+{examples_section}
 Данные источника:
 {json.dumps(source.__dict__, ensure_ascii=False, indent=2)}
 
@@ -225,8 +287,19 @@ class GOSTFormatterAgent:
 
             # Формируем запрос для батча
             sources_json = [s.__dict__ for s in batch]
+            
+            # Добавляем примеры для ВАК РБ
+            examples_section = ""
+            if standard == Standard.VAK_RB:
+                # Собираем текст первого источника для определения типа
+                first_source = batch[0]
+                sample_text = f"{first_source.authors[0] if first_source.authors else ''} {first_source.title}"
+                examples = self._get_relevant_examples(sample_text, max_examples=4)
+                if examples:
+                    examples_section = f"\n\nПРИМЕРЫ ПРАВИЛЬНОГО ФОРМАТИРОВАНИЯ ПО ВАК РБ:\n{examples}\n"
+            
             user_prompt = f"""Отформатируй следующие {len(batch)} источников по стандарту {standard.value}.
-
+{examples_section}
 Источники:
 {json.dumps(sources_json, ensure_ascii=False, indent=2)}
 
