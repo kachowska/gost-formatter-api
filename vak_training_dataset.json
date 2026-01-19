@@ -1,0 +1,2254 @@
+{
+  "metadata": {
+    "source": "vak.gov.by",
+    "parsed_at": "2026-01-19T23:37:50.605055",
+    "total_records": 58,
+    "standard": "STB 7.1-2003 / ВАК РБ"
+  },
+  "records": [
+    {
+      "id": "f6e20e464558",
+      "source_type": "unknown",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [],
+        "title": "",
+        "year": 2014,
+        "publisher": null,
+        "city": null,
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": "25",
+        "issue": "159",
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "приказ Высшей аттестационной комиссии Республики Беларусь от 25.06.2014 № 159",
+      "raw_example": "приказ Высшей аттестационной комиссии Республики Беларусь от 25.06.2014 № 159",
+      "parsing_confidence": 0.5,
+      "pattern_info": {
+        "source_type": "unknown",
+        "pattern_template": "N/A",
+        "abstracted_example": "приказ Высшей аттестационной комиссии Республики Беларусь от 25.06.{YEAR} № {NUM}",
+        "formatting_rules": [],
+        "description": "unknown"
+      }
+    },
+    {
+      "id": "70129cef87d4",
+      "source_type": "unknown",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [],
+        "title": "",
+        "year": null,
+        "publisher": null,
+        "city": null,
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "(в редакции приказа Высшей аттестационной комиссии Республики Беларусь",
+      "raw_example": "(в редакции приказа Высшей аттестационной комиссии Республики Беларусь",
+      "parsing_confidence": 0.4,
+      "pattern_info": {
+        "source_type": "unknown",
+        "pattern_template": "N/A",
+        "abstracted_example": "(в редакции приказа Высшей аттестационной комиссии Республики Беларусь",
+        "formatting_rules": [],
+        "description": "unknown"
+      }
+    },
+    {
+      "id": "531052b62feb",
+      "source_type": "book_1_3_authors",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Дробышевский, Н. П."
+        ],
+        "title": "П. Ревизия и аудит : учеб.-метод. пособие",
+        "year": 2013,
+        "publisher": "Амалфея : Мисанта",
+        "city": "Минск",
+        "pages": "415",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Дробышевский, Н. П. Ревизия и аудит : учеб.-метод. пособие / Н. П. Дробышевский. – Минск : Амалфея : Мисанта, 2013. – 415 с.",
+      "raw_example": "Дробышевский, Н. П. Ревизия и аудит : учеб.-метод. пособие / Н. П. Дробышевский. – Минск : Амалфея : Мисанта, 2013. – 415 с.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "book_1_3_authors",
+        "pattern_template": "{AUTHOR}. {TITLE} / {AUTHOR_FULL}. – {EDITION}{CITY} : {PUBLISHER}, {YEAR}. – {PAGES} с.",
+        "abstracted_example": "Дробышевский, Н. П. Ревизия и аудит : учеб.-метод. пособие / Н. П. Дробышевский. – Минск : Амалфея : Мисанта, {YEAR}. – {PAGES} с.",
+        "formatting_rules": [
+          "Автор: Фамилия, И. О.",
+          "После названия косая черта и полная форма автора",
+          "Город : Издательство, год",
+          "Количество страниц с точкой и \"с.\""
+        ],
+        "description": "Книга с 1-3 авторами"
+      }
+    },
+    {
+      "id": "0dee47ee26c7",
+      "source_type": "book_4plus_authors",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Боровая, В. А."
+        ],
+        "title": "Закономерности формирования и совершенствования системы движений спортсменов (на примере метания копья) / В. А. Боровая [и др.]. – Гомель",
+        "year": 2013,
+        "publisher": "Гомел. гос. ун-т",
+        "city": "Гомель",
+        "pages": "173",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Закономерности формирования и совершенствования системы движений спортсменов (на примере метания копья) / В. А. Боровая [и др.]. – Гомель : Гомел. гос. ун-т, 2013. – 173 с.",
+      "raw_example": "Закономерности формирования и совершенствования системы движений спортсменов (на примере метания копья) / В. А. Боровая [и др.]. – Гомель : Гомел. гос. ун-т, 2013. – 173 с.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "book_4plus_authors",
+        "pattern_template": "{TITLE} / {FIRST_AUTHOR} [и др.]{; EDITOR}. – {CITY} : {PUBLISHER}, {YEAR}. – {PAGES} с.",
+        "abstracted_example": "Закономерности формирования и совершенствования системы движений спортсменов (на примере метания копья) / В. А. Боровая [и др.]. – Гомель : Гомел. гос. ун-т, {YEAR}. – {PAGES} с.",
+        "formatting_rules": [
+          "Начинается с названия (без автора в начале)",
+          "Первый автор [и др.] или [et al.]",
+          "Редактор указывается после точки с запятой"
+        ],
+        "description": "Книга с 4+ авторами"
+      }
+    },
+    {
+      "id": "e9bf27c6a275",
+      "source_type": "book_4plus_authors",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Александрович, Л. М."
+        ],
+        "title": "Национальная стратегия устойчивого социально-экономического развития Республики Беларусь на период до 2020 г. / Нац. комис. по устойчивому развитию Респ. Беларусь ; редкол.",
+        "year": 2004,
+        "publisher": "Юнипак",
+        "city": "Минск",
+        "pages": "202",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Национальная стратегия устойчивого социально-экономического развития Республики Беларусь на период до 2020 г. / Нац. комис. по устойчивому развитию Респ. Беларусь ; редкол.: Л. М. Александрович [и др.]. – Минск : Юнипак, 2004. – 202 с.",
+      "raw_example": "Национальная стратегия устойчивого социально-экономического развития Республики Беларусь на период до 2020 г. / Нац. комис. по устойчивому развитию Респ. Беларусь ; редкол.: Л. М. Александрович [и др.]. – Минск : Юнипак, 2004. – 202 с.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "book_4plus_authors",
+        "pattern_template": "{TITLE} / {FIRST_AUTHOR} [и др.]{; EDITOR}. – {CITY} : {PUBLISHER}, {YEAR}. – {PAGES} с.",
+        "abstracted_example": "Национальная стратегия устойчивого социально-экономического развития Республики Беларусь на период до {YEAR} г. / Нац. комис. по устойчивому развитию Респ. Беларусь ; редкол.: Л. М. Александрович [и др.]. – Минск : Юнипак, {YEAR}. – {PAGES} с.",
+        "formatting_rules": [
+          "Начинается с названия (без автора в начале)",
+          "Первый автор [и др.] или [et al.]",
+          "Редактор указывается после точки с запятой"
+        ],
+        "description": "Книга с 4+ авторами"
+      }
+    },
+    {
+      "id": "a1bd1aa99313",
+      "source_type": "multivolume",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "По, М.",
+          "Багданов, М."
+        ],
+        "title": "Поўны збор твораў : у 3 т.",
+        "year": 2001,
+        "publisher": null,
+        "city": null,
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Багдановіч, М. Поўны збор твораў : у 3 т. / М. Багдановіч. – 2-е выд. – Мінск : Беларус. навука, 2001. – 3 т.",
+      "raw_example": "Багдановіч, М. Поўны збор твораў : у 3 т. / М. Багдановіч. – 2-е выд. – Мінск : Беларус. навука, 2001. – 3 т.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "multivolume",
+        "pattern_template": "{AUTHOR}. {TITLE} : у {VOLUMES} т. / {AUTHOR_FULL}. – {EDITION}{CITY} : {PUBLISHER}, {YEAR}. – {VOLUMES} т.",
+        "abstracted_example": "Багдановіч, М. Поўны збор твораў : у 3 т. / М. Багдановіч. – 2-е выд. – Мінск : Беларус. навука, {YEAR}. – 3 т.",
+        "formatting_rules": [
+          "Указание количества томов: у N т.",
+          "Общее количество томов в конце",
+          "Для отдельного тома: – Т. N : Название тома."
+        ],
+        "description": "Многотомное издание"
+      }
+    },
+    {
+      "id": "4a6bac47f8c9",
+      "source_type": "multivolume",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "По, М.",
+          "Багданов, М."
+        ],
+        "title": "Поўны збор твораў : у 3 т.",
+        "year": 2001,
+        "publisher": null,
+        "city": null,
+        "pages": "751",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": "1",
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Багдановіч, М. Поўны збор твораў : у 3 т. / М. Багдановіч. – 2-е выд. – Мінск : Беларус. навука, 2001. – Т. 1 : Вершы, паэмы, пераклады, наследаванні, чарнавыя накіды. – 751 с.",
+      "raw_example": "Багдановіч, М. Поўны збор твораў : у 3 т. / М. Багдановіч. – 2-е выд. – Мінск : Беларус. навука, 2001. – Т. 1 : Вершы, паэмы, пераклады, наследаванні, чарнавыя накіды. – 751 с.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "multivolume",
+        "pattern_template": "{AUTHOR}. {TITLE} : у {VOLUMES} т. / {AUTHOR_FULL}. – {EDITION}{CITY} : {PUBLISHER}, {YEAR}. – {VOLUMES} т.",
+        "abstracted_example": "Багдановіч, М. Поўны збор твораў : у 3 т. / М. Багдановіч. – 2-е выд. – Мінск : Беларус. навука, {YEAR}. – Т. {VOL} : Вершы, паэмы, пераклады, наследаванні, чарнавыя накіды. – {PAGES} с.",
+        "formatting_rules": [
+          "Указание количества томов: у N т.",
+          "Общее количество томов в конце",
+          "Для отдельного тома: – Т. N : Название тома."
+        ],
+        "description": "Многотомное издание"
+      }
+    },
+    {
+      "id": "46cb1553759c",
+      "source_type": "collection_article",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Сильченко, Н. В."
+        ],
+        "title": "Инновационное развитие общества в условиях интеграции правовых систем",
+        "year": 2013,
+        "publisher": "ГрГМУ",
+        "city": "Гродно",
+        "pages": "454",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Инновационное развитие общества в условиях интеграции правовых систем : сб. науч. ст. / Гродн. гос. ун-т ; редкол.: Н. В. Сильченко (гл. ред.) [и др.]. – Гродно : ГрГМУ, 2013. – 454 с.",
+      "raw_example": "Инновационное развитие общества в условиях интеграции правовых систем : сб. науч. ст. / Гродн. гос. ун-т ; редкол.: Н. В. Сильченко (гл. ред.) [и др.]. – Гродно : ГрГМУ, 2013. – 454 с.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "collection_article",
+        "pattern_template": "{AUTHOR}. {TITLE} / {AUTHOR_FULL} // {COLLECTION_TITLE} / {EDITOR}. – {CITY} : {PUBLISHER}, {YEAR}. – С. {PAGES}.",
+        "abstracted_example": "Инновационное развитие общества в условиях интеграции правовых систем : сб. науч. ст. / Гродн. гос. ун-т ; редкол.: Н. В. Сильченко (гл. ред.) [и др.]. – Гродно : ГрГМУ, {YEAR}. – {PAGES} с.",
+        "formatting_rules": [
+          "Двойная косая // перед названием сборника",
+          "Редактор сборника",
+          "Страницы: С. начало–конец."
+        ],
+        "description": "Статья из сборника"
+      }
+    },
+    {
+      "id": "053dc6d0439f",
+      "source_type": "conference",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Шилин, Л. Ю."
+        ],
+        "title": "Информационные технологии и управление",
+        "year": 2013,
+        "publisher": "БГУИР",
+        "city": "Минск",
+        "pages": "103",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Информационные технологии и управление : материалы 49 науч. конф. аспирантов, магистрантов и студентов, Минск, 6–10 мая 2013 г. / Белорус. гос. ун-т информатики и радиоэлектроники ; редкол.: Л. Ю. Шилин [и др.]. – Минск : БГУИР, 2013. – 103 с.",
+      "raw_example": "Информационные технологии и управление : материалы 49 науч. конф. аспирантов, магистрантов и студентов, Минск, 6–10 мая 2013 г. / Белорус. гос. ун-т информатики и радиоэлектроники ; редкол.: Л. Ю. Шилин [и др.]. – Минск : БГУИР, 2013. – 103 с.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "conference",
+        "pattern_template": "{TITLE} : материалы {CONF_NAME}, {CITY}, {DATE} / {ORGANIZATION}{; EDITOR}. – {CITY} : {PUBLISHER}, {YEAR}. – {PAGES} с.",
+        "abstracted_example": "Информационные технологии и управление : материалы 49 науч. конф. аспирантов, магистрантов и студентов, Минск, 6–10 мая {YEAR} г. / Белорус. гос. ун-т информатики и радиоэлектроники ; редкол.: Л. Ю. Шилин [и др.]. – Минск : БГУИР, {YEAR}. – {PAGES} с.",
+        "formatting_rules": [
+          "Вид документа: материалы, сборник, тезисы",
+          "Указание места и даты проведения",
+          "Организатор и редколлегия"
+        ],
+        "description": "Материалы конференции"
+      }
+    },
+    {
+      "id": "01f0d985a0a1",
+      "source_type": "dissertation",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Врубле, Ю. У."
+        ],
+        "title": "У. Гістарыяграфія гісторыі ўзнікнення і развіцця гарадоў на тэрыторыі Беларусі ў IX–XIII стст. : дыс. ... канд. гіст. навук : 07.00.09",
+        "year": 2013,
+        "publisher": null,
+        "city": null,
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Врублеўскі, Ю. У. Гістарыяграфія гісторыі ўзнікнення і развіцця гарадоў на тэрыторыі Беларусі ў IX–XIII стст. : дыс. ... канд. гіст. навук : 07.00.09 / Ю. У. Врублеўскі. – Мінск, 2013. – 148 л.",
+      "raw_example": "Врублеўскі, Ю. У. Гістарыяграфія гісторыі ўзнікнення і развіцця гарадоў на тэрыторыі Беларусі ў IX–XIII стст. : дыс. ... канд. гіст. навук : 07.00.09 / Ю. У. Врублеўскі. – Мінск, 2013. – 148 л.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "dissertation",
+        "pattern_template": "{AUTHOR}. {TITLE} : дис. ... {DEGREE} : {SPECIALTY} / {AUTHOR_FULL}. – {CITY}, {YEAR}. – {PAGES} л.",
+        "abstracted_example": "Врублеўскі, Ю. У. Гістарыяграфія гісторыі ўзнікнення і развіцця гарадоў на тэрыторыі Беларусі ў IX–XIII стст. : дыс. ... канд. гіст. навук : 07.00.09 / Ю. У. Врублеўскі. – Мінск, {YEAR}. – 148 л.",
+        "formatting_rules": [
+          "Тип работы: дис. ... канд./д-ра наук",
+          "Код специальности: XX.XX.XX",
+          "Страницы в \"л.\" (листах), не \"с.\""
+        ],
+        "description": "Диссертация"
+      }
+    },
+    {
+      "id": "e4baf0401f64",
+      "source_type": "abstract",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Горянов, А. В."
+        ],
+        "title": "В. Эволюция сельской дворянской усадьбы в конце XVIII – начале XX в.: по материалам усадеб князей Голицыных : автореф. дис. ... канд. ист. наук : 07.00.02",
+        "year": 2013,
+        "publisher": null,
+        "city": null,
+        "pages": "40",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Горянов, А. В. Эволюция сельской дворянской усадьбы в конце XVIII – начале XX в.: по материалам усадеб князей Голицыных : автореф. дис. ... канд. ист. наук : 07.00.02 / А. В. Горянов ; Рос. акад. наук, Ин-т рос. истории. – М., 2013. – 40 с.",
+      "raw_example": "Горянов, А. В. Эволюция сельской дворянской усадьбы в конце XVIII – начале XX в.: по материалам усадеб князей Голицыных : автореф. дис. ... канд. ист. наук : 07.00.02 / А. В. Горянов ; Рос. акад. наук, Ин-т рос. истории. – М., 2013. – 40 с.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "abstract",
+        "pattern_template": "{AUTHOR}. {TITLE} : автореф. дис. ... {DEGREE} : {SPECIALTY} / {AUTHOR_FULL}{; ORGANIZATION}. – {CITY}, {YEAR}. – {PAGES} с.",
+        "abstracted_example": "Горянов, А. В. Эволюция сельской дворянской усадьбы в конце XVIII – начале XX в.: по материалам усадеб князей Голицыных : автореф. дис. ... канд. ист. наук : 07.00.02 / А. В. Горянов ; Рос. акад. наук, Ин-т рос. истории. – М., {YEAR}. – {PAGES} с.",
+        "formatting_rules": [
+          "Тип: автореф. дис.",
+          "Организация через точку с запятой",
+          "Страницы в \"с.\""
+        ],
+        "description": "Автореферат диссертации"
+      }
+    },
+    {
+      "id": "7a7c22a773ac",
+      "source_type": "abstract",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Агапов, Е. П."
+        ],
+        "title": "П. Методы исследования в социальной работе : учеб. пособие",
+        "year": 2013,
+        "publisher": null,
+        "city": null,
+        "pages": "223",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Агапов, Е. П. Методы исследования в социальной работе : учеб. пособие / Е. П. Агапов. – 2-е изд. – М. : Дашков и К° ; Ростов н/Д : Наука-Спектр, 2013. – 223 с.",
+      "raw_example": "Агапов, Е. П. Методы исследования в социальной работе : учеб. пособие / Е. П. Агапов. – 2-е изд. – М. : Дашков и К° ; Ростов н/Д : Наука-Спектр, 2013. – 223 с.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "abstract",
+        "pattern_template": "{AUTHOR}. {TITLE} : автореф. дис. ... {DEGREE} : {SPECIALTY} / {AUTHOR_FULL}{; ORGANIZATION}. – {CITY}, {YEAR}. – {PAGES} с.",
+        "abstracted_example": "Агапов, Е. П. Методы исследования в социальной работе : учеб. пособие / Е. П. Агапов. – 2-е изд. – М. : Дашков и К° ; Ростов н/Д : Наука-Спектр, {YEAR}. – {PAGES} с.",
+        "formatting_rules": [
+          "Тип: автореф. дис.",
+          "Организация через точку с запятой",
+          "Страницы в \"с.\""
+        ],
+        "description": "Автореферат диссертации"
+      }
+    },
+    {
+      "id": "fc516c14cb1a",
+      "source_type": "archive",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [],
+        "title": "",
+        "year": 2008,
+        "publisher": null,
+        "city": null,
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": "1",
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Архив суда Ленинского района г. Минска за 2008 г. – Уголовное дело № 1-485/08 (14).",
+      "raw_example": "Архив суда Ленинского района г. Минска за 2008 г. – Уголовное дело № 1-485/08 (14).",
+      "parsing_confidence": 0.5,
+      "pattern_info": {
+        "source_type": "archive",
+        "pattern_template": "{ARCHIVE_NAME} за {YEAR}. – {DOCUMENT_TYPE} № {NUMBER}.",
+        "abstracted_example": "Архив суда Ленинского района г. Минска за {YEAR} г. – Уголовное дело № {NUM}-485/08 (14).",
+        "formatting_rules": [
+          "Название архива/фонда",
+          "Тип дела/документа",
+          "Номер дела"
+        ],
+        "description": "Архивный документ"
+      }
+    },
+    {
+      "id": "f893cf319aa0",
+      "source_type": "archive",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Джиго, А. А.",
+          "Смирнова, В. П."
+        ],
+        "title": "Состояние и перспективы развития статистики печати Российской Федерации",
+        "year": 2000,
+        "publisher": null,
+        "city": null,
+        "pages": "250",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": "756600",
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Состояние и перспективы развития статистики печати Российской Федерации : отчет о НИР (заключ.) : 06-02 / Рос. кн. палата ; рук. А. А. Джиго ; исполн.: В. П. Смирнова [и др.]. – М., 2000. – 250 с. – Инв. № 756600.",
+      "raw_example": "Состояние и перспективы развития статистики печати Российской Федерации : отчет о НИР (заключ.) : 06-02 / Рос. кн. палата ; рук. А. А. Джиго ; исполн.: В. П. Смирнова [и др.]. – М., 2000. – 250 с. – Инв. № 756600.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "archive",
+        "pattern_template": "{ARCHIVE_NAME} за {YEAR}. – {DOCUMENT_TYPE} № {NUMBER}.",
+        "abstracted_example": "Состояние и перспективы развития статистики печати Российской Федерации : отчет о НИР (заключ.) : 06-02 / Рос. кн. палата ; рук. А. А. Джиго ; исполн.: В. П. Смирнова [и др.]. – М., {YEAR}. – {PAGES} с. – Инв. № {NUM}.",
+        "formatting_rules": [
+          "Название архива/фонда",
+          "Тип дела/документа",
+          "Номер дела"
+        ],
+        "description": "Архивный документ"
+      }
+    },
+    {
+      "id": "84d535fac973",
+      "source_type": "deposited",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Кузнецов, Ю. С.",
+          "Кузнецов, Н. Н.",
+          "Курбатов, Ю. Ф."
+        ],
+        "title": "С. Измерение скорости звука в холодильных расплавах",
+        "year": 1982,
+        "publisher": null,
+        "city": null,
+        "pages": "10",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": "59159",
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Кузнецов, Ю. С. Измерение скорости звука в холодильных расплавах / Ю. С. Кузнецов, Н. Н. Курбатов, Ю. Ф. Червинский ; Моск. хим.-технол. ун-т. – М., 1982. – 10 с. – Деп. в ИНИОН РАН 10.03.2005, № 59159.",
+      "raw_example": "Кузнецов, Ю. С. Измерение скорости звука в холодильных расплавах / Ю. С. Кузнецов, Н. Н. Курбатов, Ю. Ф. Червинский ; Моск. хим.-технол. ун-т. – М., 1982. – 10 с. – Деп. в ИНИОН РАН 10.03.2005, № 59159.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "deposited",
+        "pattern_template": "N/A",
+        "abstracted_example": "Кузнецов, Ю. С. Измерение скорости звука в холодильных расплавах / Ю. С. Кузнецов, Н. Н. Курбатов, Ю. Ф. Червинский ; Моск. хим.-технол. ун-т. – М., {YEAR}. – {PAGES} с. – Деп. в ИНИОН РАН 10.03.{YEAR}, № {NUM}.",
+        "formatting_rules": [],
+        "description": "deposited"
+      }
+    },
+    {
+      "id": "6080fd979709",
+      "source_type": "deposited",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Аношко, В. С."
+        ],
+        "title": "С. Аношко [и др.]. – Минск : Белорус. науч.-исслед. центр «Экология», 2005. – 45 с. – (Обзорная информация",
+        "year": 2005,
+        "publisher": "Белорус. науч.-исслед. центр «Экология»",
+        "city": "Минск",
+        "pages": "45",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Настоящее и будущее осушенных болот Беларуси / В. С. Аношко [и др.]. – Минск : Белорус. науч.-исслед. центр «Экология», 2005. – 45 с. – (Обзорная информация / М-во природ. ресурсов и охраны окружающей среды Респ. Беларусь, БелНИЦ «Экология»).",
+      "raw_example": "Настоящее и будущее осушенных болот Беларуси / В. С. Аношко [и др.]. – Минск : Белорус. науч.-исслед. центр «Экология», 2005. – 45 с. – (Обзорная информация / М-во природ. ресурсов и охраны окружающей среды Респ. Беларусь, БелНИЦ «Экология»).",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "deposited",
+        "pattern_template": "N/A",
+        "abstracted_example": "Настоящее и будущее осушенных болот Беларуси / В. С. Аношко [и др.]. – Минск : Белорус. науч.-исслед. центр «Экология», {YEAR}. – {PAGES} с. – (Обзорная информация / М-во природ. ресурсов и охраны окружающей среды Респ. Беларусь, БелНИЦ «Экология»).",
+        "formatting_rules": [],
+        "description": "deposited"
+      }
+    },
+    {
+      "id": "b4b60db560ad",
+      "source_type": "deposited",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Гаранович, И. М.",
+          "Титок, В. В."
+        ],
+        "title": "Каталог древесных растений основных коллекционных фондов Беларуси / Центр. ботан. сад НАН Беларуси ; сост.",
+        "year": 2013,
+        "publisher": "Право и экономика",
+        "city": "Минск",
+        "pages": "133",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Каталог древесных растений основных коллекционных фондов Беларуси / Центр. ботан. сад НАН Беларуси ; сост.: И. М. Гаранович [и др.] ; науч. ред. В. В. Титок. – Минск : Право и экономика, 2013. – 133 с.",
+      "raw_example": "Каталог древесных растений основных коллекционных фондов Беларуси / Центр. ботан. сад НАН Беларуси ; сост.: И. М. Гаранович [и др.] ; науч. ред. В. В. Титок. – Минск : Право и экономика, 2013. – 133 с.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "deposited",
+        "pattern_template": "N/A",
+        "abstracted_example": "Каталог древесных растений основных коллекционных фондов Беларуси / Центр. ботан. сад НАН Беларуси ; сост.: И. М. Гаранович [и др.] ; науч. ред. В. В. Титок. – Минск : Право и экономика, {YEAR}. – {PAGES} с.",
+        "formatting_rules": [],
+        "description": "deposited"
+      }
+    },
+    {
+      "id": "107aab38d3df",
+      "source_type": "deposited",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Мальдз, А.",
+          "Смаленчука, А."
+        ],
+        "title": "Дыяспара. Культуралогія. Гісторыя",
+        "year": 2006,
+        "publisher": null,
+        "city": null,
+        "pages": "359",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Дыяспара. Культуралогія. Гісторыя : матэрыялы IV Мiжнар. кангр. беларусiстаў «Беларуская культура ў кантэксце культур еўрапейскiх краiн», Мiнск, 6–9 чэрв. 2005 г. / Міжнар. асац. беларусістаў [і інш.] ; пад рэд. А. Мальдзіса, А. Смаленчука. – Мінск : Голас Радзімы, 2006. – 359 с. – (Беларусіка = Albaruthenica ; кн. 28).",
+      "raw_example": "Дыяспара. Культуралогія. Гісторыя : матэрыялы IV Мiжнар. кангр. беларусiстаў «Беларуская культура ў кантэксце культур еўрапейскiх краiн», Мiнск, 6–9 чэрв. 2005 г. / Міжнар. асац. беларусістаў [і інш.] ; пад рэд. А. Мальдзіса, А. Смаленчука. – Мінск : Голас Радзімы, 2006. – 359 с. – (Беларусіка = Albaruthenica ; кн. 28).",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "deposited",
+        "pattern_template": "N/A",
+        "abstracted_example": "Дыяспара. Культуралогія. Гісторыя : матэрыялы IV Мiжнар. кангр. беларусiстаў «Беларуская культура ў кантэксце культур еўрапейскiх краiн», Мiнск, 6–9 чэрв. {YEAR} г. / Міжнар. асац. беларусістаў [і інш.] ; пад рэд. А. Мальдзіса, А. Смаленчука. – Мінск : Голас Радзімы, {YEAR}. – {PAGES} с. – (Беларусіка = Albaruthenica ; кн. 28).",
+        "formatting_rules": [],
+        "description": "deposited"
+      }
+    },
+    {
+      "id": "d67ca90451c0",
+      "source_type": "electronic_resource",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [],
+        "title": "Национальный правовой Интернет-портал Республики Беларусь [Электронный ресурс]. – Режим доступа",
+        "year": 2016,
+        "publisher": null,
+        "city": null,
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": "http://www.pravo.by",
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": "www",
+        "edition": null
+      },
+      "formatted_output": "Национальный правовой Интернет-портал Республики Беларусь [Электронный ресурс]. – Режим доступа: http://www.pravo.by. – Дата доступа: 24.06.2016.",
+      "raw_example": "Национальный правовой Интернет-портал Республики Беларусь [Электронный ресурс]. – Режим доступа: http://www.pravo.by. – Дата доступа: 24.06.2016.",
+      "parsing_confidence": 0.8,
+      "pattern_info": {
+        "source_type": "electronic_resource",
+        "pattern_template": "{TITLE} [Электронный ресурс]. – Режим доступа: {URL}. – Дата доступа: {ACCESS_DATE}.",
+        "abstracted_example": "Национальный правовой Интернет-портал Республики Беларусь [Электронный ресурс]. – Режим доступа: http://www.pravo.by. – Дата доступа: 24.06.{YEAR}.",
+        "formatting_rules": [
+          "Обозначение типа в квадратных скобках [Электронный ресурс]",
+          "Режим доступа: URL",
+          "Обязательно дата доступа: ДД.ММ.ГГГГ"
+        ],
+        "description": "Электронный ресурс"
+      }
+    },
+    {
+      "id": "182bc69d8921",
+      "source_type": "electronic_resource",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Маризе, М. А."
+        ],
+        "title": "А. С праздником 1 мая! [Изоматериал] : [открытка из фондов Нац. б-ки Беларуси], 1955 г.",
+        "year": 2010,
+        "publisher": "Нац. б-ка Беларуси",
+        "city": "Минск",
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Маризе, М. А. С праздником 1 мая! [Изоматериал] : [открытка из фондов Нац. б-ки Беларуси], 1955 г. / М. А. Маризе. – Минск : Нац. б-ка Беларуси, 2010. – 1 л.",
+      "raw_example": "Маризе, М. А. С праздником 1 мая! [Изоматериал] : [открытка из фондов Нац. б-ки Беларуси], 1955 г. / М. А. Маризе. – Минск : Нац. б-ка Беларуси, 2010. – 1 л.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "electronic_resource",
+        "pattern_template": "{TITLE} [Электронный ресурс]. – Режим доступа: {URL}. – Дата доступа: {ACCESS_DATE}.",
+        "abstracted_example": "Маризе, М. А. С праздником 1 мая! [Изоматериал] : [открытка из фондов Нац. б-ки Беларуси], {YEAR} г. / М. А. Маризе. – Минск : Нац. б-ка Беларуси, {YEAR}. – 1 л.",
+        "formatting_rules": [
+          "Обозначение типа в квадратных скобках [Электронный ресурс]",
+          "Режим доступа: URL",
+          "Обязательно дата доступа: ДД.ММ.ГГГГ"
+        ],
+        "description": "Электронный ресурс"
+      }
+    },
+    {
+      "id": "3eee60ce3da7",
+      "source_type": "electronic_resource",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [],
+        "title": "Европа [Карты]",
+        "year": 2013,
+        "publisher": null,
+        "city": null,
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Европа [Карты] : [полит.-адм. карта] : полит. устройство на 1 мая 2013. – 1 : 10 500 000, 105 км в 1 см. – М. : АГТ Геоцентр, 2013. – 1 к.",
+      "raw_example": "Европа [Карты] : [полит.-адм. карта] : полит. устройство на 1 мая 2013. – 1 : 10 500 000, 105 км в 1 см. – М. : АГТ Геоцентр, 2013. – 1 к.",
+      "parsing_confidence": 0.8,
+      "pattern_info": {
+        "source_type": "electronic_resource",
+        "pattern_template": "{TITLE} [Электронный ресурс]. – Режим доступа: {URL}. – Дата доступа: {ACCESS_DATE}.",
+        "abstracted_example": "Европа [Карты] : [полит.-адм. карта] : полит. устройство на 1 мая {YEAR}. – 1 : 10 500 000, 105 км в 1 см. – М. : АГТ Геоцентр, {YEAR}. – 1 к.",
+        "formatting_rules": [
+          "Обозначение типа в квадратных скобках [Электронный ресурс]",
+          "Режим доступа: URL",
+          "Обязательно дата доступа: ДД.ММ.ГГГГ"
+        ],
+        "description": "Электронный ресурс"
+      }
+    },
+    {
+      "id": "041cae29d233",
+      "source_type": "electronic_resource",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Богатырев, А. В."
+        ],
+        "title": "В. Шесть романсов на стихи Сергея Есенина [Ноты] : для тенора с фортепиано",
+        "year": 2013,
+        "publisher": "Белорус. гос. акад. музыки",
+        "city": "Минск",
+        "pages": "39",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Богатырев, А. В. Шесть романсов на стихи Сергея Есенина [Ноты] : для тенора с фортепиано / А. В. Богатырев. – Минск : Белорус. гос. акад. музыки, 2013. – 39 с.",
+      "raw_example": "Богатырев, А. В. Шесть романсов на стихи Сергея Есенина [Ноты] : для тенора с фортепиано / А. В. Богатырев. – Минск : Белорус. гос. акад. музыки, 2013. – 39 с.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "electronic_resource",
+        "pattern_template": "{TITLE} [Электронный ресурс]. – Режим доступа: {URL}. – Дата доступа: {ACCESS_DATE}.",
+        "abstracted_example": "Богатырев, А. В. Шесть романсов на стихи Сергея Есенина [Ноты] : для тенора с фортепиано / А. В. Богатырев. – Минск : Белорус. гос. акад. музыки, {YEAR}. – {PAGES} с.",
+        "formatting_rules": [
+          "Обозначение типа в квадратных скобках [Электронный ресурс]",
+          "Режим доступа: URL",
+          "Обязательно дата доступа: ДД.ММ.ГГГГ"
+        ],
+        "description": "Электронный ресурс"
+      }
+    },
+    {
+      "id": "7c5b01ddeb73",
+      "source_type": "electronic_resource",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Глебов, Е. М"
+        ],
+        "title": "Маленький принц [Звукозапись] : балет в 2 д.",
+        "year": 2010,
+        "publisher": "Медиал",
+        "city": "Минск",
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Глебов, Е. Маленький принц [Звукозапись] : балет в 2 д. / Е. Глебов ; [играет] Симф. оркестр Гостелерадио Белорус. ССР, дирижер Б. Райский. – Минск : Медиал, 2010. – 1 зв. диск.",
+      "raw_example": "Глебов, Е. Маленький принц [Звукозапись] : балет в 2 д. / Е. Глебов ; [играет] Симф. оркестр Гостелерадио Белорус. ССР, дирижер Б. Райский. – Минск : Медиал, 2010. – 1 зв. диск.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "electronic_resource",
+        "pattern_template": "{TITLE} [Электронный ресурс]. – Режим доступа: {URL}. – Дата доступа: {ACCESS_DATE}.",
+        "abstracted_example": "Глебов, Е. Маленький принц [Звукозапись] : балет в 2 д. / Е. Глебов ; [играет] Симф. оркестр Гостелерадио Белорус. ССР, дирижер Б. Райский. – Минск : Медиал, {YEAR}. – 1 зв. диск.",
+        "formatting_rules": [
+          "Обозначение типа в квадратных скобках [Электронный ресурс]",
+          "Режим доступа: URL",
+          "Обязательно дата доступа: ДД.ММ.ГГГГ"
+        ],
+        "description": "Электронный ресурс"
+      }
+    },
+    {
+      "id": "8a30e35a2ca1",
+      "source_type": "electronic_resource",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Бабарикин, В.",
+          "Москович, К.",
+          "Никитченко, В."
+        ],
+        "title": "Музыкальные вечера с Президентским оркестром Республики Беларусь [Видеозапись]",
+        "year": 2006,
+        "publisher": null,
+        "city": null,
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Музыкальные вечера с Президентским оркестром Республики Беларусь [Видеозапись] : концерт / [исполняет] Президент. оркестр Респ. Беларусь, художеств. рук. и гл. дирижер В. Бабарикин, солисты: К. Москович, пан-флейта (1–4, 7–14), В. Никитченко, вокал (5, 6). – [Б. м., 2006?]. – 1 DVD video.",
+      "raw_example": "Музыкальные вечера с Президентским оркестром Республики Беларусь [Видеозапись] : концерт / [исполняет] Президент. оркестр Респ. Беларусь, художеств. рук. и гл. дирижер В. Бабарикин, солисты: К. Москович, пан-флейта (1–4, 7–14), В. Никитченко, вокал (5, 6). – [Б. м., 2006?]. – 1 DVD video.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "electronic_resource",
+        "pattern_template": "{TITLE} [Электронный ресурс]. – Режим доступа: {URL}. – Дата доступа: {ACCESS_DATE}.",
+        "abstracted_example": "Музыкальные вечера с Президентским оркестром Республики Беларусь [Видеозапись] : концерт / [исполняет] Президент. оркестр Респ. Беларусь, художеств. рук. и гл. дирижер В. Бабарикин, солисты: К. Москович, пан-флейта (1–4, 7–14), В. Никитченко, вокал (5, 6). – [Б. м., {YEAR}?]. – 1 DVD video.",
+        "formatting_rules": [
+          "Обозначение типа в квадратных скобках [Электронный ресурс]",
+          "Режим доступа: URL",
+          "Обязательно дата доступа: ДД.ММ.ГГГГ"
+        ],
+        "description": "Электронный ресурс"
+      }
+    },
+    {
+      "id": "1c2bca06a143",
+      "source_type": "electronic_resource",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [],
+        "title": "О безопасности оборудования, работающего под избыточным давлением",
+        "year": 2013,
+        "publisher": "Экономэнерго",
+        "city": "Минск",
+        "pages": "38",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": "02",
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "О безопасности оборудования, работающего под избыточным давлением : ТР ТС 032/2013 : принят 02.07.2013 : вступ. в силу 01.02.2014 / Евраз. экон. комис. – Минск : Экономэнерго, 2013. – 38 с.",
+      "raw_example": "О безопасности оборудования, работающего под избыточным давлением : ТР ТС 032/2013 : принят 02.07.2013 : вступ. в силу 01.02.2014 / Евраз. экон. комис. – Минск : Экономэнерго, 2013. – 38 с.",
+      "parsing_confidence": 0.8,
+      "pattern_info": {
+        "source_type": "electronic_resource",
+        "pattern_template": "{TITLE} [Электронный ресурс]. – Режим доступа: {URL}. – Дата доступа: {ACCESS_DATE}.",
+        "abstracted_example": "О безопасности оборудования, работающего под избыточным давлением : ТР ТС 032/{YEAR} : принят 02.07.{YEAR} : вступ. в силу 01.02.{YEAR} / Евраз. экон. комис. – Минск : Экономэнерго, {YEAR}. – {PAGES} с.",
+        "formatting_rules": [
+          "Обозначение типа в квадратных скобках [Электронный ресурс]",
+          "Режим доступа: URL",
+          "Обязательно дата доступа: ДД.ММ.ГГГГ"
+        ],
+        "description": "Электронный ресурс"
+      }
+    },
+    {
+      "id": "eca9109c82e2",
+      "source_type": "electronic_resource",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [],
+        "title": "Здания и сооружения объектов нефтехимической и нефтеперерабатывающей промышленности. Противопожарные нормы проектирования = Будынкі і збудаванні аб'ектаў нафтахімічнай і нафтаперапрацоўчай прамысловасці. Супрацьпажарныя нормы праектавання",
+        "year": 2013,
+        "publisher": "Белнефтехим",
+        "city": "Минск",
+        "pages": "38",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Здания и сооружения объектов нефтехимической и нефтеперерабатывающей промышленности. Противопожарные нормы проектирования = Будынкі і збудаванні аб'ектаў нафтахімічнай і нафтаперапрацоўчай прамысловасці. Супрацьпажарныя нормы праектавання : ТКП 455-2012 (09100). – Введ. 01.04.13 (с отменой на территории РБ ВУПП-88). – Минск : Белнефтехим, 2013. – 38 с.",
+      "raw_example": "Здания и сооружения объектов нефтехимической и нефтеперерабатывающей промышленности. Противопожарные нормы проектирования = Будынкі і збудаванні аб'ектаў нафтахімічнай і нафтаперапрацоўчай прамысловасці. Супрацьпажарныя нормы праектавання : ТКП 455-2012 (09100). – Введ. 01.04.13 (с отменой на территории РБ ВУПП-88). – Минск : Белнефтехим, 2013. – 38 с.",
+      "parsing_confidence": 0.8,
+      "pattern_info": {
+        "source_type": "electronic_resource",
+        "pattern_template": "{TITLE} [Электронный ресурс]. – Режим доступа: {URL}. – Дата доступа: {ACCESS_DATE}.",
+        "abstracted_example": "Здания и сооружения объектов нефтехимической и нефтеперерабатывающей промышленности. Противопожарные нормы проектирования = Будынкі і збудаванні аб'ектаў нафтахімічнай і нафтаперапрацоўчай прамысловасці. Супрацьпажарныя нормы праектавання : ТКП 455-{YEAR} (09100). – Введ. 01.04.13 (с отменой на территории РБ ВУПП-88). – Минск : Белнефтехим, {YEAR}. – {PAGES} с.",
+        "formatting_rules": [
+          "Обозначение типа в квадратных скобках [Электронный ресурс]",
+          "Режим доступа: URL",
+          "Обязательно дата доступа: ДД.ММ.ГГГГ"
+        ],
+        "description": "Электронный ресурс"
+      }
+    },
+    {
+      "id": "0d065606a1d9",
+      "source_type": "standard",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [],
+        "title": "Промышленные каталоги. Общие требования = Прамысловыя каталогі. Агульныя патрабаванні",
+        "year": 2004,
+        "publisher": "Белорус. гос. ин-т стандартизации и сертификации",
+        "city": "Минск",
+        "pages": "3",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": "7",
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Промышленные каталоги. Общие требования = Прамысловыя каталогі. Агульныя патрабаванні : ГОСТ 7.22-2003. – Взамен ГОСТ 7.22-80 ; введ. РБ 01.07.04. – Минск : Белорус. гос. ин-т стандартизации и сертификации, 2004. – 3 с. – (Система стандартов по информации, библиотечному и издательскому делу).",
+      "raw_example": "Промышленные каталоги. Общие требования = Прамысловыя каталогі. Агульныя патрабаванні : ГОСТ 7.22-2003. – Взамен ГОСТ 7.22-80 ; введ. РБ 01.07.04. – Минск : Белорус. гос. ин-т стандартизации и сертификации, 2004. – 3 с. – (Система стандартов по информации, библиотечному и издательскому делу).",
+      "parsing_confidence": 0.8,
+      "pattern_info": {
+        "source_type": "standard",
+        "pattern_template": "{TITLE} : {STANDARD_CODE}. – {STATUS}. – {CITY} : {PUBLISHER}, {YEAR}. – {PAGES} с.",
+        "abstracted_example": "Промышленные каталоги. Общие требования = Прамысловыя каталогі. Агульныя патрабаванні : ГОСТ 7.22-{YEAR}. – Взамен ГОСТ 7.22-80 ; введ. РБ 01.07.04. – Минск : Белорус. гос. ин-т стандартизации и сертификации, {YEAR}. – {PAGES} с. – (Система стандартов по информации, библиотечному и издательскому делу).",
+        "formatting_rules": [
+          "Обозначение после названия: ГОСТ, СТБ, ТКП и номер",
+          "Статус: введен, взамен",
+          "Серия в скобках если есть"
+        ],
+        "description": "Стандарт (ГОСТ, СТБ, ТКП)"
+      }
+    },
+    {
+      "id": "5f1587a1ad5e",
+      "source_type": "standard",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [],
+        "title": "Государственная система стандартизации Республики Беларусь. Порядок проведения экспертизы стандартов",
+        "year": 2000,
+        "publisher": "Госстандарт : Белорус. гос. ин-т стандартизации и сертификации",
+        "city": "Минск",
+        "pages": "6",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Государственная система стандартизации Республики Беларусь. Порядок проведения экспертизы стандартов : РД РБ 03180.53–2000 : введ. 01.09.00. – Минск : Госстандарт : Белорус. гос. ин-т стандартизации и сертификации, 2000. – 6 с.",
+      "raw_example": "Государственная система стандартизации Республики Беларусь. Порядок проведения экспертизы стандартов : РД РБ 03180.53–2000 : введ. 01.09.00. – Минск : Госстандарт : Белорус. гос. ин-т стандартизации и сертификации, 2000. – 6 с.",
+      "parsing_confidence": 0.8,
+      "pattern_info": {
+        "source_type": "standard",
+        "pattern_template": "{TITLE} : {STANDARD_CODE}. – {STATUS}. – {CITY} : {PUBLISHER}, {YEAR}. – {PAGES} с.",
+        "abstracted_example": "Государственная система стандартизации Республики Беларусь. Порядок проведения экспертизы стандартов : РД РБ 03180.53–{YEAR} : введ. 01.09.00. – Минск : Госстандарт : Белорус. гос. ин-т стандартизации и сертификации, {YEAR}. – {PAGES} с.",
+        "formatting_rules": [
+          "Обозначение после названия: ГОСТ, СТБ, ТКП и номер",
+          "Статус: введен, взамен",
+          "Серия в скобках если есть"
+        ],
+        "description": "Стандарт (ГОСТ, СТБ, ТКП)"
+      }
+    },
+    {
+      "id": "412cb51eb712",
+      "source_type": "standard",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Блинов, А. В."
+        ],
+        "title": "Аспирационный счетчик ионов",
+        "year": 1982,
+        "publisher": null,
+        "city": null,
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Аспирационный счетчик ионов : а. с. SU 935780 / Б. Н. Блинов, А. В. Шолух. – Опубл. 15.06.1982.",
+      "raw_example": "Аспирационный счетчик ионов : а. с. SU 935780 / Б. Н. Блинов, А. В. Шолух. – Опубл. 15.06.1982.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "standard",
+        "pattern_template": "{TITLE} : {STANDARD_CODE}. – {STATUS}. – {CITY} : {PUBLISHER}, {YEAR}. – {PAGES} с.",
+        "abstracted_example": "Аспирационный счетчик ионов : а. с. SU 935780 / Б. Н. Блинов, А. В. Шолух. – Опубл. 15.06.{YEAR}.",
+        "formatting_rules": [
+          "Обозначение после названия: ГОСТ, СТБ, ТКП и номер",
+          "Статус: введен, взамен",
+          "Серия в скобках если есть"
+        ],
+        "description": "Стандарт (ГОСТ, СТБ, ТКП)"
+      }
+    },
+    {
+      "id": "5d802888b5e8",
+      "source_type": "standard",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Данилов, Ю. А.",
+          "Косарев, В. Ю.",
+          "Луканичев, М. М.",
+          "Сильвестров, В. В."
+        ],
+        "title": "Унифицированный тренажер летных экипажей летательных аппаратов",
+        "year": 2000,
+        "publisher": null,
+        "city": null,
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Унифицированный тренажер летных экипажей летательных аппаратов : полез. модель RU 14689 / М. С. Данилов, Ю. А. Косарев, В. Ю. Луканичев, М. М. Сильвестров, В. В. Сомик. – Опубл. 10.08.2000.",
+      "raw_example": "Унифицированный тренажер летных экипажей летательных аппаратов : полез. модель RU 14689 / М. С. Данилов, Ю. А. Косарев, В. Ю. Луканичев, М. М. Сильвестров, В. В. Сомик. – Опубл. 10.08.2000.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "standard",
+        "pattern_template": "{TITLE} : {STANDARD_CODE}. – {STATUS}. – {CITY} : {PUBLISHER}, {YEAR}. – {PAGES} с.",
+        "abstracted_example": "Унифицированный тренажер летных экипажей летательных аппаратов : полез. модель RU 14689 / М. С. Данилов, Ю. А. Косарев, В. Ю. Луканичев, М. М. Сильвестров, В. В. Сомик. – Опубл. 10.08.{YEAR}.",
+        "formatting_rules": [
+          "Обозначение после названия: ГОСТ, СТБ, ТКП и номер",
+          "Статус: введен, взамен",
+          "Серия в скобках если есть"
+        ],
+        "description": "Стандарт (ГОСТ, СТБ, ТКП)"
+      }
+    },
+    {
+      "id": "64a1eed1cb78",
+      "source_type": "standard",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Супрун, В. П."
+        ],
+        "title": "Устройство для вычисления полиномиальных симметрических булевых функций",
+        "year": 2012,
+        "publisher": null,
+        "city": null,
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Устройство для вычисления полиномиальных симметрических булевых функций : заявка BY 20120452 / В. П. Супрун. – Опубл. 30.10.2012.",
+      "raw_example": "Устройство для вычисления полиномиальных симметрических булевых функций : заявка BY 20120452 / В. П. Супрун. – Опубл. 30.10.2012.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "standard",
+        "pattern_template": "{TITLE} : {STANDARD_CODE}. – {STATUS}. – {CITY} : {PUBLISHER}, {YEAR}. – {PAGES} с.",
+        "abstracted_example": "Устройство для вычисления полиномиальных симметрических булевых функций : заявка BY 20120452 / В. П. Супрун. – Опубл. 30.10.{YEAR}.",
+        "formatting_rules": [
+          "Обозначение после названия: ГОСТ, СТБ, ТКП и номер",
+          "Статус: введен, взамен",
+          "Серия в скобках если есть"
+        ],
+        "description": "Стандарт (ГОСТ, СТБ, ТКП)"
+      }
+    },
+    {
+      "id": "bcc98ce56498",
+      "source_type": "patent",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Титок, Л. В.",
+          "Хотылева, Л. В.",
+          "Корень, С. И.",
+          "Вакула, В. Н.",
+          "Леонтьев, Л. М."
+        ],
+        "title": "Способ определения содержания белка в семенах льна масличного",
+        "year": 2010,
+        "publisher": null,
+        "city": null,
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Способ определения содержания белка в семенах льна масличного : пат. BY 13275 / В. В. Титок, Л. В. Хотылева, Л. В. Корень, С. И. Вакула, В. Н. Леонтьев, Л. М. Шостак. – Опубл. 30.06.2010.",
+      "raw_example": "Способ определения содержания белка в семенах льна масличного : пат. BY 13275 / В. В. Титок, Л. В. Хотылева, Л. В. Корень, С. И. Вакула, В. Н. Леонтьев, Л. М. Шостак. – Опубл. 30.06.2010.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "patent",
+        "pattern_template": "{TITLE} : пат. {COUNTRY} {NUMBER} / {AUTHORS}. – Опубл. {DATE}.",
+        "abstracted_example": "Способ определения содержания белка в семенах льна масличного : пат. BY 13275 / В. В. Титок, Л. В. Хотылева, Л. В. Корень, С. И. Вакула, В. Н. Леонтьев, Л. М. Шостак. – Опубл. 30.06.{YEAR}.",
+        "formatting_rules": [
+          "Вид документа: пат., а. с., полез. модель",
+          "Код страны и номер патента",
+          "Дата публикации: Опубл. ДД.ММ.ГГГГ"
+        ],
+        "description": "Патент"
+      }
+    },
+    {
+      "id": "e442dce8ce5e",
+      "source_type": "preprint",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Велесницкий, В. Ф.",
+          "Велесницкий, В. Н."
+        ],
+        "title": "Ф. Конечные группы с заданными свойствами критических подгрупп",
+        "year": 2013,
+        "publisher": "ГГУ",
+        "city": "Гомель",
+        "pages": "15",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": "2",
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Велесницкий, В. Ф. Конечные группы с заданными свойствами критических подгрупп / В. Ф. Велесницкий, В. Н. Семенчук. – Гомель : ГГУ, 2013. – 15 с. – (Препринт / Гомел. гос. ун-т ; № 2).",
+      "raw_example": "Велесницкий, В. Ф. Конечные группы с заданными свойствами критических подгрупп / В. Ф. Велесницкий, В. Н. Семенчук. – Гомель : ГГУ, 2013. – 15 с. – (Препринт / Гомел. гос. ун-т ; № 2).",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "preprint",
+        "pattern_template": "{AUTHOR}. {TITLE} / {AUTHOR_FULL}{; ORGANIZATION}. – {CITY}, {YEAR}. – {PAGES} с. – (Препринт / {SERIES}).",
+        "abstracted_example": "Велесницкий, В. Ф. Конечные группы с заданными свойствами критических подгрупп / В. Ф. Велесницкий, В. Н. Семенчук. – Гомель : ГГУ, {YEAR}. – {PAGES} с. – (Препринт / Гомел. гос. ун-т ; № {NUM}).",
+        "formatting_rules": [
+          "Серия препринта в круглых скобках",
+          "Организация через точку с запятой"
+        ],
+        "description": "Препринт"
+      }
+    },
+    {
+      "id": "6eb1c354592b",
+      "source_type": "preprint",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [],
+        "title": "Открытое акционерное общество «Экзон» = Open joint-stock company «Ekzon»",
+        "year": null,
+        "publisher": null,
+        "city": null,
+        "pages": "142",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Открытое акционерное общество «Экзон» = Open joint-stock company «Ekzon» : кат. продукции. – [Б. м. : б. и., б. г.]. – 142 с.",
+      "raw_example": "Открытое акционерное общество «Экзон» = Open joint-stock company «Ekzon» : кат. продукции. – [Б. м. : б. и., б. г.]. – 142 с.",
+      "parsing_confidence": 0.7000000000000001,
+      "pattern_info": {
+        "source_type": "preprint",
+        "pattern_template": "{AUTHOR}. {TITLE} / {AUTHOR_FULL}{; ORGANIZATION}. – {CITY}, {YEAR}. – {PAGES} с. – (Препринт / {SERIES}).",
+        "abstracted_example": "Открытое акционерное общество «Экзон» = Open joint-stock company «Ekzon» : кат. продукции. – [Б. м. : б. и., б. г.]. – {PAGES} с.",
+        "formatting_rules": [
+          "Серия препринта в круглых скобках",
+          "Организация через точку с запятой"
+        ],
+        "description": "Препринт"
+      }
+    },
+    {
+      "id": "1a3b8331a1bf",
+      "source_type": "preprint",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Абросимова, М. А."
+        ],
+        "title": "А. Направления автоматизации",
+        "year": 2013,
+        "publisher": null,
+        "city": null,
+        "pages": "44–46",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": "Информационные технологии в государственном и муниципальном управлении : учеб",
+        "edition": null
+      },
+      "formatted_output": "Абросимова, М. А. Направления автоматизации / М. А. Абросимова // Информационные технологии в государственном и муниципальном управлении : учеб. пособие / М. А. Абросимова. – 2-е изд., стер. – М., 2013. – С. 44–46.",
+      "raw_example": "Абросимова, М. А. Направления автоматизации / М. А. Абросимова // Информационные технологии в государственном и муниципальном управлении : учеб. пособие / М. А. Абросимова. – 2-е изд., стер. – М., 2013. – С. 44–46.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "preprint",
+        "pattern_template": "{AUTHOR}. {TITLE} / {AUTHOR_FULL}{; ORGANIZATION}. – {CITY}, {YEAR}. – {PAGES} с. – (Препринт / {SERIES}).",
+        "abstracted_example": "Абросимова, М. А. Направления автоматизации / М. А. Абросимова // Информационные технологии в государственном и муниципальном управлении : учеб. пособие / М. А. Абросимова. – 2-е изд., стер. – М., {YEAR}. – С. {PAGE_RANGE}.",
+        "formatting_rules": [
+          "Серия препринта в круглых скобках",
+          "Организация через точку с запятой"
+        ],
+        "description": "Препринт"
+      }
+    },
+    {
+      "id": "d0381ed1ae5e",
+      "source_type": "preprint",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Борхард, Ю. В"
+        ],
+        "title": "Восстановление производства",
+        "year": 2013,
+        "publisher": null,
+        "city": null,
+        "pages": "253–271",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": "Накопление капитала : пер",
+        "edition": null
+      },
+      "formatted_output": "Борхард, Ю. Восстановление производства / Ю. Борхард // Накопление капитала : пер. с нем. / Ю. Борхард ; под ред. Г. Б. Гермаидзе. – Изд. 2-е. – М., 2013. – Гл. 9. – С. 253–271.",
+      "raw_example": "Борхард, Ю. Восстановление производства / Ю. Борхард // Накопление капитала : пер. с нем. / Ю. Борхард ; под ред. Г. Б. Гермаидзе. – Изд. 2-е. – М., 2013. – Гл. 9. – С. 253–271.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "preprint",
+        "pattern_template": "{AUTHOR}. {TITLE} / {AUTHOR_FULL}{; ORGANIZATION}. – {CITY}, {YEAR}. – {PAGES} с. – (Препринт / {SERIES}).",
+        "abstracted_example": "Борхард, Ю. Восстановление производства / Ю. Борхард // Накопление капитала : пер. с нем. / Ю. Борхард ; под ред. Г. Б. Гермаидзе. – Изд. 2-е. – М., {YEAR}. – Гл. 9. – С. {PAGE_RANGE}.",
+        "formatting_rules": [
+          "Серия препринта в круглых скобках",
+          "Организация через точку с запятой"
+        ],
+        "description": "Препринт"
+      }
+    },
+    {
+      "id": "9a9438187628",
+      "source_type": "preprint",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Белинский, В. Г."
+        ],
+        "title": "Г. Рассуждение",
+        "year": 1953,
+        "publisher": null,
+        "city": null,
+        "pages": "15–17",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": "1",
+        "issue": null,
+        "journal_title": "Полн",
+        "edition": null
+      },
+      "formatted_output": "Белинский, В. Г. Рассуждение / В. Г. Белинский // Полн. собр. соч. : в 13 т. – М., 1953. – Т. 1 : Статьи и рецензии. Художественные произведения, 1829–1835. – С. 15–17.",
+      "raw_example": "Белинский, В. Г. Рассуждение / В. Г. Белинский // Полн. собр. соч. : в 13 т. – М., 1953. – Т. 1 : Статьи и рецензии. Художественные произведения, 1829–1835. – С. 15–17.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "preprint",
+        "pattern_template": "{AUTHOR}. {TITLE} / {AUTHOR_FULL}{; ORGANIZATION}. – {CITY}, {YEAR}. – {PAGES} с. – (Препринт / {SERIES}).",
+        "abstracted_example": "Белинский, В. Г. Рассуждение / В. Г. Белинский // Полн. собр. соч. : в 13 т. – М., {YEAR}. – Т. {VOL} : Статьи и рецензии. Художественные произведения, 1829–1835. – С. {PAGE_RANGE}.",
+        "formatting_rules": [
+          "Серия препринта в круглых скобках",
+          "Организация через точку с запятой"
+        ],
+        "description": "Препринт"
+      }
+    },
+    {
+      "id": "d0305b7f5907",
+      "source_type": "collection_article",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Божанов, П. В.",
+          "Апанасович, А. Д."
+        ],
+        "title": "В. Направления развития транспортного комплекса Беларуси",
+        "year": 2014,
+        "publisher": null,
+        "city": null,
+        "pages": "56–64",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": "Современные концепции развития транспорта и логистики в Республике Беларусь : сб",
+        "edition": null
+      },
+      "formatted_output": "Божанов, П. В. Направления развития транспортного комплекса Беларуси / П. В. Божанов // Современные концепции развития транспорта и логистики в Республике Беларусь : сб. ст. / Ин-т бизнеса и менеджмента технологий Белорус. гос. ун-та ; сост.: В. В. Апанасович, А. Д. Молокович. – Минск, 2014. – С. 56–64.",
+      "raw_example": "Божанов, П. В. Направления развития транспортного комплекса Беларуси / П. В. Божанов // Современные концепции развития транспорта и логистики в Республике Беларусь : сб. ст. / Ин-т бизнеса и менеджмента технологий Белорус. гос. ун-та ; сост.: В. В. Апанасович, А. Д. Молокович. – Минск, 2014. – С. 56–64.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "collection_article",
+        "pattern_template": "{AUTHOR}. {TITLE} / {AUTHOR_FULL} // {COLLECTION_TITLE} / {EDITOR}. – {CITY} : {PUBLISHER}, {YEAR}. – С. {PAGES}.",
+        "abstracted_example": "Божанов, П. В. Направления развития транспортного комплекса Беларуси / П. В. Божанов // Современные концепции развития транспорта и логистики в Республике Беларусь : сб. ст. / Ин-т бизнеса и менеджмента технологий Белорус. гос. ун-та ; сост.: В. В. Апанасович, А. Д. Молокович. – Минск, {YEAR}. – С. {PAGE_RANGE}.",
+        "formatting_rules": [
+          "Двойная косая // перед названием сборника",
+          "Редактор сборника",
+          "Страницы: С. начало–конец."
+        ],
+        "description": "Статья из сборника"
+      }
+    },
+    {
+      "id": "ffd094b01cce",
+      "source_type": "collection_article",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Лукашевич, М. М."
+        ],
+        "title": "М. Текстурный анализ. Алгоритм вычисления текстурных признаков",
+        "year": 2012,
+        "publisher": null,
+        "city": null,
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": "Компьютерные системы и сети : материалы 48 науч",
+        "edition": null
+      },
+      "formatted_output": "Лукашевич, М. М. Текстурный анализ. Алгоритм вычисления текстурных признаков / М. М. Лукашевич // Компьютерные системы и сети : материалы 48 науч. конф. аспирантов, магистрантов и студентов, Минск, 7–11 мая 2012 г. / Белорус. гос. ун-т информатики и радиоэлектроники ; редкол.: В. А. Прытков (гл. ред.) [и др.]. – Минск, 2012. – С. 12.",
+      "raw_example": "Лукашевич, М. М. Текстурный анализ. Алгоритм вычисления текстурных признаков / М. М. Лукашевич // Компьютерные системы и сети : материалы 48 науч. конф. аспирантов, магистрантов и студентов, Минск, 7–11 мая 2012 г. / Белорус. гос. ун-т информатики и радиоэлектроники ; редкол.: В. А. Прытков (гл. ред.) [и др.]. – Минск, 2012. – С. 12.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "collection_article",
+        "pattern_template": "{AUTHOR}. {TITLE} / {AUTHOR_FULL} // {COLLECTION_TITLE} / {EDITOR}. – {CITY} : {PUBLISHER}, {YEAR}. – С. {PAGES}.",
+        "abstracted_example": "Лукашевич, М. М. Текстурный анализ. Алгоритм вычисления текстурных признаков / М. М. Лукашевич // Компьютерные системы и сети : материалы 48 науч. конф. аспирантов, магистрантов и студентов, Минск, 7–11 мая {YEAR} г. / Белорус. гос. ун-т информатики и радиоэлектроники ; редкол.: В. А. Прытков (гл. ред.) [и др.]. – Минск, {YEAR}. – С. 12.",
+        "formatting_rules": [
+          "Двойная косая // перед названием сборника",
+          "Редактор сборника",
+          "Страницы: С. начало–конец."
+        ],
+        "description": "Статья из сборника"
+      }
+    },
+    {
+      "id": "1fb1ec7a5a88",
+      "source_type": "collection_article",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Электронны, М. М.",
+          "Аляхнов, М. М.",
+          "Пашко, Г. П."
+        ],
+        "title": "М. Электронны мікраскоп",
+        "year": 2004,
+        "publisher": null,
+        "city": null,
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": "18",
+        "issue": null,
+        "journal_title": "Беларуская энцыклапедыя : у 18 т",
+        "edition": null
+      },
+      "formatted_output": "Аляхновіч, М. М. Электронны мікраскоп / М. М. Аляхновіч // Беларуская энцыклапедыя : у 18 т. / Беларус. Энцыкл. ; рэдкал.: Г. П. Пашкоў [і інш.]. – Мінск, 2004. – Т. 18, кн. 1. – С. 100.",
+      "raw_example": "Аляхновіч, М. М. Электронны мікраскоп / М. М. Аляхновіч // Беларуская энцыклапедыя : у 18 т. / Беларус. Энцыкл. ; рэдкал.: Г. П. Пашкоў [і інш.]. – Мінск, 2004. – Т. 18, кн. 1. – С. 100.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "collection_article",
+        "pattern_template": "{AUTHOR}. {TITLE} / {AUTHOR_FULL} // {COLLECTION_TITLE} / {EDITOR}. – {CITY} : {PUBLISHER}, {YEAR}. – С. {PAGES}.",
+        "abstracted_example": "Аляхновіч, М. М. Электронны мікраскоп / М. М. Аляхновіч // Беларуская энцыклапедыя : у 18 т. / Беларус. Энцыкл. ; рэдкал.: Г. П. Пашкоў [і інш.]. – Мінск, {YEAR}. – Т. {VOL}, кн. 1. – С. 100.",
+        "formatting_rules": [
+          "Двойная косая // перед названием сборника",
+          "Редактор сборника",
+          "Страницы: С. начало–конец."
+        ],
+        "description": "Статья из сборника"
+      }
+    },
+    {
+      "id": "3b07a1f0f39c",
+      "source_type": "journal_article",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Традыцыйны, Н. А.",
+          "Валато, Н. А."
+        ],
+        "title": "А. Традыцыйны і сучасны вясельны абрад беларусаў і ўкраінцаў: агульнае і рознае ў сямейнай абраднасці славянскіх народаў",
+        "year": 2013,
+        "publisher": null,
+        "city": null,
+        "pages": "88–91",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": "5",
+        "journal_title": "Нар",
+        "edition": null
+      },
+      "formatted_output": "Валатоўская, Н. А. Традыцыйны і сучасны вясельны абрад беларусаў і ўкраінцаў: агульнае і рознае ў сямейнай абраднасці славянскіх народаў / Н. А. Валатоўская // Нар. асвета. – 2013. – № 5. – С. 88–91.",
+      "raw_example": "Валатоўская, Н. А. Традыцыйны і сучасны вясельны абрад беларусаў і ўкраінцаў: агульнае і рознае ў сямейнай абраднасці славянскіх народаў / Н. А. Валатоўская // Нар. асвета. – 2013. – № 5. – С. 88–91.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "journal_article",
+        "pattern_template": "{AUTHOR}. {TITLE} / {AUTHOR_FULL} // {JOURNAL}. – {YEAR}. – Т. {VOLUME}, № {ISSUE}. – С. {PAGES}.",
+        "abstracted_example": "Валатоўская, Н. А. Традыцыйны і сучасны вясельны абрад беларусаў і ўкраінцаў: агульнае і рознае ў сямейнай абраднасці славянскіх народаў / Н. А. Валатоўская // Нар. асвета. – {YEAR}. – № {NUM}. – С. {PAGE_RANGE}.",
+        "formatting_rules": [
+          "Автор. Название / Автор",
+          "Двойная косая // перед названием журнала",
+          "Том и номер после года",
+          "Страницы: С. начало–конец."
+        ],
+        "description": "Статья из журнала"
+      }
+    },
+    {
+      "id": "e04343af1b10",
+      "source_type": "newspaper_article",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Дубаневич, Л. П"
+        ],
+        "title": "Партизанский десант в Германию : [о комиссаре партизан. отряда А. Андрееве]",
+        "year": 2014,
+        "publisher": null,
+        "city": null,
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": "Белорус",
+        "edition": null
+      },
+      "formatted_output": "Дубаневич, Л. Партизанский десант в Германию : [о комиссаре партизан. отряда А. Андрееве] / Л. Дубаневич // Белорус. лес. газ. – 2014. – 13 февр. – С. 10.",
+      "raw_example": "Дубаневич, Л. Партизанский десант в Германию : [о комиссаре партизан. отряда А. Андрееве] / Л. Дубаневич // Белорус. лес. газ. – 2014. – 13 февр. – С. 10.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "newspaper_article",
+        "pattern_template": "N/A",
+        "abstracted_example": "Дубаневич, Л. Партизанский десант в Германию : [о комиссаре партизан. отряда А. Андрееве] / Л. Дубаневич // Белорус. лес. газ. – {YEAR}. – 13 февр. – С. 10.",
+        "formatting_rules": [],
+        "description": "newspaper_article"
+      }
+    },
+    {
+      "id": "f91aaa84f11f",
+      "source_type": "newspaper_article",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Давидович, А. Л."
+        ],
+        "title": "Л. О современных подходах к определению качества дошкольного образования",
+        "year": 2013,
+        "publisher": null,
+        "city": null,
+        "pages": "210–219",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": "Зб",
+        "edition": null
+      },
+      "formatted_output": "Давидович, А. Л. О современных подходах к определению качества дошкольного образования / А. Л. Давидович // Зб. навук. пр. / Акад. паслядыплом. адукацыi. – Мінск, 2013. – Вып. 11. – С. 210–219.",
+      "raw_example": "Давидович, А. Л. О современных подходах к определению качества дошкольного образования / А. Л. Давидович // Зб. навук. пр. / Акад. паслядыплом. адукацыi. – Мінск, 2013. – Вып. 11. – С. 210–219.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "newspaper_article",
+        "pattern_template": "N/A",
+        "abstracted_example": "Давидович, А. Л. О современных подходах к определению качества дошкольного образования / А. Л. Давидович // Зб. навук. пр. / Акад. паслядыплом. адукацыi. – Мінск, {YEAR}. – Вып. 11. – С. {PAGE_RANGE}.",
+        "formatting_rules": [],
+        "description": "newspaper_article"
+      }
+    },
+    {
+      "id": "74290d0b9b15",
+      "source_type": "review",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Грачыха, Т. А."
+        ],
+        "title": "А. [Рэцэнзія]",
+        "year": 2013,
+        "publisher": null,
+        "city": null,
+        "pages": "303",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": "1",
+        "journal_title": "Весн",
+        "edition": null
+      },
+      "formatted_output": "Грачыха, Т. А. [Рэцэнзія] / Т. А. Грачыха // Весн. Віцеб. дзярж. ун-та. – 2013. – № 1. – С. 127–128. – Рэц. на кн.: Рэгіянальны слоўнік Віцебшчыны : у 2 ч. / Віцеб. дзярж. ун-т ; склад.: Л. І. Злобін [і інш.]. – Віцебск : ВДУ, 2012–2014. – Ч. 1. – 2012. – 303 с.",
+      "raw_example": "Грачыха, Т. А. [Рэцэнзія] / Т. А. Грачыха // Весн. Віцеб. дзярж. ун-та. – 2013. – № 1. – С. 127–128. – Рэц. на кн.: Рэгіянальны слоўнік Віцебшчыны : у 2 ч. / Віцеб. дзярж. ун-т ; склад.: Л. І. Злобін [і інш.]. – Віцебск : ВДУ, 2012–2014. – Ч. 1. – 2012. – 303 с.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "review",
+        "pattern_template": "N/A",
+        "abstracted_example": "Грачыха, Т. А. [Рэцэнзія] / Т. А. Грачыха // Весн. Віцеб. дзярж. ун-та. – {YEAR}. – № {NUM}. – С. {PAGE_RANGE}. – Рэц. на кн.: Рэгіянальны слоўнік Віцебшчыны : у 2 ч. / Віцеб. дзярж. ун-т ; склад.: Л. І. Злобін [і інш.]. – Віцебск : ВДУ, {YEAR}–{YEAR}. – Ч. 1. – {YEAR}. – {PAGES} с.",
+        "formatting_rules": [],
+        "description": "review"
+      }
+    },
+    {
+      "id": "c17423a7d439",
+      "source_type": "archive",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [],
+        "title": "Об усилении использования научно-технических методов и средств в борьбе с преступностью",
+        "year": null,
+        "publisher": null,
+        "city": null,
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": "1948",
+        "issue": "454",
+        "journal_title": "Архив Министерства внутренних дел Республики Беларусь",
+        "edition": null
+      },
+      "formatted_output": "Об усилении использования научно-технических методов и средств в борьбе с преступностью : приказ М-ва внутр. дел СССР, 26 окт. 1948 г., № 454 // Архив Министерства внутренних дел Республики Беларусь. – Ф. 51. Оп. 3. Д. 14. Л. 236.",
+      "raw_example": "Об усилении использования научно-технических методов и средств в борьбе с преступностью : приказ М-ва внутр. дел СССР, 26 окт. 1948 г., № 454 // Архив Министерства внутренних дел Республики Беларусь. – Ф. 51. Оп. 3. Д. 14. Л. 236.",
+      "parsing_confidence": 0.7000000000000001,
+      "pattern_info": {
+        "source_type": "archive",
+        "pattern_template": "{ARCHIVE_NAME} за {YEAR}. – {DOCUMENT_TYPE} № {NUMBER}.",
+        "abstracted_example": "Об усилении использования научно-технических методов и средств в борьбе с преступностью : приказ М-ва внутр. дел СССР, 26 окт. {YEAR} г., № {NUM} // Архив Министерства внутренних дел Республики Беларусь. – Ф. 51. Оп. 3. Д. 14. Л. 236.",
+        "formatting_rules": [
+          "Название архива/фонда",
+          "Тип дела/документа",
+          "Номер дела"
+        ],
+        "description": "Архивный документ"
+      }
+    },
+    {
+      "id": "11491ee815b1",
+      "source_type": "archive",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Введенский, Л. И."
+        ],
+        "title": "И. Судьбы философии в России [Электронный ресурс]",
+        "year": 2002,
+        "publisher": null,
+        "city": null,
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": "История философии : собр",
+        "edition": null
+      },
+      "formatted_output": "Введенский, Л. И. Судьбы философии в России [Электронный ресурс] / Л. И. Введенский // История философии : собр. тр. крупнейших философов по истории философии. – М., 2002. – 1 электрон. опт. диск (CD-ROM).",
+      "raw_example": "Введенский, Л. И. Судьбы философии в России [Электронный ресурс] / Л. И. Введенский // История философии : собр. тр. крупнейших философов по истории философии. – М., 2002. – 1 электрон. опт. диск (CD-ROM).",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "archive",
+        "pattern_template": "{ARCHIVE_NAME} за {YEAR}. – {DOCUMENT_TYPE} № {NUMBER}.",
+        "abstracted_example": "Введенский, Л. И. Судьбы философии в России [Электронный ресурс] / Л. И. Введенский // История философии : собр. тр. крупнейших философов по истории философии. – М., {YEAR}. – 1 электрон. опт. диск (CD-ROM).",
+        "formatting_rules": [
+          "Название архива/фонда",
+          "Тип дела/документа",
+          "Номер дела"
+        ],
+        "description": "Архивный документ"
+      }
+    },
+    {
+      "id": "ca18a4874d72",
+      "source_type": "electronic_resource",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Жданухин, Д. Ю."
+        ],
+        "title": "Ю. Коллекторские агентства: основные черты деятельности, история появления и зарубежный опыт [Электронный ресурс]",
+        "year": 2016,
+        "publisher": null,
+        "city": null,
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": "http://law.edu.ru/doc/document.asp?docID=1233648",
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": "Юридическая Россия : Федер",
+        "edition": null
+      },
+      "formatted_output": "Жданухин, Д. Ю. Коллекторские агентства: основные черты деятельности, история появления и зарубежный опыт [Электронный ресурс] / Д. Ю. Жданухин // Юридическая Россия : Федер. правовой портал. – Режим доступа: http://law.edu.ru/doc/document.asp?docID=1233648. – Дата доступа: 22.06.2016.",
+      "raw_example": "Жданухин, Д. Ю. Коллекторские агентства: основные черты деятельности, история появления и зарубежный опыт [Электронный ресурс] / Д. Ю. Жданухин // Юридическая Россия : Федер. правовой портал. – Режим доступа: http://law.edu.ru/doc/document.asp?docID=1233648. – Дата доступа: 22.06.2016.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "electronic_resource",
+        "pattern_template": "{TITLE} [Электронный ресурс]. – Режим доступа: {URL}. – Дата доступа: {ACCESS_DATE}.",
+        "abstracted_example": "Жданухин, Д. Ю. Коллекторские агентства: основные черты деятельности, история появления и зарубежный опыт [Электронный ресурс] / Д. Ю. Жданухин // Юридическая Россия : Федер. правовой портал. – Режим доступа: http://law.edu.ru/doc/document.asp?docID=1233648. – Дата доступа: 22.06.{YEAR}.",
+        "formatting_rules": [
+          "Обозначение типа в квадратных скобках [Электронный ресурс]",
+          "Режим доступа: URL",
+          "Обязательно дата доступа: ДД.ММ.ГГГГ"
+        ],
+        "description": "Электронный ресурс"
+      }
+    },
+    {
+      "id": "ae42370dcd8b",
+      "source_type": "electronic_resource",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [],
+        "title": "Конституция Республики Беларусь",
+        "year": 2016,
+        "publisher": "Нац. центр правовой информ. Респ. Беларусь",
+        "city": "Минск",
+        "pages": "62",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": "2004",
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Конституция Республики Беларусь : с изм. и доп., принятыми на респ. референдумах 24 нояб. 1996 г. и 17 окт. 2004 г. – Минск : Нац. центр правовой информ. Респ. Беларусь, 2016. – 62 с.",
+      "raw_example": "Конституция Республики Беларусь : с изм. и доп., принятыми на респ. референдумах 24 нояб. 1996 г. и 17 окт. 2004 г. – Минск : Нац. центр правовой информ. Респ. Беларусь, 2016. – 62 с.",
+      "parsing_confidence": 0.8,
+      "pattern_info": {
+        "source_type": "electronic_resource",
+        "pattern_template": "{TITLE} [Электронный ресурс]. – Режим доступа: {URL}. – Дата доступа: {ACCESS_DATE}.",
+        "abstracted_example": "Конституция Республики Беларусь : с изм. и доп., принятыми на респ. референдумах 24 нояб. {YEAR} г. и 17 окт. {YEAR} г. – Минск : Нац. центр правовой информ. Респ. Беларусь, {YEAR}. – {PAGES} с.",
+        "formatting_rules": [
+          "Обозначение типа в квадратных скобках [Электронный ресурс]",
+          "Режим доступа: URL",
+          "Обязательно дата доступа: ДД.ММ.ГГГГ"
+        ],
+        "description": "Электронный ресурс"
+      }
+    },
+    {
+      "id": "576263fcb899",
+      "source_type": "electronic_resource",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [],
+        "title": "Кодекс внутреннего водного транспорта Российской Федерации [Электронный ресурс]",
+        "year": 2016,
+        "publisher": null,
+        "city": null,
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": "09",
+        "issue": "24",
+        "journal_title": "КонсультантПлюс",
+        "edition": null
+      },
+      "formatted_output": "Кодекс внутреннего водного транспорта Российской Федерации [Электронный ресурс] : 7 марта 2001 г., № 24-ФЗ : принят Гос. Думой 7 февр. 2001 г. : одобр. Советом Федерации 22 февр. 2001 г. : в ред. Федер. закона от 09.03.2016 г. // КонсультантПлюс. Россия / ЗАО «Консультант Плюс». – М., 2016.",
+      "raw_example": "Кодекс внутреннего водного транспорта Российской Федерации [Электронный ресурс] : 7 марта 2001 г., № 24-ФЗ : принят Гос. Думой 7 февр. 2001 г. : одобр. Советом Федерации 22 февр. 2001 г. : в ред. Федер. закона от 09.03.2016 г. // КонсультантПлюс. Россия / ЗАО «Консультант Плюс». – М., 2016.",
+      "parsing_confidence": 0.8,
+      "pattern_info": {
+        "source_type": "electronic_resource",
+        "pattern_template": "{TITLE} [Электронный ресурс]. – Режим доступа: {URL}. – Дата доступа: {ACCESS_DATE}.",
+        "abstracted_example": "Кодекс внутреннего водного транспорта Российской Федерации [Электронный ресурс] : 7 марта {YEAR} г., № {NUM}-ФЗ : принят Гос. Думой 7 февр. {YEAR} г. : одобр. Советом Федерации 22 февр. {YEAR} г. : в ред. Федер. закона от 09.03.{YEAR} г. // КонсультантПлюс. Россия / ЗАО «Консультант Плюс». – М., {YEAR}.",
+        "formatting_rules": [
+          "Обозначение типа в квадратных скобках [Электронный ресурс]",
+          "Режим доступа: URL",
+          "Обязательно дата доступа: ДД.ММ.ГГГГ"
+        ],
+        "description": "Электронный ресурс"
+      }
+    },
+    {
+      "id": "7ae05fc10646",
+      "source_type": "electronic_resource",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Законодательство, Н."
+        ],
+        "title": "Законодательство Республики Беларусь",
+        "year": 2016,
+        "publisher": null,
+        "city": null,
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": "2005",
+        "issue": "12",
+        "journal_title": "ЭТАЛОН",
+        "edition": null
+      },
+      "formatted_output": "О Парке высоких технологий [Электронный ресурс] : Декрет Президента Респ. Беларусь, 22 сент. 2005 г., № 12 : в ред. Декрета Президента Респ. Беларусь от 03.11.2014 г. // ЭТАЛОН. Законодательство Республики Беларусь / Нац. центр правовой информ. Респ. Беларусь. – Минск, 2016.",
+      "raw_example": "О Парке высоких технологий [Электронный ресурс] : Декрет Президента Респ. Беларусь, 22 сент. 2005 г., № 12 : в ред. Декрета Президента Респ. Беларусь от 03.11.2014 г. // ЭТАЛОН. Законодательство Республики Беларусь / Нац. центр правовой информ. Респ. Беларусь. – Минск, 2016.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "electronic_resource",
+        "pattern_template": "{TITLE} [Электронный ресурс]. – Режим доступа: {URL}. – Дата доступа: {ACCESS_DATE}.",
+        "abstracted_example": "О Парке высоких технологий [Электронный ресурс] : Декрет Президента Респ. Беларусь, 22 сент. {YEAR} г., № {NUM} : в ред. Декрета Президента Респ. Беларусь от 03.11.{YEAR} г. // ЭТАЛОН. Законодательство Республики Беларусь / Нац. центр правовой информ. Респ. Беларусь. – Минск, {YEAR}.",
+        "formatting_rules": [
+          "Обозначение типа в квадратных скобках [Электронный ресурс]",
+          "Режим доступа: URL",
+          "Обязательно дата доступа: ДД.ММ.ГГГГ"
+        ],
+        "description": "Электронный ресурс"
+      }
+    },
+    {
+      "id": "c38ce2b49cb2",
+      "source_type": "electronic_resource",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [],
+        "title": "Аб ратыфiкацыi Пагаднення памiж Урадам Рэспублiкi Беларусь i Урадам Кiтайскай Народнай Рэспублiкi аб паветраных зносiнах",
+        "year": 1997,
+        "publisher": null,
+        "city": null,
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": "1997",
+        "issue": "22",
+        "journal_title": "Ведамасцi Нац",
+        "edition": null
+      },
+      "formatted_output": "Аб ратыфiкацыi Пагаднення памiж Урадам Рэспублiкi Беларусь i Урадам Кiтайскай Народнай Рэспублiкi аб паветраных зносiнах : Закон Рэсп. Беларусь, 26 лют. 1997 г., № 22-З // Ведамасцi Нац. сходу Рэсп. Беларусь. – 1997. – № 16. – Арт. 297–298.",
+      "raw_example": "Аб ратыфiкацыi Пагаднення памiж Урадам Рэспублiкi Беларусь i Урадам Кiтайскай Народнай Рэспублiкi аб паветраных зносiнах : Закон Рэсп. Беларусь, 26 лют. 1997 г., № 22-З // Ведамасцi Нац. сходу Рэсп. Беларусь. – 1997. – № 16. – Арт. 297–298.",
+      "parsing_confidence": 0.8,
+      "pattern_info": {
+        "source_type": "electronic_resource",
+        "pattern_template": "{TITLE} [Электронный ресурс]. – Режим доступа: {URL}. – Дата доступа: {ACCESS_DATE}.",
+        "abstracted_example": "Аб ратыфiкацыi Пагаднення памiж Урадам Рэспублiкi Беларусь i Урадам Кiтайскай Народнай Рэспублiкi аб паветраных зносiнах : Закон Рэсп. Беларусь, 26 лют. {YEAR} г., № {NUM}-З // Ведамасцi Нац. сходу Рэсп. Беларусь. – {YEAR}. – № {NUM}. – Арт. 297–298.",
+        "formatting_rules": [
+          "Обозначение типа в квадратных скобках [Электронный ресурс]",
+          "Режим доступа: URL",
+          "Обязательно дата доступа: ДД.ММ.ГГГГ"
+        ],
+        "description": "Электронный ресурс"
+      }
+    },
+    {
+      "id": "9eca0a80fde6",
+      "source_type": "electronic_resource",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [],
+        "title": "Дело «Михаил Гришин (Mikhail Grishin) против Российской Федерации»",
+        "year": 2013,
+        "publisher": null,
+        "city": null,
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": "8",
+        "journal_title": "Бюл",
+        "edition": null
+      },
+      "formatted_output": "Дело «Михаил Гришин (Mikhail Grishin) против Российской Федерации» : постановление Европ. суда по правам человека, 24 июля 2012 г. // Бюл. Европ. суда по правам человека : рос. изд. – 2013. – № 8. – С. 9, 89–113.",
+      "raw_example": "Дело «Михаил Гришин (Mikhail Grishin) против Российской Федерации» : постановление Европ. суда по правам человека, 24 июля 2012 г. // Бюл. Европ. суда по правам человека : рос. изд. – 2013. – № 8. – С. 9, 89–113.",
+      "parsing_confidence": 0.8,
+      "pattern_info": {
+        "source_type": "electronic_resource",
+        "pattern_template": "{TITLE} [Электронный ресурс]. – Режим доступа: {URL}. – Дата доступа: {ACCESS_DATE}.",
+        "abstracted_example": "Дело «Михаил Гришин (Mikhail Grishin) против Российской Федерации» : постановление Европ. суда по правам человека, 24 июля {YEAR} г. // Бюл. Европ. суда по правам человека : рос. изд. – {YEAR}. – № {NUM}. – С. 9, 89–113.",
+        "formatting_rules": [
+          "Обозначение типа в квадратных скобках [Электронный ресурс]",
+          "Режим доступа: URL",
+          "Обязательно дата доступа: ДД.ММ.ГГГГ"
+        ],
+        "description": "Электронный ресурс"
+      }
+    },
+    {
+      "id": "e1163a115648",
+      "source_type": "electronic_resource",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [],
+        "title": "Конвенция Организации Объединенных Наций о договорах международной купли-продажи товаров [Электронный ресурс]",
+        "year": 2016,
+        "publisher": null,
+        "city": null,
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": "КонсультантПлюс",
+        "edition": null
+      },
+      "formatted_output": "Конвенция Организации Объединенных Наций о договорах международной купли-продажи товаров [Электронный ресурс] : [заключена в г. Вене 11.04.1980 г.] // КонсультантПлюс. Россия / ЗАО «Консультант Плюс». – М., 2016.",
+      "raw_example": "Конвенция Организации Объединенных Наций о договорах международной купли-продажи товаров [Электронный ресурс] : [заключена в г. Вене 11.04.1980 г.] // КонсультантПлюс. Россия / ЗАО «Консультант Плюс». – М., 2016.",
+      "parsing_confidence": 0.8,
+      "pattern_info": {
+        "source_type": "electronic_resource",
+        "pattern_template": "{TITLE} [Электронный ресурс]. – Режим доступа: {URL}. – Дата доступа: {ACCESS_DATE}.",
+        "abstracted_example": "Конвенция Организации Объединенных Наций о договорах международной купли-продажи товаров [Электронный ресурс] : [заключена в г. Вене 11.04.{YEAR} г.] // КонсультантПлюс. Россия / ЗАО «Консультант Плюс». – М., {YEAR}.",
+        "formatting_rules": [
+          "Обозначение типа в квадратных скобках [Электронный ресурс]",
+          "Режим доступа: URL",
+          "Обязательно дата доступа: ДД.ММ.ГГГГ"
+        ],
+        "description": "Электронный ресурс"
+      }
+    },
+    {
+      "id": "b11eca7f99cf",
+      "source_type": "electronic_resource",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [],
+        "title": "О ведении государственной статистики в 2016 году [Электронный ресурс]",
+        "year": 2016,
+        "publisher": null,
+        "city": null,
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": "http://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/prikaz-o_vedenii_sttatistiki_22_2_2016.pdf",
+        "access_date": null,
+        "volume": null,
+        "issue": "367",
+        "journal_title": "Национальный статистический комитет Республики Беларусь",
+        "edition": null
+      },
+      "formatted_output": "О ведении государственной статистики в 2016 году [Электронный ресурс] : приказ Нац. стат. ком. Респ. Беларусь, 17 дек. 2015 г., № 367 // Национальный статистический комитет Республики Беларусь. – Режим доступа: http://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/prikaz-o_vedenii_sttatistiki_22_2_2016.pdf. – Дата доступа: 22.06.2016.",
+      "raw_example": "О ведении государственной статистики в 2016 году [Электронный ресурс] : приказ Нац. стат. ком. Респ. Беларусь, 17 дек. 2015 г., № 367 // Национальный статистический комитет Республики Беларусь. – Режим доступа: http://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/prikaz-o_vedenii_sttatistiki_22_2_2016.pdf. – Дата доступа: 22.06.2016.",
+      "parsing_confidence": 0.8,
+      "pattern_info": {
+        "source_type": "electronic_resource",
+        "pattern_template": "{TITLE} [Электронный ресурс]. – Режим доступа: {URL}. – Дата доступа: {ACCESS_DATE}.",
+        "abstracted_example": "О ведении государственной статистики в {YEAR} году [Электронный ресурс] : приказ Нац. стат. ком. Респ. Беларусь, 17 дек. {YEAR} г., № {NUM} // Национальный статистический комитет Республики Беларусь. – Режим доступа: http://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/prikaz-o_vedenii_sttatistiki_22_2_2016.pdf. – Дата доступа: 22.06.{YEAR}.",
+        "formatting_rules": [
+          "Обозначение типа в квадратных скобках [Электронный ресурс]",
+          "Режим доступа: URL",
+          "Обязательно дата доступа: ДД.ММ.ГГГГ"
+        ],
+        "description": "Электронный ресурс"
+      }
+    },
+    {
+      "id": "b1561c8bf82b",
+      "source_type": "electronic_resource",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [],
+        "title": "Типовое положение о мобилизационных структурах [Электронный ресурс]",
+        "year": 2013,
+        "publisher": null,
+        "city": null,
+        "pages": null,
+        "isbn": null,
+        "doi": null,
+        "url": "http://base.spinform.ru/show_doc.fwx?rgn=60039",
+        "access_date": null,
+        "volume": null,
+        "issue": "145",
+        "journal_title": "Законодательство стран СНГ / ООО «СоюзПравоИнформ»",
+        "edition": null
+      },
+      "formatted_output": "Типовое положение о мобилизационных структурах [Электронный ресурс] : утв. постановлением Правительства Респ. Таджикистан, 30 марта 2013 г., № 145 // Законодательство стран СНГ / ООО «СоюзПравоИнформ». – Режим доступа: http://base.spinform.ru/show_doc.fwx?rgn=60039. – Дата доступа: 21.06.2016.",
+      "raw_example": "Типовое положение о мобилизационных структурах [Электронный ресурс] : утв. постановлением Правительства Респ. Таджикистан, 30 марта 2013 г., № 145 // Законодательство стран СНГ / ООО «СоюзПравоИнформ». – Режим доступа: http://base.spinform.ru/show_doc.fwx?rgn=60039. – Дата доступа: 21.06.2016.",
+      "parsing_confidence": 0.8,
+      "pattern_info": {
+        "source_type": "electronic_resource",
+        "pattern_template": "{TITLE} [Электронный ресурс]. – Режим доступа: {URL}. – Дата доступа: {ACCESS_DATE}.",
+        "abstracted_example": "Типовое положение о мобилизационных структурах [Электронный ресурс] : утв. постановлением Правительства Респ. Таджикистан, 30 марта {YEAR} г., № {NUM} // Законодательство стран СНГ / ООО «СоюзПравоИнформ». – Режим доступа: http://base.spinform.ru/show_doc.fwx?rgn=60039. – Дата доступа: 21.06.{YEAR}.",
+        "formatting_rules": [
+          "Обозначение типа в квадратных скобках [Электронный ресурс]",
+          "Режим доступа: URL",
+          "Обязательно дата доступа: ДД.ММ.ГГГГ"
+        ],
+        "description": "Электронный ресурс"
+      }
+    },
+    {
+      "id": "3da2f98c98b8",
+      "source_type": "electronic_resource",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Лукашенко, А. Г."
+        ],
+        "title": "Г. Обновление страны – путь к успеху и процветанию : послание Президента белорус. народу и Нац. собр., 19 апр. 2013 г.",
+        "year": 2013,
+        "publisher": null,
+        "city": null,
+        "pages": "1–7",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": "Совет",
+        "edition": null
+      },
+      "formatted_output": "Лукашенко, А. Г. Обновление страны – путь к успеху и процветанию : послание Президента белорус. народу и Нац. собр., 19 апр. 2013 г. / А. Г. Лукашенко // Совет. Белоруссия. – 2013. – 20 апр. – С. 1–7.",
+      "raw_example": "Лукашенко, А. Г. Обновление страны – путь к успеху и процветанию : послание Президента белорус. народу и Нац. собр., 19 апр. 2013 г. / А. Г. Лукашенко // Совет. Белоруссия. – 2013. – 20 апр. – С. 1–7.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "electronic_resource",
+        "pattern_template": "{TITLE} [Электронный ресурс]. – Режим доступа: {URL}. – Дата доступа: {ACCESS_DATE}.",
+        "abstracted_example": "Лукашенко, А. Г. Обновление страны – путь к успеху и процветанию : послание Президента белорус. народу и Нац. собр., 19 апр. {YEAR} г. / А. Г. Лукашенко // Совет. Белоруссия. – {YEAR}. – 20 апр. – С. {PAGE_RANGE}.",
+        "formatting_rules": [
+          "Обозначение типа в квадратных скобках [Электронный ресурс]",
+          "Режим доступа: URL",
+          "Обязательно дата доступа: ДД.ММ.ГГГГ"
+        ],
+        "description": "Электронный ресурс"
+      }
+    },
+    {
+      "id": "3a21c71c0293",
+      "source_type": "electronic_resource",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [],
+        "title": "Инструкция по делопроизводству в государственных органах, иных организациях",
+        "year": 2013,
+        "publisher": "Нац. центр правовой информ. Респ. Беларусь",
+        "city": "Минск",
+        "pages": "109",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": null,
+        "issue": null,
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Инструкция по делопроизводству в государственных органах, иных организациях : утв. М-вом юстиции Респ. Беларусь 19.01.09 : по состоянию на 22 апр. 2013 г. – Минск : Нац. центр правовой информ. Респ. Беларусь, 2013. – 109 с.",
+      "raw_example": "Инструкция по делопроизводству в государственных органах, иных организациях : утв. М-вом юстиции Респ. Беларусь 19.01.09 : по состоянию на 22 апр. 2013 г. – Минск : Нац. центр правовой информ. Респ. Беларусь, 2013. – 109 с.",
+      "parsing_confidence": 0.8,
+      "pattern_info": {
+        "source_type": "electronic_resource",
+        "pattern_template": "{TITLE} [Электронный ресурс]. – Режим доступа: {URL}. – Дата доступа: {ACCESS_DATE}.",
+        "abstracted_example": "Инструкция по делопроизводству в государственных органах, иных организациях : утв. М-вом юстиции Респ. Беларусь 19.01.09 : по состоянию на 22 апр. {YEAR} г. – Минск : Нац. центр правовой информ. Респ. Беларусь, {YEAR}. – {PAGES} с.",
+        "formatting_rules": [
+          "Обозначение типа в квадратных скобках [Электронный ресурс]",
+          "Режим доступа: URL",
+          "Обязательно дата доступа: ДД.ММ.ГГГГ"
+        ],
+        "description": "Электронный ресурс"
+      }
+    },
+    {
+      "id": "89e42925e633",
+      "source_type": "electronic_resource",
+      "country_standard": "BY",
+      "input_metadata": {
+        "authors": [
+          "Воробей, Г. А."
+        ],
+        "title": "А. Комментарий к изменениям и дополнениям, внесенным в Бюджетный кодекс Республики Беларусь Законом Республики Беларусь от 15 октября 2010 г. № 175-З",
+        "year": 2012,
+        "publisher": "Амалфея",
+        "city": "Минск",
+        "pages": "96",
+        "isbn": null,
+        "doi": null,
+        "url": null,
+        "access_date": null,
+        "volume": "15",
+        "issue": "175",
+        "journal_title": null,
+        "edition": null
+      },
+      "formatted_output": "Воробей, Г. А. Комментарий к изменениям и дополнениям, внесенным в Бюджетный кодекс Республики Беларусь Законом Республики Беларусь от 15 октября 2010 г. № 175-З / Г. А. Воробей. – Минск : Амалфея, 2012. – 96 с.",
+      "raw_example": "Воробей, Г. А. Комментарий к изменениям и дополнениям, внесенным в Бюджетный кодекс Республики Беларусь Законом Республики Беларусь от 15 октября 2010 г. № 175-З / Г. А. Воробей. – Минск : Амалфея, 2012. – 96 с.",
+      "parsing_confidence": 1.0,
+      "pattern_info": {
+        "source_type": "electronic_resource",
+        "pattern_template": "{TITLE} [Электронный ресурс]. – Режим доступа: {URL}. – Дата доступа: {ACCESS_DATE}.",
+        "abstracted_example": "Воробей, Г. А. Комментарий к изменениям и дополнениям, внесенным в Бюджетный кодекс Республики Беларусь Законом Республики Беларусь от 15 октября {YEAR} г. № {NUM}-З / Г. А. Воробей. – Минск : Амалфея, {YEAR}. – {PAGES} с.",
+        "formatting_rules": [
+          "Обозначение типа в квадратных скобках [Электронный ресурс]",
+          "Режим доступа: URL",
+          "Обязательно дата доступа: ДД.ММ.ГГГГ"
+        ],
+        "description": "Электронный ресурс"
+      }
+    }
+  ],
+  "patterns": {
+    "book_1_3_authors": {
+      "pattern": "{AUTHOR}. {TITLE} / {AUTHOR_FULL}. – {EDITION}{CITY} : {PUBLISHER}, {YEAR}. – {PAGES} с.",
+      "description": "Книга с 1-3 авторами",
+      "rules": [
+        "Автор: Фамилия, И. О.",
+        "После названия косая черта и полная форма автора",
+        "Город : Издательство, год",
+        "Количество страниц с точкой и \"с.\""
+      ]
+    },
+    "book_4plus_authors": {
+      "pattern": "{TITLE} / {FIRST_AUTHOR} [и др.]{; EDITOR}. – {CITY} : {PUBLISHER}, {YEAR}. – {PAGES} с.",
+      "description": "Книга с 4+ авторами",
+      "rules": [
+        "Начинается с названия (без автора в начале)",
+        "Первый автор [и др.] или [et al.]",
+        "Редактор указывается после точки с запятой"
+      ]
+    },
+    "journal_article": {
+      "pattern": "{AUTHOR}. {TITLE} / {AUTHOR_FULL} // {JOURNAL}. – {YEAR}. – Т. {VOLUME}, № {ISSUE}. – С. {PAGES}.",
+      "description": "Статья из журнала",
+      "rules": [
+        "Автор. Название / Автор",
+        "Двойная косая // перед названием журнала",
+        "Том и номер после года",
+        "Страницы: С. начало–конец."
+      ]
+    },
+    "dissertation": {
+      "pattern": "{AUTHOR}. {TITLE} : дис. ... {DEGREE} : {SPECIALTY} / {AUTHOR_FULL}. – {CITY}, {YEAR}. – {PAGES} л.",
+      "description": "Диссертация",
+      "rules": [
+        "Тип работы: дис. ... канд./д-ра наук",
+        "Код специальности: XX.XX.XX",
+        "Страницы в \"л.\" (листах), не \"с.\""
+      ]
+    },
+    "abstract": {
+      "pattern": "{AUTHOR}. {TITLE} : автореф. дис. ... {DEGREE} : {SPECIALTY} / {AUTHOR_FULL}{; ORGANIZATION}. – {CITY}, {YEAR}. – {PAGES} с.",
+      "description": "Автореферат диссертации",
+      "rules": [
+        "Тип: автореф. дис.",
+        "Организация через точку с запятой",
+        "Страницы в \"с.\""
+      ]
+    },
+    "conference": {
+      "pattern": "{TITLE} : материалы {CONF_NAME}, {CITY}, {DATE} / {ORGANIZATION}{; EDITOR}. – {CITY} : {PUBLISHER}, {YEAR}. – {PAGES} с.",
+      "description": "Материалы конференции",
+      "rules": [
+        "Вид документа: материалы, сборник, тезисы",
+        "Указание места и даты проведения",
+        "Организатор и редколлегия"
+      ]
+    },
+    "electronic_resource": {
+      "pattern": "{TITLE} [Электронный ресурс]. – Режим доступа: {URL}. – Дата доступа: {ACCESS_DATE}.",
+      "description": "Электронный ресурс",
+      "rules": [
+        "Обозначение типа в квадратных скобках [Электронный ресурс]",
+        "Режим доступа: URL",
+        "Обязательно дата доступа: ДД.ММ.ГГГГ"
+      ]
+    },
+    "standard": {
+      "pattern": "{TITLE} : {STANDARD_CODE}. – {STATUS}. – {CITY} : {PUBLISHER}, {YEAR}. – {PAGES} с.",
+      "description": "Стандарт (ГОСТ, СТБ, ТКП)",
+      "rules": [
+        "Обозначение после названия: ГОСТ, СТБ, ТКП и номер",
+        "Статус: введен, взамен",
+        "Серия в скобках если есть"
+      ]
+    },
+    "patent": {
+      "pattern": "{TITLE} : пат. {COUNTRY} {NUMBER} / {AUTHORS}. – Опубл. {DATE}.",
+      "description": "Патент",
+      "rules": [
+        "Вид документа: пат., а. с., полез. модель",
+        "Код страны и номер патента",
+        "Дата публикации: Опубл. ДД.ММ.ГГГГ"
+      ]
+    },
+    "law": {
+      "pattern": "{TITLE} : {TYPE} {COUNTRY}, {DATE}, № {NUMBER} // {PERIODIC}. – {YEAR}. – № {ISSUE}. – С. {PAGES}.",
+      "description": "Законодательный акт",
+      "rules": [
+        "Вид акта: Закон, Указ, Постановление",
+        "Дата принятия и номер",
+        "Источник публикации"
+      ]
+    },
+    "multivolume": {
+      "pattern": "{AUTHOR}. {TITLE} : у {VOLUMES} т. / {AUTHOR_FULL}. – {EDITION}{CITY} : {PUBLISHER}, {YEAR}. – {VOLUMES} т.",
+      "description": "Многотомное издание",
+      "rules": [
+        "Указание количества томов: у N т.",
+        "Общее количество томов в конце",
+        "Для отдельного тома: – Т. N : Название тома."
+      ]
+    },
+    "collection_article": {
+      "pattern": "{AUTHOR}. {TITLE} / {AUTHOR_FULL} // {COLLECTION_TITLE} / {EDITOR}. – {CITY} : {PUBLISHER}, {YEAR}. – С. {PAGES}.",
+      "description": "Статья из сборника",
+      "rules": [
+        "Двойная косая // перед названием сборника",
+        "Редактор сборника",
+        "Страницы: С. начало–конец."
+      ]
+    },
+    "archive": {
+      "pattern": "{ARCHIVE_NAME} за {YEAR}. – {DOCUMENT_TYPE} № {NUMBER}.",
+      "description": "Архивный документ",
+      "rules": [
+        "Название архива/фонда",
+        "Тип дела/документа",
+        "Номер дела"
+      ]
+    },
+    "preprint": {
+      "pattern": "{AUTHOR}. {TITLE} / {AUTHOR_FULL}{; ORGANIZATION}. – {CITY}, {YEAR}. – {PAGES} с. – (Препринт / {SERIES}).",
+      "description": "Препринт",
+      "rules": [
+        "Серия препринта в круглых скобках",
+        "Организация через точку с запятой"
+      ]
+    }
+  },
+  "formatting_rules": {
+    "punctuation": {
+      "dash": " – ",
+      "colon_publisher": " : ",
+      "slash_author": " / ",
+      "double_slash": " // ",
+      "semicolon_editor": " ; ",
+      "comma": ", "
+    },
+    "abbreviations": {
+      "pages": "с.",
+      "volume": "Т.",
+      "issue": "№",
+      "edition": "изд.",
+      "edited_by": "под ред.",
+      "and_others": "[и др.]",
+      "electronic": "[Электронный ресурс]"
+    },
+    "author_format": {
+      "first_mention": "Фамилия, И. О.",
+      "after_slash": "И. О. Фамилия",
+      "multiple": "Фамилия1, И. О., Фамилия2, П. П.",
+      "four_plus": "И. О. Фамилия [и др.]"
+    }
+  }
+}
