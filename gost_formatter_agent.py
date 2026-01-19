@@ -437,13 +437,14 @@ class GOSTFormatterAgent:
 
 ТОЧНОСТЬ 100% — это единственный приемлемый результат."""
 
-    def format_single(self, source: Source, standard: Standard) -> FormattedResult:
+    def format_single(self, source: Source, standard: Standard, original_text: str = "") -> FormattedResult:
         """
         Форматирует один источник
 
         Args:
             source: Исходные данные источника
             standard: Стандарт форматирования (GOST или VAK)
+            original_text: Оригинальный текст ввода для сверки
 
         Returns:
             FormattedResult с отформатированной записью
@@ -458,8 +459,20 @@ class GOSTFormatterAgent:
             if examples:
                 examples_section = f"\n\nПРИМЕРЫ ПРАВИЛЬНОГО ФОРМАТИРОВАНИЯ ПО ВАК РБ:\n{examples}\n"
         
+        # Если есть оригинальный текст — передаём его Claude для сверки
+        original_section = ""
+        if original_text:
+            original_section = f"""
+
+⚠️ ОРИГИНАЛЬНЫЙ ТЕКСТ ВВОДА (СВЕРЯЙСЯ С НИМ!):
+{original_text}
+
+ВАЖНО: Все данные из оригинала ДОЛЖНЫ быть в выводе!
+Если в оригинале есть "Т. 15, № 3" — они ОБЯЗАНЫ быть в результате.
+"""
+        
         user_prompt = f"""Отформатируй библиографический источник по стандарту {standard.value}.
-{examples_section}
+{examples_section}{original_section}
 Данные источника:
 {json.dumps(source.__dict__, ensure_ascii=False, indent=2)}
 

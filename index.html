@@ -513,11 +513,11 @@
                 const source = parseData.sources[0];
                 source.type = sourceType; // Используем выбранный тип
 
-                // Форматируем
+                // Форматируем (передаём оригинальный текст для сверки)
                 const formatResponse = await fetch(`${API_BASE_URL}/api/format/single`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ source, standard })
+                    body: JSON.stringify({ source, standard, original_text: inputText })
                 });
 
                 if (!formatResponse.ok) throw new Error('Ошибка форматирования');

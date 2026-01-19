@@ -74,6 +74,7 @@ class SingleFormatRequest(BaseModel):
     """Запрос на форматирование одного источника"""
     source: SourceRequest
     standard: str
+    original_text: Optional[str] = None  # Оригинальный текст для сверки
 
 
 class BatchFormatRequest(BaseModel):
@@ -218,8 +219,8 @@ async def format_single_source(request: SingleFormatRequest):
         # Определяем стандарт
         standard = Standard.GOST_2018 if request.standard == "GOST_2018" else Standard.VAK_RB
 
-        # Форматируем
-        result = agent.format_single(source, standard)
+        # Форматируем (передаём оригинальный текст для сверки)
+        result = agent.format_single(source, standard, original_text=request.original_text or "")
 
         return FormatResponse(
             id=result.id,
