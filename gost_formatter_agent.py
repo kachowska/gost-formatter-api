@@ -74,13 +74,12 @@ class GOSTFormatterAgent:
         }
 
     def _load_vak_reference(self) -> Dict:
-        """Загружает датасет примеров ВАК РБ (1000 записей)"""
+        """Загружает упрощённый датасет примеров ВАК РБ"""
         import os
-        import re
         
-        # Сначала пробуем расширенный датасет, затем базовый
+        # Сначала пробуем упрощённый датасет (96 примеров, простая структура)
         dataset_paths = [
-            os.path.join(os.path.dirname(__file__), "vak_training_dataset_expanded.json"),
+            os.path.join(os.path.dirname(__file__), "vak_examples_simple.json"),
             os.path.join(os.path.dirname(__file__), "vak_training_dataset.json"),
         ]
         
@@ -88,8 +87,13 @@ class GOSTFormatterAgent:
             try:
                 with open(dataset_path, "r", encoding="utf-8") as f:
                     data = json.load(f)
-                    self.logger.info("Загружен датасет: %s (%d записей)", 
-                                    dataset_path, len(data.get('records', [])))
+                    # Определяем структуру
+                    if 'examples' in data:
+                        count = len(data.get('examples', []))
+                    else:
+                        count = len(data.get('records', []))
+                    self.logger.info("Загружен датасет: %s (%d примеров)", 
+                                    dataset_path, count)
                     return data
             except FileNotFoundError:
                 continue
@@ -98,7 +102,7 @@ class GOSTFormatterAgent:
                 continue
         
         self.logger.warning("Датасет не найден, используем пустой")
-        return {"records": []}
+        return {"examples": []}
 
     def _detect_document_type(self, text: str) -> str:
         """Определяет тип документа по содержимому текста"""
@@ -166,12 +170,18 @@ class GOSTFormatterAgent:
         return 'unknown'
 
     def _get_relevant_examples(self, text: str, max_examples: int = 5) -> str:
-        """Получает релевантные примеры из датасета для форматирования"""
+        """Получает релевантные примеры из упрощённого датасета"""
         detected_type = self._detect_document_type(text)
-        records = self.vak_rb_reference.get('records', [])
+        
+        # Поддержка обоих форматов: новый (examples) и старый (records)
+        examples = self.vak_rb_reference.get('examples', [])
+        if not examples:
+            records = self.vak_rb_reference.get('records', [])
+            examples = [{'type': r.get('source_type'), 'example': r.get('formatted_output')} 
+                       for r in records if not r.get('is_variation')]
         
         # Фильтруем примеры по типу
-        matching = [r for r in records if r.get('source_type') == detected_type and not r.get('is_variation')]
+        matching = [e for e in examples if e.get('type') == detected_type]
         
         # Если нет точных совпадений, берём похожие типы
         if not matching:
@@ -182,20 +192,20 @@ class GOSTFormatterAgent:
                 'law': ['standard'],
             }
             for similar in similar_types.get(detected_type, []):
-                matching = [r for r in records if r.get('source_type') == similar and not r.get('is_variation')]
+                matching = [e for e in examples if e.get('type') == similar]
                 if matching:
                     break
         
-        # Если всё ещё нет — берём любые оригинальные
+        # Если всё ещё нет — берём любые
         if not matching:
-            matching = [r for r in records if not r.get('is_variation')][:max_examples]
+            matching = examples[:max_examples]
         
         # Формируем текст с примерами
         examples_text = []
-        for record in matching[:max_examples]:
-            source_type = record.get('source_type', 'unknown')
-            formatted = record.get('formatted_output', '')
-            examples_text.append(f"[{source_type}] {formatted}")
+        for ex in matching[:max_examples]:
+            ex_type = ex.get('type', 'unknown')
+            ex_text = ex.get('example', '')
+            examples_text.append(f"[{ex_type}] {ex_text}")
         
         return "\n".join(examples_text)
 
@@ -362,18 +372,20 @@ class GOSTFormatterAgent:
   Грачыха, Т. А. [Рэцэнзія] / Т. А. Грачыха // Весн. Віцеб. дзярж. ун-та. – 2013. – № 1. – С. 127–128. – Рэц. на кн.: ...
 """
         
-        # Собираем примеры из датасета
-        records = self.vak_rb_reference.get('records', [])
-        examples_by_type = {}
+        # Собираем примеры из упрощённого датасета
+        examples = self.vak_rb_reference.get('examples', [])
+        if not examples:
+            records = self.vak_rb_reference.get('records', [])
+            examples = [{'type': r.get('source_type'), 'example': r.get('formatted_output')} 
+                       for r in records if not r.get('is_variation')]
         
-        for r in records:
-            if r.get('is_variation'):
-                continue
-            source_type = r.get('source_type', 'unknown')
-            if source_type not in examples_by_type:
-                examples_by_type[source_type] = []
-            if len(examples_by_type[source_type]) < 1:
-                examples_by_type[source_type].append(r.get('formatted_output', ''))
+        examples_by_type = {}
+        for ex in examples:
+            ex_type = ex.get('type', 'unknown')
+            if ex_type not in examples_by_type:
+                examples_by_type[ex_type] = []
+            if len(examples_by_type[ex_type]) < 1:
+                examples_by_type[ex_type].append(ex.get('example', ''))
         
         return f"""Ты — эксперт по библиографическому оформлению по стандартам ГОСТ Р 7.0.100-2018 и ВАК Республики Беларусь.
 
