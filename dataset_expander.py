@@ -248,29 +248,51 @@ class DatasetExpander:
         }
     
     def expand(self, target_count: int = 1000, variations_per_record: int = 8) -> List[Dict]:
-        """Расширяет датасет до целевого количества"""
+        """Расширяет датасет до целевого количества
+        
+        Args:
+            target_count: Целевое количество записей
+            variations_per_record: Макс. вариаций на одну оригинальную запись
+        """
         self.expanded = []
         self.idx = 0
         
-        # Включаем оригинальные записи
+        # Включаем оригинальные записи (копируем, чтобы не мутировать оригинал)
         for record in self.records:
-            record['is_variation'] = False
-            self.expanded.append(record)
+            record_copy = record.copy()
+            record_copy['is_variation'] = False
+            self.expanded.append(record_copy)
             self.idx += 1
         
-        # Генерируем вариации
+        # Фильтруем записи для вариаций (исключаем unknown)
         records_to_vary = [r for r in self.records if r.get('source_type') != 'unknown']
         
-        variation_num = 0
+        if not records_to_vary:
+            return self.expanded
+        
+        # Генерируем вариации с учётом variations_per_record
+        variation_counts = {r.get('id', i): 0 for i, r in enumerate(records_to_vary)}
+        
         while len(self.expanded) < target_count:
             for record in records_to_vary:
                 if len(self.expanded) >= target_count:
                     break
                 
-                variation = self.create_variation(record, variation_num)
+                record_id = record.get('id', '')
+                current_count = variation_counts.get(record_id, 0)
+                
+                # Проверяем лимит вариаций для данной записи
+                if current_count >= variations_per_record:
+                    continue
+                
+                variation = self.create_variation(record, current_count)
                 self.expanded.append(variation)
                 self.idx += 1
-                variation_num += 1
+                variation_counts[record_id] = current_count + 1
+            
+            # Если все записи достигли лимита, сбрасываем счётчики
+            if all(c >= variations_per_record for c in variation_counts.values()):
+                variation_counts = {k: 0 for k in variation_counts}
         
         return self.expanded
     
