@@ -20,6 +20,9 @@ from gost_formatter_agent import (
     FormattedResult
 )
 
+# Импорт модуля для внешних API (CrossRef, Open Library)
+from metadata_lookup import get_metadata_lookup, MetadataResult
+
 # Инициализация FastAPI
 app = FastAPI(
     title="GOST Formatter API",
@@ -134,6 +137,59 @@ async def health_check():
         "status": "ok",
         "service": "GOST Formatter",
         "api_key_set": bool(os.getenv("ANTHROPIC_API_KEY"))
+    }
+
+
+@app.get("/api/lookup/{identifier}")
+async def lookup_metadata(identifier: str):
+    """
+    Поиск метаданных по DOI или ISBN
+    
+    Автоматически определяет тип идентификатора и запрашивает
+    соответствующий API (CrossRef для DOI, Open Library для ISBN)
+    """
+    lookup = get_metadata_lookup()
+    result = lookup.lookup(identifier)
+    
+    if not result.success:
+        raise HTTPException(status_code=404, detail=result.error)
+    
+    return {
+        "success": True,
+        "source": result.source,
+        "data": result.data
+    }
+
+
+@app.get("/api/lookup/doi/{doi:path}")
+async def lookup_by_doi(doi: str):
+    """Поиск метаданных статьи по DOI через CrossRef API"""
+    lookup = get_metadata_lookup()
+    result = lookup.lookup_by_doi(doi)
+    
+    if not result.success:
+        raise HTTPException(status_code=404, detail=result.error)
+    
+    return {
+        "success": True,
+        "source": "crossref",
+        "data": result.data
+    }
+
+
+@app.get("/api/lookup/isbn/{isbn}")
+async def lookup_by_isbn(isbn: str):
+    """Поиск метаданных книги по ISBN через Open Library API"""
+    lookup = get_metadata_lookup()
+    result = lookup.lookup_by_isbn(isbn)
+    
+    if not result.success:
+        raise HTTPException(status_code=404, detail=result.error)
+    
+    return {
+        "success": True,
+        "source": "openlibrary",
+        "data": result.data
     }
 
 
