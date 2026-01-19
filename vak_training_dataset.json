@@ -8,7 +8,7 @@
       "https://vak.gov.by/node/8026"
     ],
     "fixed_types": 66,
-    "reclassified_at": "2026-01-20T00:16:22.183752"
+    "reclassified_at": "2026-01-20T00:22:48.544979"
   },
   "records": [
     {
@@ -93,11 +93,11 @@
     },
     {
       "id": "e0dabebb7d33",
-      "source_type": "deposited",
+      "source_type": "research_report",
       "country_standard": "BY",
       "formatted_output": "Состояние и перспективы развития статистики печати Российской Федерации : отчет о НИР (заключ.) : 06-02 / Рос. кн. палата ; рук. А. А. Джиго ; исполн.: В. П. Смирнова [и др.]. – М., 2000. – 250 с. – Инв. № 756600.",
       "source_url": "https://vak.gov.by/bibliographicDescription",
-      "old_source_type": "archive"
+      "old_source_type": "deposited"
     },
     {
       "id": "1ccd3d84b678",
@@ -224,11 +224,11 @@
     },
     {
       "id": "188b715c60fe",
-      "source_type": "unknown",
+      "source_type": "patent_application",
       "country_standard": "BY",
       "formatted_output": "Устройство для вычисления полиномиальных симметрических булевых функций : заявка BY 20120452 / В. П. Супрун. – Опубл. 30.10.2012.",
       "source_url": "https://vak.gov.by/bibliographicDescription",
-      "old_source_type": "patent"
+      "old_source_type": "unknown"
     },
     {
       "id": "f09a2e49f4e8",
@@ -337,18 +337,19 @@
     },
     {
       "id": "31ed96f8de85",
-      "source_type": "electronic_resource",
+      "source_type": "book_1_3_authors",
       "country_standard": "BY",
       "formatted_output": "Введенский, Л. И. Судьбы философии в России [Электронный ресурс] / Л. И. Введенский // История философии : собр. тр. крупнейших философов по истории философии. – М., 2002. – 1 электрон. опт. диск (CD-ROM).",
       "source_url": "https://vak.gov.by/bibliographicDescription",
-      "old_source_type": "archive"
+      "old_source_type": "electronic_resource"
     },
     {
       "id": "52eac6b0f7f8",
-      "source_type": "electronic_resource",
+      "source_type": "book_1_3_authors",
       "country_standard": "BY",
       "formatted_output": "Жданухин, Д. Ю. Коллекторские агентства: основные черты деятельности, история появления и зарубежный опыт [Электронный ресурс] / Д. Ю. Жданухин // Юридическая Россия : Федер. правовой портал. – Режим доступа: http://law.edu.ru/doc/document.asp?docID=1233648. – Дата доступа: 22.06.2016.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "electronic_resource"
     },
     {
       "id": "070244768dc4",
@@ -360,18 +361,19 @@
     },
     {
       "id": "85385e967289",
-      "source_type": "electronic_resource",
+      "source_type": "law",
       "country_standard": "BY",
       "formatted_output": "Кодекс внутреннего водного транспорта Российской Федерации [Электронный ресурс] : 7 марта 2001 г., № 24-ФЗ : принят Гос. Думой 7 февр. 2001 г. : одобр. Советом Федерации 22 февр. 2001 г. : в ред. Федер. закона от 09.03.2016 г. // КонсультантПлюс. Россия / ЗАО «Консультант Плюс». – М., 2016.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "electronic_resource"
     },
     {
       "id": "0d7ad005fc83",
-      "source_type": "electronic_resource",
+      "source_type": "law",
       "country_standard": "BY",
       "formatted_output": "О Парке высоких технологий[Электронный ресурс]: Декрет Президента Респ. Беларусь, 22 сент. 2005 г., № 12 : в ред. Декрета Президента Респ. Беларусь от 03.11.2014 г. // ЭТАЛОН.Законодательство Республики Беларусь / Нац. центр правовой информ. Респ. Беларусь.–Минск, 2016.",
       "source_url": "https://vak.gov.by/bibliographicDescription",
-      "old_source_type": "law"
+      "old_source_type": "electronic_resource"
     },
     {
       "id": "07080376c261",
@@ -389,42 +391,43 @@
     },
     {
       "id": "75aebad2682a",
-      "source_type": "electronic_resource",
+      "source_type": "law",
       "country_standard": "BY",
       "formatted_output": "Конвенция Организации Объединенных Наций о договорах международной купли-продажи товаров [Электронный ресурс] : [заключена в г. Вене 11.04.1980 г.] // КонсультантПлюс. Россия / ЗАО «Консультант Плюс».–М., 2016.",
       "source_url": "https://vak.gov.by/bibliographicDescription",
-      "old_source_type": "law"
+      "old_source_type": "electronic_resource"
     },
     {
       "id": "db38d246a7a6",
-      "source_type": "electronic_resource",
+      "source_type": "law",
       "country_standard": "BY",
       "formatted_output": "О ведении государственной статистики в 2016 году [Электронный ресурс] : приказ Нац. стат. ком. Респ. Беларусь, 17 дек. 2015 г., № 367 // Национальный статистический комитет Республики Беларусь. – Режим доступа: http://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/prikaz-o_vedenii_sttatistiki_22_2_2016.pdf. – Дата доступа: 22.06.2016.",
       "source_url": "https://vak.gov.by/bibliographicDescription",
-      "old_source_type": "law"
+      "old_source_type": "electronic_resource"
     },
     {
       "id": "5ceb473c4e53",
-      "source_type": "electronic_resource",
+      "source_type": "law",
       "country_standard": "BY",
       "formatted_output": "Типовое положение о мобилизационных структурах [Электронный ресурс] : утв. постановлением Правительства Респ. Таджикистан, 30 марта 2013 г., № 145 // Законодательство стран СНГ / ООО «СоюзПравоИнформ». – Режим доступа: http://base.spinform.ru/show_doc.fwx?rgn=60039. – Дата доступа: 21.06.2016.",
       "source_url": "https://vak.gov.by/bibliographicDescription",
-      "old_source_type": "law"
+      "old_source_type": "electronic_resource"
     },
     {
       "id": "4b77bdc4151e",
-      "source_type": "law",
+      "source_type": "book_1_3_authors",
       "country_standard": "BY",
       "formatted_output": "Лукашенко, А. Г. Обновление страны – путь к успеху и процветанию : послание Президента белорус. народу и Нац. собр., 19 апр. 2013 г. / А. Г. Лукашенко // Совет. Белоруссия. – 2013. – 20 апр. – С. 1–7.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "law"
     },
     {
       "id": "4a52de84eca7",
-      "source_type": "unknown",
+      "source_type": "law",
       "country_standard": "BY",
       "formatted_output": "Инструкция по делопроизводству в государственных органах, иных организациях : утв. М-вом юстиции Респ. Беларусь 19.01.09 : по состоянию на 22 апр. 2013 г. – Минск : Нац. центр правовой информ. Респ. Беларусь, 2013. – 109 с.",
       "source_url": "https://vak.gov.by/bibliographicDescription",
-      "old_source_type": "law"
+      "old_source_type": "unknown"
     },
     {
       "id": "1cc1dab2592f",
@@ -564,19 +567,19 @@
     },
     {
       "id": "d67ca90451c0",
-      "source_type": "unknown",
+      "source_type": "electronic_resource",
       "country_standard": "BY",
       "formatted_output": "Национальный правовой Интернет-портал Республики Беларусь : [сайт]. – Мн., 2003–2025. – URL: http://www.pravo.by (дата обращения: 01.10.2025).",
       "source_url": "https://vak.gov.by/node/8026",
-      "old_source_type": "electronic_resource"
+      "old_source_type": "unknown"
     },
     {
       "id": "185e9893ed5a",
-      "source_type": "unknown",
+      "source_type": "visual_material",
       "country_standard": "BY",
       "formatted_output": "9 мая. С праздником Победы! : [плакат]. – Мн. : Полиграфкомбинат им. Я. Коласа, 2024. – 1 л.",
       "source_url": "https://vak.gov.by/node/8026",
-      "old_source_type": "electronic_resource"
+      "old_source_type": "unknown"
     },
     {
       "id": "138fe61af019",
@@ -689,11 +692,11 @@
     },
     {
       "id": "4d5f846a215a",
-      "source_type": "catalog",
+      "source_type": "unknown",
       "country_standard": "BY",
       "formatted_output": "Белорусские экспортеры, 2023 : [каталог] / Бел.торгово-пром. палата. – Мн. : СтройМедиаПроект, 2023. – 546 с.",
       "source_url": "https://vak.gov.by/node/8026",
-      "old_source_type": "preprint"
+      "old_source_type": "catalog"
     },
     {
       "id": "9036dcc2f953",
@@ -774,11 +777,11 @@
     },
     {
       "id": "b2c0e0377c7f",
-      "source_type": "book_1_3_authors",
+      "source_type": "newspaper_article",
       "country_standard": "BY",
       "formatted_output": "Ватыль, В. Беларусь развивается и идет по пути консолидации общества / В. Ватыль // SB.BY. Беларусь сегодня. – URL: https://www.sb.by/articles/byla-est-i-budet-belarus.html. – Дата публ.: 12.09.2024.",
       "source_url": "https://vak.gov.by/node/8026",
-      "old_source_type": "electronic_resource"
+      "old_source_type": "book_1_3_authors"
     },
     {
       "id": "4400169eb138",
@@ -811,26 +814,27 @@
     },
     {
       "id": "9bc71610e3a3",
-      "source_type": "unknown",
+      "source_type": "law",
       "country_standard": "BY",
       "formatted_output": "О ведении государственной статистики в 2024 году : приказ Нац. стат. ком. Респ. Беларусь от 15 дек. 2023 г. № 197 // Национальный статистический комитет Республики Беларусь. – URL: https://www.belstat.gov.by/upload-belstat/upload-belstat-word/O-Belstate/prikaz_197_15_12_2023.doc (дата обращения: 01.10.2025).",
       "source_url": "https://vak.gov.by/node/8026",
-      "old_source_type": "law"
+      "old_source_type": "unknown"
     },
     {
       "id": "a5583dad04bd",
-      "source_type": "unknown",
+      "source_type": "law",
       "country_standard": "BY",
       "formatted_output": "Положение об осуществлении физическими лицами ремесленной деятельности : утв. Указом Президента Респ. Беларусь от 21 авг. 2024 г. № 328 // КонсультантПлюс. Беларусь : справ. правовая система (дата обращения: 01.10.2025).",
       "source_url": "https://vak.gov.by/node/8026",
-      "old_source_type": "law"
+      "old_source_type": "unknown"
     },
     {
       "id": "1920dd5322b6",
-      "source_type": "law",
+      "source_type": "newspaper_article",
       "country_standard": "BY",
       "formatted_output": "Лукашенко, А. Г. О международном положении Республики Беларусь и задачах по сохранению мира и единства белорусского общества : послание Президента Респ. Беларусь А.Г. Лукашенко бел. народу и Нац. собр. Респ. Беларусь, 24 апр. 2024 г. / А. Г. Лукашенко // Национальный правовой Интернет-портал Республики Беларусь. – URL: https://pravo.by/document/?guid=3871&p0=P024p0001 (дата обращения: 01.10.2025).",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "law"
     },
     {
       "id": "2ac351d389a4",
