@@ -74,123 +74,216 @@ class GOSTFormatterAgent:
         }
 
     def _load_vak_reference(self) -> Dict:
-        """Загружает справочник примеров ВАК РБ"""
+        """Загружает датасет примеров ВАК РБ (1000 записей)"""
         import os
-        reference_path = os.path.join(os.path.dirname(__file__), "vak_rb_reference.json")
-        try:
-            with open(reference_path, "r", encoding="utf-8") as f:
-                return json.load(f)
-        except FileNotFoundError:
-            self.logger.warning("VAK RB reference file not found: %s", reference_path)
-            return {"document_types": {}}
-        except json.JSONDecodeError as e:
-            self.logger.error("Error parsing VAK RB reference: %s", e)
-            return {"document_types": {}}
+        import re
+        
+        # Сначала пробуем расширенный датасет, затем базовый
+        dataset_paths = [
+            os.path.join(os.path.dirname(__file__), "vak_training_dataset_expanded.json"),
+            os.path.join(os.path.dirname(__file__), "vak_training_dataset.json"),
+        ]
+        
+        for dataset_path in dataset_paths:
+            try:
+                with open(dataset_path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    self.logger.info("Загружен датасет: %s (%d записей)", 
+                                    dataset_path, len(data.get('records', [])))
+                    return data
+            except FileNotFoundError:
+                continue
+            except json.JSONDecodeError as e:
+                self.logger.error("Ошибка парсинга датасета: %s", e)
+                continue
+        
+        self.logger.warning("Датасет не найден, используем пустой")
+        return {"records": []}
 
-    def _detect_document_type(self, text: str) -> List[str]:
-        """Определяет тип документа по ключевым словам"""
+    def _detect_document_type(self, text: str) -> str:
+        """Определяет тип документа по содержимому текста"""
+        import re
         text_lower = text.lower()
-        matched_types = []
         
-        for type_key, type_data in self.vak_rb_reference.get("document_types", {}).items():
-            keywords = type_data.get("keywords", [])
-            for keyword in keywords:
-                if keyword.lower() in text_lower:
-                    matched_types.append(type_key)
-                    break
+        # Медиаформат
+        if '[звукозапись]' in text_lower or '[видеозапись]' in text_lower:
+            return 'multimedia'
+        if '[изоматериал]' in text_lower or 'плакат]' in text_lower:
+            return 'visual_material'
+        if '[ноты]' in text_lower:
+            return 'music_score'
+        if '[карт' in text_lower:
+            return 'map'
         
-        return matched_types if matched_types else ["book_1_3_authors"]  # default
+        # Научные работы
+        if re.search(r'пат\.\s*[A-Z]{2}|а\.\s*с\.\s*[A-Z]{2}|полез\.\s*модель', text):
+            return 'patent'
+        if re.search(r'дис\.\s*\.{3}|дыс\.\s*\.{3}', text_lower):
+            return 'dissertation'
+        if 'автореф' in text_lower:
+            return 'abstract'
+        if 'препринт' in text_lower:
+            return 'preprint'
+        
+        # Стандарты
+        if re.search(r'гост\s*\d|стб\s*\d|ткп\s*\d|тр\s*тс\s*\d', text_lower):
+            return 'standard'
+        
+        # Законодательство
+        if 'конституц' in text_lower or re.search(r'\bкодекс\b', text_lower):
+            return 'law'
+        if re.search(r'\bзакон\b|\bуказ\b|\bпостановлени|\bдекрет\b|приказ\s+\w+\.', text_lower):
+            return 'law'
+        
+        # Конференции и сборники
+        if re.search(r'матер.*конф|тезис.*докл|чтения\s*:', text_lower):
+            return 'conference'
+        if re.search(r'сб\.\s*(науч\.|ст\.|тр\.)', text_lower):
+            return 'collection_article'
+        
+        # Периодика
+        if ' // ' in text:
+            after_slashes = text.split(' // ')[1] if len(text.split(' // ')) > 1 else ''
+            if re.search(r'[ТT]\.\s*\d|№\s*\d', after_slashes):
+                return 'journal_article'
+            if re.search(r'\.by\b|газет', after_slashes.lower()):
+                return 'newspaper_article'
+        
+        # Книги
+        if '[и др.]' in text or '[et al.]' in text:
+            return 'book_4plus_authors'
+        
+        # Подсчёт авторов
+        authors = set(re.findall(r'([А-ЯЁA-Z][а-яёa-z]+),\s+[А-ЯЁA-Z]\.', text))
+        if len(authors) >= 4:
+            return 'book_4plus_authors'
+        elif len(authors) >= 1:
+            return 'book_1_3_authors'
+        
+        if '[электронный ресурс]' in text_lower:
+            return 'electronic_resource'
+        
+        return 'unknown'
 
-    def _get_relevant_examples(self, text: str, max_examples: int = 6) -> str:
-        """Получает релевантные примеры для форматирования"""
-        detected_types = self._detect_document_type(text)
-        examples_text = []
-        examples_count = 0
+    def _get_relevant_examples(self, text: str, max_examples: int = 5) -> str:
+        """Получает релевантные примеры из датасета для форматирования"""
+        detected_type = self._detect_document_type(text)
+        records = self.vak_rb_reference.get('records', [])
         
-        for doc_type in detected_types:
-            if examples_count >= max_examples:
-                break
-            
-            type_data = self.vak_rb_reference.get("document_types", {}).get(doc_type, {})
-            type_name = type_data.get("name", doc_type)
-            examples = type_data.get("examples", [])
-            
-            for example in examples[:2]:  # Max 2 examples per type
-                if examples_count >= max_examples:
+        # Фильтруем примеры по типу
+        matching = [r for r in records if r.get('source_type') == detected_type and not r.get('is_variation')]
+        
+        # Если нет точных совпадений, берём похожие типы
+        if not matching:
+            similar_types = {
+                'book_1_3_authors': ['book_4plus_authors', 'book_collective_author'],
+                'book_4plus_authors': ['book_1_3_authors', 'book_collective_author'],
+                'journal_article': ['newspaper_article', 'collection_article'],
+                'law': ['standard'],
+            }
+            for similar in similar_types.get(detected_type, []):
+                matching = [r for r in records if r.get('source_type') == similar and not r.get('is_variation')]
+                if matching:
                     break
-                examples_text.append(f"[{type_name}]\nВВОД: {example['input']}\nВЫВОД: {example['output']}")
-                examples_count += 1
         
-        return "\n\n".join(examples_text)
+        # Если всё ещё нет — берём любые оригинальные
+        if not matching:
+            matching = [r for r in records if not r.get('is_variation')][:max_examples]
+        
+        # Формируем текст с примерами
+        examples_text = []
+        for record in matching[:max_examples]:
+            source_type = record.get('source_type', 'unknown')
+            formatted = record.get('formatted_output', '')
+            examples_text.append(f"[{source_type}] {formatted}")
+        
+        return "\n".join(examples_text)
 
     def _build_system_prompt(self) -> str:
-        """Создает системный промпт с полными правилами"""
-        return """Ты - специализированный AI-агент для форматирования библиографических записей.
+        """Создает системный промпт на основе 1000 официальных примеров ВАК РБ"""
+        
+        # Собираем примеры из датасета для системного промпта (по 1-2 на тип)
+        records = self.vak_rb_reference.get('records', [])
+        examples_by_type = {}
+        
+        for r in records:
+            if r.get('is_variation'):
+                continue  # Только оригиналы
+            source_type = r.get('source_type', 'unknown')
+            if source_type not in examples_by_type:
+                examples_by_type[source_type] = []
+            if len(examples_by_type[source_type]) < 2:
+                examples_by_type[source_type].append(r.get('formatted_output', ''))
+        
+        # Формируем секцию примеров (самые важные типы)
+        priority_types = [
+            'book_1_3_authors', 'book_4plus_authors', 'journal_article',
+            'dissertation', 'law', 'electronic_resource', 'conference', 'standard'
+        ]
+        
+        examples_section = ""
+        for doc_type in priority_types:
+            if doc_type in examples_by_type and examples_by_type[doc_type]:
+                type_names = {
+                    'book_1_3_authors': 'Книга (1-3 автора)',
+                    'book_4plus_authors': 'Книга (4+ авторов)',
+                    'journal_article': 'Статья из журнала',
+                    'dissertation': 'Диссертация',
+                    'law': 'Законодательный акт',
+                    'electronic_resource': 'Электронный ресурс',
+                    'conference': 'Материалы конференции',
+                    'standard': 'Стандарт (ГОСТ/СТБ)',
+                }
+                type_name = type_names.get(doc_type, doc_type)
+                examples_section += f"\n{type_name}:\n"
+                for ex in examples_by_type[doc_type][:1]:  # По 1 примеру
+                    examples_section += f"  » {ex}\n"
+        
+        return f"""Ты — эксперт по библиографическому оформлению по стандартам ГОСТ Р 7.0.100-2018 и ВАК Республики Беларусь.
 
-ТВОЯ МИССИЯ: Обеспечить 100% корректность форматирования по стандартам ГОСТ Р 7.0.100-2018 и ВАК РБ.
+ТВОЯ БАЗА ЗНАНИЙ: 1000 официальных примеров с сайта vak.gov.by. Ты знаешь ТОЧНУЮ структуру и пунктуацию для каждого типа источника.
 
-СТАНДАРТЫ:
-1. ГОСТ Р 7.0.100-2018 (Россия, Казахстан)
-2. ВАК РБ (Беларусь)
+══════════════════════════════════════════
+ПРАВИЛА ПУНКТУАЦИИ (НАРУШЕНИЕ = ОШИБКА)
+══════════════════════════════════════════
+• Тире: " – " (длинное U+2013, с пробелами с обеих сторон)
+• Двоеточие: " : " (с пробелами, перед издательством/подзаголовком)
+• Косая черта: " / " (пробелы, перед повтором авторов)
+• Двойная косая: " // " (для статей — перед названием журнала/сборника)
+• Точка с запятой: " ; " (между редактором и организацией)
+• После сокращений: пробел ("Т. 5", "№ 3", "С. 45–52", "с.")
 
-ПРАВИЛА ПУНКТУАЦИИ (КРИТИЧЕСКИ ВАЖНО):
-- Тире: " – " (длинное тире U+2013 с пробелами)
-- Двоеточие: " : " (с пробелами)
-- Запятая: ", " (с пробелом после)
-- Точка: ". " (с пробелом после)
-- Косая черта: " / " (с пробелами)
-- Двойная косая черта: " // " (с пробелами, для статей)
-
-ФОРМАТ АВТОРОВ:
-- 1-4 автора: Фамилия, И. О., Фамилия, И. О., Фамилия, И. О.
-- Более 4 авторов: Фамилия, И. О. [и др.]
-- После названия повторить всех авторов: / И. О. Фамилия, И. О. Фамилия
-
-ШАБЛОНЫ ПО ТИПАМ:
-
-1. КНИГА (ГОСТ):
-Фамилия, И. О. Название книги / И. О. Фамилия, И. О. Фамилия. – Город : Издательство, Год. – Кол-во с.
-
-Пример:
-Иванов, И. И. Основы программирования / И. И. Иванов, П. П. Петров. – Москва : Наука, 2023. – 320 с.
-
-2. СТАТЬЯ ИЗ ЖУРНАЛА (ГОСТ):
-Фамилия, И. О. Название статьи / И. О. Фамилия // Название журнала. – Год. – Т. X, № Y. – С. X-Y.
-
-Пример:
-Сидоров, С. С. Новые методы анализа / С. С. Сидоров // Вестник науки. – 2024. – Т. 15, № 3. – С. 45-52.
-
-3. ДИССЕРТАЦИЯ (ГОСТ):
-Фамилия, И. О. Название диссертации : дис. ... канд. наук : код специальности / И. О. Фамилия. – Город, Год. – Кол-во с.
-
-4. ЭЛЕКТРОННЫЙ РЕСУРС (ГОСТ):
-Фамилия, И. О. Название / И. О. Фамилия. – URL: https://... (дата обращения: ДД.ММ.ГГГГ).
-
-ВАК РБ - аналогичные правила, но с особенностями:
-- Для официальных документов: особый формат с номерами и датами
-- Для многотомных изданий: указание "в X т." после названия
-
-ЭТАПЫ РАБОТЫ:
-1. Проанализируй входные данные
-2. Нормализуй авторов (правильный формат инициалов)
-3. Создай запись по шаблону
-4. Провалидируй пунктуацию и пробелы
-5. Верни JSON с результатом
-
-ФОРМАТ ОТВЕТА (только JSON, без markdown):
-{
-  "formatted": "полная отформатированная запись",
-  "errors_fixed": ["список исправленных ошибок"],
+══════════════════════════════════════════
+ОФИЦИАЛЬНЫЕ ПРИМЕРЫ ПО ТИПАМ (С vak.gov.by)
+══════════════════════════════════════════
+{examples_section}
+══════════════════════════════════════════
+ФОРМАТ ОТВЕТА (строго JSON, без markdown)
+══════════════════════════════════════════
+{{
+  "formatted": "готовая библиографическая запись",
+  "errors_fixed": ["список исправлений"],
   "confidence": 95
-}
+}}
 
-ЗАПРЕЩЕНО:
-- Использовать короткое тире (-) вместо длинного (–)
-- Пропускать пробелы вокруг знаков препинания
-- Изменять порядок элементов
-- Добавлять информацию, которой нет во входных данных
+══════════════════════════════════════════
+АЛГОРИТМ РАБОТЫ
+══════════════════════════════════════════
+1. ОПРЕДЕЛИ ТИП источника (книга, статья, закон, диссертация...)
+2. НАЙДИ соответствующий шаблон из примеров выше
+3. ЗАПОЛНИ шаблон данными пользователя
+4. ПРОВЕРЬ пунктуацию (тире, пробелы, сокращения)
+5. ВЕРНИ JSON с результатом
 
-КАЧЕСТВО: 100% точность - это единственный приемлемый результат."""
+══════════════════════════════════════════
+ЗАПРЕЩЕНО
+══════════════════════════════════════════
+✗ Короткое тире (-) вместо длинного (–)
+✗ Пропуск пробелов: "М.:Наука" вместо "М. : Наука"
+✗ Добавление данных, которых нет в исходнике
+✗ Изменение порядка элементов
+
+ТОЧНОСТЬ 100% — это единственный приемлемый результат."""
 
     def format_single(self, source: Source, standard: Standard) -> FormattedResult:
         """
