@@ -6,7 +6,9 @@
     "urls": [
       "https://vak.gov.by/bibliographicDescription",
       "https://vak.gov.by/node/8026"
-    ]
+    ],
+    "fixed_types": 66,
+    "reclassified_at": "2026-01-20T00:16:22.183752"
   },
   "records": [
     {
@@ -32,10 +34,11 @@
     },
     {
       "id": "a6aa5aaec453",
-      "source_type": "book_collective_author",
+      "source_type": "book_4plus_authors",
       "country_standard": "BY",
       "formatted_output": "Национальная стратегия устойчивого социально-экономического развития Республики Беларусь на период до 2020 г. / Нац. комис. по устойчивому развитию Респ. Беларусь ; редкол.: Л. М. Александрович [и др.]. – Минск : Юнипак, 2004. – 202 с.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "book_collective_author"
     },
     {
       "id": "8a33dc2704cd",
@@ -67,17 +70,19 @@
     },
     {
       "id": "5b52857709a6",
-      "source_type": "abstract",
+      "source_type": "dissertation",
       "country_standard": "BY",
       "formatted_output": "Горянов, А. В. Эволюция сельской дворянской усадьбы в конце XVIII – начале XX в.: по материалам усадеб князей Голицыных : автореф. дис. ... канд. ист. наук : 07.00.02 / А. В. Горянов ; Рос. акад. наук, Ин-т рос. истории. – М., 2013. – 40 с.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "abstract"
     },
     {
       "id": "0e6afad29472",
-      "source_type": "abstract",
+      "source_type": "book_1_3_authors",
       "country_standard": "BY",
       "formatted_output": "Агапов, Е. П. Методы исследования в социальной работе : учеб. пособие / Е. П. Агапов. – 2-е изд. – М. : Дашков и К° ; Ростов н/Д : Наука-Спектр, 2013. – 223 с.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "abstract"
     },
     {
       "id": "3001c5e05773",
@@ -88,10 +93,11 @@
     },
     {
       "id": "e0dabebb7d33",
-      "source_type": "archive",
+      "source_type": "deposited",
       "country_standard": "BY",
       "formatted_output": "Состояние и перспективы развития статистики печати Российской Федерации : отчет о НИР (заключ.) : 06-02 / Рос. кн. палата ; рук. А. А. Джиго ; исполн.: В. П. Смирнова [и др.]. – М., 2000. – 250 с. – Инв. № 756600.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "archive"
     },
     {
       "id": "1ccd3d84b678",
@@ -102,24 +108,27 @@
     },
     {
       "id": "bb0a0fb54e19",
-      "source_type": "deposited",
+      "source_type": "book_4plus_authors",
       "country_standard": "BY",
       "formatted_output": "Настоящее и будущее осушенных болот Беларуси / В. С. Аношко [и др.]. – Минск :Белорус. науч.-исслед. центр«Экология», 2005. – 45 с. – (Обзорная информация / М-во природ. ресурсов и охраны окружающей среды Респ. Беларусь, БелНИЦ «Экология»).",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "deposited"
     },
     {
       "id": "9a2f8bd3641e",
-      "source_type": "deposited",
+      "source_type": "book_4plus_authors",
       "country_standard": "BY",
       "formatted_output": "Каталог древесных растений основных коллекционных фондов Беларуси / Центр. ботан. сад НАН Беларуси ; сост.: И. М. Гаранович [и др.] ; науч. ред. В. В. Титок. – Минск : Право и экономика, 2013. – 133 с.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "deposited"
     },
     {
       "id": "e8c8c4014efe",
-      "source_type": "deposited",
+      "source_type": "book_4plus_authors",
       "country_standard": "BY",
       "formatted_output": "Дыяспара. Культуралогія. Гісторыя : матэрыялы IV Мiжнар. кангр. беларусiстаў «Беларуская культура ў кантэксце культур еўрапейскiх краiн», Мiнск, 6–9 чэрв. 2005 г. / Міжнар. асац. беларусістаў [і інш.] ; пад рэд. А. Мальдзіса, А. Смаленчука. – Мінск : Голас Радзімы, 2006. – 359 с. – (Беларусіка = Albaruthenica ; кн. 28).",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "deposited"
     },
     {
       "id": "c851334b741e",
@@ -130,10 +139,11 @@
     },
     {
       "id": "8adb71ed117c",
-      "source_type": "electronic_resource",
+      "source_type": "visual_material",
       "country_standard": "BY",
       "formatted_output": "Маризе, М. А. С праздником 1 мая! [Изоматериал] : [открытка из фондов Нац. б-ки Беларуси], 1955 г. / М. А. Маризе. – Минск : Нац. б-ка Беларуси, 2010. – 1 л.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "electronic_resource"
     },
     {
       "id": "286f33d8d385",
@@ -144,38 +154,43 @@
     },
     {
       "id": "e2bcfb312de9",
-      "source_type": "map",
+      "source_type": "music_score",
       "country_standard": "BY",
       "formatted_output": "Богатырев, А. В.Шесть романсов на стихи Сергея Есенина [Ноты] : для тенора с фортепиано / А. В. Богатырев. – Минск : Белорус. гос. акад. музыки, 2013. – 39 с.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "map"
     },
     {
       "id": "5465ec2be0d0",
-      "source_type": "map",
+      "source_type": "multimedia",
       "country_standard": "BY",
       "formatted_output": "Глебов, Е.Маленький принц [Звукозапись] : балет в 2 д. / Е. Глебов ; [играет] Симф. оркестр Гостелерадио Белорус. ССР, дирижер Б. Райский. – Минск : Медиал, 2010. – 1 зв. диск.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "map"
     },
     {
       "id": "a8ce1c5835fe",
-      "source_type": "map",
+      "source_type": "multimedia",
       "country_standard": "BY",
       "formatted_output": "Музыкальные вечера с Президентским оркестром Республики Беларусь [Видеозапись] : концерт / [исполняет] Президент. оркестр Респ. Беларусь, художеств. рук. и гл. дирижер В. Бабарикин, солисты: К. Москович, пан-флейта (1–4, 7–14), В. Никитченко, вокал (5, 6). – [Б. м., 2006?]. – 1 DVD video.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "map"
     },
     {
       "id": "d25ad02a5c7d",
-      "source_type": "map",
+      "source_type": "standard",
       "country_standard": "BY",
       "formatted_output": "О безопасности оборудования, работающего под избыточным давлением :ТР ТС 032/2013 :принят 02.07.2013 : вступ. в силу 01.02.2014 / Евраз. экон. комис. – Минск : Экономэнерго, 2013. – 38 с.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "map"
     },
     {
       "id": "164de60c69d8",
-      "source_type": "map",
+      "source_type": "standard",
       "country_standard": "BY",
       "formatted_output": "Здания и сооружения объектов нефтехимической и нефтеперерабатывающей промышленности. Противопожарные нормы проектирования =Будынкі і збудаванні аб'ектаў нафтахімічнай і нафтаперапрацоўчай прамысловасці. Супрацьпажарныя нормы праектавання:ТКП 455-2012 (09100). –Введ. 01.04.13 (с отменой на территории РБ ВУПП-88). – Минск : Белнефтехим, 2013. – 38 с.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "map"
     },
     {
       "id": "34ee48b908d7",
@@ -186,17 +201,19 @@
     },
     {
       "id": "0693b27ffc9b",
-      "source_type": "standard",
+      "source_type": "unknown",
       "country_standard": "BY",
       "formatted_output": "Государственная система стандартизации Республики Беларусь. Порядок проведения экспертизы стандартов : РД РБ 03180.53–2000 : введ. 01.09.00. – Минск : Госстандарт : Белорус. гос. ин-т стандартизации и сертификации, 2000. – 6 с.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "standard"
     },
     {
       "id": "453d9fb4a105",
-      "source_type": "standard",
+      "source_type": "patent",
       "country_standard": "BY",
       "formatted_output": "Аспирационный счетчик ионов :а. с. SU 935780 / Б. Н. Блинов, А. В. Шолух. – Опубл. 15.06.1982.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "standard"
     },
     {
       "id": "1e01d47b6ad8",
@@ -207,10 +224,11 @@
     },
     {
       "id": "188b715c60fe",
-      "source_type": "patent",
+      "source_type": "unknown",
       "country_standard": "BY",
       "formatted_output": "Устройство для вычисления полиномиальных симметрических булевых функций : заявка BY 20120452 / В. П. Супрун. – Опубл. 30.10.2012.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "patent"
     },
     {
       "id": "f09a2e49f4e8",
@@ -228,31 +246,35 @@
     },
     {
       "id": "f0692d134bf4",
-      "source_type": "preprint",
+      "source_type": "unknown",
       "country_standard": "BY",
       "formatted_output": "Открытое акционерное общество «Экзон» = Open joint-stock company «Ekzon» : кат. продукции. – [Б. м. : б. и., б. г.]. – 142 с.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "preprint"
     },
     {
       "id": "89e27c054ac8",
-      "source_type": "preprint",
+      "source_type": "book_1_3_authors",
       "country_standard": "BY",
       "formatted_output": "Абросимова, М. А. Направления автоматизации / М. А. Абросимова // Информационные технологии в государственном и муниципальном управлении : учеб. пособие / М. А. Абросимова. – 2-е изд., стер. – М., 2013. – С. 44–46.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "preprint"
     },
     {
       "id": "7c05ba68bf2a",
-      "source_type": "preprint",
+      "source_type": "book_1_3_authors",
       "country_standard": "BY",
       "formatted_output": "Борхард, Ю. Восстановление производства / Ю. Борхард // Накопление капитала : пер. с нем. / Ю. Борхард ; под ред. Г. Б. Гермаидзе. – Изд. 2-е. – М., 2013. – Гл. 9. – С. 253–271.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "preprint"
     },
     {
       "id": "b83d1eaf30f2",
-      "source_type": "multivolume_part",
+      "source_type": "journal_article",
       "country_standard": "BY",
       "formatted_output": "Белинский, В. Г. Рассуждение / В. Г. Белинский // Полн. собр. соч. : в 13 т. – М., 1953. – Т. 1 : Статьи и рецензии. Художественные произведения, 1829–1835. – С. 15–17.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "multivolume_part"
     },
     {
       "id": "ff186d464bba",
@@ -270,10 +292,11 @@
     },
     {
       "id": "a91a7b9e022e",
-      "source_type": "conference",
+      "source_type": "journal_article",
       "country_standard": "BY",
       "formatted_output": "Аляхновіч, М. М. Электронны мікраскоп / М. М. Аляхновіч // Беларуская энцыклапедыя : у 18 т. /Беларус. Энцыкл. ; рэдкал.: Г. П. Пашкоў [і інш.].– Мінск, 2004. – Т. 18, кн. 1. – С. 100.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "conference"
     },
     {
       "id": "af1e325227cb",
@@ -284,17 +307,19 @@
     },
     {
       "id": "c5e1bbde7ab4",
-      "source_type": "newspaper_article",
+      "source_type": "book_1_3_authors",
       "country_standard": "BY",
       "formatted_output": "Дубаневич, Л. Партизанский десант в Германию: [о комиссаре партизан. отряда А. Андрееве]/ Л. Дубаневич // Белорус. лес. газ. – 2014. – 13 февр. – С. 10.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "newspaper_article"
     },
     {
       "id": "67bb513d3b88",
-      "source_type": "newspaper_article",
+      "source_type": "collection_article",
       "country_standard": "BY",
       "formatted_output": "Давидович, А. Л. О современных подходах к определению качества дошкольного образования / А. Л. Давидович // Зб. навук. пр. / Акад. паслядыплом. адукацыi. – Мінск, 2013. – Вып. 11. – С. 210–219.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "newspaper_article"
     },
     {
       "id": "2788495b3726",
@@ -312,10 +337,11 @@
     },
     {
       "id": "31ed96f8de85",
-      "source_type": "archive",
+      "source_type": "electronic_resource",
       "country_standard": "BY",
       "formatted_output": "Введенский, Л. И. Судьбы философии в России [Электронный ресурс] / Л. И. Введенский // История философии : собр. тр. крупнейших философов по истории философии. – М., 2002. – 1 электрон. опт. диск (CD-ROM).",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "archive"
     },
     {
       "id": "52eac6b0f7f8",
@@ -326,10 +352,11 @@
     },
     {
       "id": "070244768dc4",
-      "source_type": "electronic_resource",
+      "source_type": "law",
       "country_standard": "BY",
       "formatted_output": "Конституция Республики Беларусь : с изм. и доп., принятыми на респ. референдумах 24 нояб. 1996 г. и 17 окт. 2004 г. – Минск : Нац. центр правовой информ. Респ. Беларусь, 2016. – 62 с.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "electronic_resource"
     },
     {
       "id": "85385e967289",
@@ -340,10 +367,11 @@
     },
     {
       "id": "0d7ad005fc83",
-      "source_type": "law",
+      "source_type": "electronic_resource",
       "country_standard": "BY",
       "formatted_output": "О Парке высоких технологий[Электронный ресурс]: Декрет Президента Респ. Беларусь, 22 сент. 2005 г., № 12 : в ред. Декрета Президента Респ. Беларусь от 03.11.2014 г. // ЭТАЛОН.Законодательство Республики Беларусь / Нац. центр правовой информ. Респ. Беларусь.–Минск, 2016.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "law"
     },
     {
       "id": "07080376c261",
@@ -361,24 +389,27 @@
     },
     {
       "id": "75aebad2682a",
-      "source_type": "law",
+      "source_type": "electronic_resource",
       "country_standard": "BY",
       "formatted_output": "Конвенция Организации Объединенных Наций о договорах международной купли-продажи товаров [Электронный ресурс] : [заключена в г. Вене 11.04.1980 г.] // КонсультантПлюс. Россия / ЗАО «Консультант Плюс».–М., 2016.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "law"
     },
     {
       "id": "db38d246a7a6",
-      "source_type": "law",
+      "source_type": "electronic_resource",
       "country_standard": "BY",
       "formatted_output": "О ведении государственной статистики в 2016 году [Электронный ресурс] : приказ Нац. стат. ком. Респ. Беларусь, 17 дек. 2015 г., № 367 // Национальный статистический комитет Республики Беларусь. – Режим доступа: http://www.belstat.gov.by/upload-belstat/upload-belstat-pdf/prikaz-o_vedenii_sttatistiki_22_2_2016.pdf. – Дата доступа: 22.06.2016.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "law"
     },
     {
       "id": "5ceb473c4e53",
-      "source_type": "law",
+      "source_type": "electronic_resource",
       "country_standard": "BY",
       "formatted_output": "Типовое положение о мобилизационных структурах [Электронный ресурс] : утв. постановлением Правительства Респ. Таджикистан, 30 марта 2013 г., № 145 // Законодательство стран СНГ / ООО «СоюзПравоИнформ». – Режим доступа: http://base.spinform.ru/show_doc.fwx?rgn=60039. – Дата доступа: 21.06.2016.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "law"
     },
     {
       "id": "4b77bdc4151e",
@@ -389,10 +420,11 @@
     },
     {
       "id": "4a52de84eca7",
-      "source_type": "law",
+      "source_type": "unknown",
       "country_standard": "BY",
       "formatted_output": "Инструкция по делопроизводству в государственных органах, иных организациях : утв. М-вом юстиции Респ. Беларусь 19.01.09 : по состоянию на 22 апр. 2013 г. – Минск : Нац. центр правовой информ. Респ. Беларусь, 2013. – 109 с.",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "law"
     },
     {
       "id": "1cc1dab2592f",
@@ -403,10 +435,11 @@
     },
     {
       "id": "2f5d8980561e",
-      "source_type": "law",
+      "source_type": "unknown",
       "country_standard": "BY",
       "formatted_output": "Высшая аттестационная комиссия Республики Беларусь © 2020-2026",
-      "source_url": "https://vak.gov.by/bibliographicDescription"
+      "source_url": "https://vak.gov.by/bibliographicDescription",
+      "old_source_type": "law"
     },
     {
       "id": "513ca5ec5620",
@@ -424,17 +457,19 @@
     },
     {
       "id": "b95e4f04cd35",
-      "source_type": "book_4plus_authors",
+      "source_type": "book_1_3_authors",
       "country_standard": "BY",
       "formatted_output": "Земледелие / А. С. Мастеров, С. И Трапков, Д. В. Караульный, Д. И. Романцевич ; под общ. ред. А. С. Мастерова. – Горки : Бел. гос. с.-х. акад., 2022. – 211 с.",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "book_4plus_authors"
     },
     {
       "id": "189b86ad4659",
-      "source_type": "book_collective_author",
+      "source_type": "unknown",
       "country_standard": "BY",
       "formatted_output": "Геноцид белорусского народа = Genocide of the belarusian people : информ.-аналит. материалы и док. / Генер. прокуратура Респ. Беларусь ; под общ. ред. А. И. Шведа. – Мн. : Беларусь, 2023. – 175 с.",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "book_collective_author"
     },
     {
       "id": "518ee18ff506",
@@ -459,10 +494,11 @@
     },
     {
       "id": "37bd6c50eb2a",
-      "source_type": "dissertation",
+      "source_type": "book_1_3_authors",
       "country_standard": "BY",
       "formatted_output": "Амосова, Ю. В. Преломление художественных традиций Китая и Японии в современном искусстве Беларуси : дис. … канд. искусствоведения : 17.00.09 / Амосова Юлия Владимировна ; Бел. гос. ун-т культуры и искусств. – Мн., 2023. – 221 л.",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "dissertation"
     },
     {
       "id": "e5316cccf87a",
@@ -473,17 +509,19 @@
     },
     {
       "id": "d9bbb629d6fe",
-      "source_type": "abstract",
+      "source_type": "methodical_guide",
       "country_standard": "BY",
       "formatted_output": "Геология нефти и газа : метод. рекомендации к практ. занятиям / Бел.-Рос. ун-т ; сост. И. В. Гомелюк. – Могилев : Бел.-Рос. ун-т, 2024. – 47 с.",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "abstract"
     },
     {
       "id": "5abef5563a9f",
-      "source_type": "archive",
+      "source_type": "research_report",
       "country_standard": "BY",
       "formatted_output": "Подготовка будущих педагогов к проектированию коррекционно-развивающей среды инклюзивного образования : отчет о НИР (заключ.) / Бел. гос. пед. ун-т ; рук. О. В. Мамонько ; исполн.: С. Е. Гайдукевич, Н. В. Дроздова, А. А. Савицкая, А. А. Сасс. – Мн., 2020. – 194 с. – № ГР 20180995.",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "archive"
     },
     {
       "id": "27bc52138245",
@@ -494,87 +532,99 @@
     },
     {
       "id": "9c5a9d697da5",
-      "source_type": "deposited",
+      "source_type": "book_1_3_authors",
       "country_standard": "BY",
       "formatted_output": "Настоящее и будущее осушенных болот Беларуси / В. С. Аношко, С. М. Зайко, Л. Ф. Вашкевич, С. С. Бачила. – Мн. : Бел. науч.-исслед. центр «Экология», 2005. – 45 с. – (Обзорная информация / М-во природ. ресурсов и охраны окружающей среды Респ. Беларусь, БелНИЦ «Экология»).",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "deposited"
     },
     {
       "id": "e7779d33d034",
-      "source_type": "deposited",
+      "source_type": "catalog",
       "country_standard": "BY",
       "formatted_output": "Каталог инновационных разработок организаций НАН Беларуси для замещения критического импорта / НАН Беларуси ; сост.: Н. М. Литвиненко, Н. Г. Козлова ; отв. ред. В. Л. Гурский. – Мн. : Бел. навука, 2022. – 396 с.",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "deposited"
     },
     {
       "id": "3dcb7d487cb9",
-      "source_type": "deposited",
+      "source_type": "book_1_3_authors",
       "country_standard": "BY",
       "formatted_output": "Гендина, Н. И. Формируем информационную культуру школьника: познавательные пятиминутки : учеб.-практ. пособие / Н. И. Гендина. – М. : Ассоц. шк. библиотекарей рус. мира, 2020. – 278 с. – (Профессиональная библиотека школьного библиотекаря: приложение к журналу «Школьная библиотека». Серия 1 ; вып. 6).",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "deposited"
     },
     {
       "id": "74eb3f199ea1",
-      "source_type": "electronic_resource",
+      "source_type": "conference",
       "country_standard": "BY",
       "formatted_output": "Весенние анатомические чтения : сб. ст. Респ. науч.-практ. конф., 31 мая 2024 г. / Гродн. гос. мед. ун-т ; редкол.: Ф. Г. Гаджиева (отв. ред.), С. А. Сидорович. – Гродно : ГрГМУ, 2024. –1 CD-ROM.",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "electronic_resource"
     },
     {
       "id": "d67ca90451c0",
-      "source_type": "electronic_resource",
+      "source_type": "unknown",
       "country_standard": "BY",
       "formatted_output": "Национальный правовой Интернет-портал Республики Беларусь : [сайт]. – Мн., 2003–2025. – URL: http://www.pravo.by (дата обращения: 01.10.2025).",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "electronic_resource"
     },
     {
       "id": "185e9893ed5a",
-      "source_type": "electronic_resource",
+      "source_type": "unknown",
       "country_standard": "BY",
       "formatted_output": "9 мая. С праздником Победы! : [плакат]. – Мн. : Полиграфкомбинат им. Я. Коласа, 2024. – 1 л.",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "electronic_resource"
     },
     {
       "id": "138fe61af019",
-      "source_type": "map",
+      "source_type": "book_collective_author",
       "country_standard": "BY",
       "formatted_output": "Великая Отечественная война советского народа (в контексте Второй мировой войны) : атлас : учеб. пособие / сост. и подгот. к печ. Респ. унитар. предприятием «Белкартография» в 2014 г. ; ред.: Д. Е. Макаревич, Л. В. Солдак ; спец. содерж. разраб.: А. А. Коваленя, М. Г. Жилинский, А. А. Лукашов. – Испр. и перераб. в 2021 г. – [Масштабы разные]. – Мн. : Белкартография, 2023. – 1 атлас (51 с.)",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "map"
     },
     {
       "id": "efff0b87198e",
-      "source_type": "map",
+      "source_type": "music_score",
       "country_standard": "BY",
       "formatted_output": "Джоплин, С. Кленовый лист : регтаймы : [ноты] / С. Джоплин. – СПб. [и др.] : Лань : Планета музыки, 2023. – 47 с.",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "map"
     },
     {
       "id": "5f8619f4bf53",
-      "source_type": "map",
+      "source_type": "multimedia",
       "country_standard": "BY",
       "formatted_output": "Филиппов, А. Белая Русь : [звукозапись] / А. Филиппов. – Мн. : Ковчег, 2024. – 1 CD-ROM.",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "map"
     },
     {
       "id": "3f50dafb157f",
-      "source_type": "map",
+      "source_type": "multimedia",
       "country_standard": "BY",
       "formatted_output": "Занимонец, С. Трактор Беларусь : записи концерт. выступлений разн. лет : [видеозапись] / С. Занимонец. – Мн. : Ковчег, 2018. – 1 диск.",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "map"
     },
     {
       "id": "38227504c1c1",
-      "source_type": "map",
+      "source_type": "unknown",
       "country_standard": "BY",
       "formatted_output": "Технологический регламент на производство работ по гидроизоляции монолитных, сборных и сборно-монолитных бетонных и железобетонных конструкций и сооружений с применением материалов производства ЗАО «ПАРАД» : ТР 100926738.08-2022 : срок действия с 01.04.2022 / РУП «СтройМедиаПроект», ЗАО «ПАРАД». – Мн. : СтройМедиаПроект, 2022. – 32 с.",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "map"
     },
     {
       "id": "9aeaa3c4324c",
-      "source_type": "map",
+      "source_type": "unknown",
       "country_standard": "BY",
       "formatted_output": "Правила эксплуатации цементобетонных покрытий автомобильных дорог и дополнительных элементов = Правілы эксплуатацыі цэментнабетонных пакрыццяў аўтамабільных дарог і дадатковых элементаў : ТПК 675-2024 (33200). – Введ. 01.03.2024. – Мн. : Бел. дорож. науч.-исслед. ин-т «БелдорНИИ», 2024. – III, 36 с.",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "map"
     },
     {
       "id": "ec870e5e5c97",
@@ -592,38 +642,43 @@
     },
     {
       "id": "b4160d6b0b35",
-      "source_type": "standard",
+      "source_type": "unknown",
       "country_standard": "BY",
       "formatted_output": "Авторское свидетельство RU 2293310, МПК5 G01N27/62, G01N15/00. Аспирационная ионная камера : заявлено 08.08.2005 : опубл. 10.02.2007 / Реута В. П., Туктагулов А. Ф. – URL: https://patenton.ru/patent/RU2293310C1.pdf (дата обращения: 01.10.2025).",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "standard"
     },
     {
       "id": "e16b18bac662",
-      "source_type": "standard",
+      "source_type": "unknown",
       "country_standard": "BY",
       "formatted_output": "Свидетельство селекционера 0007023. Сорт ячмень зерновой : № 2021201 : заявлено 16.12.2020 : опубл. 30.12.2022 / Ярота А. А., Зубкович А. А., Зубкович Н. В., Марчук О. В., Банцер Е. З., Зенькович Т. И., Карпович Н. С. ; заявитель Гос. инспекция по испытанию и охране сортов растений. – 1 с.",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "standard"
     },
     {
       "id": "ae2368cc969a",
-      "source_type": "patent",
+      "source_type": "unknown",
       "country_standard": "BY",
       "formatted_output": "Полезная модель RU 212120, МПК B62D 59/04 (2006.01). Плавающий прицеп : № 2022108139 : заявлено 28.03.2022 : опубл. 06.07.2022 / Годжаев З. А., Коваленко Е. А., Комочков В. А., Короляш В. А., Червонцев С. Е., Шведов В. К. ; заявитель Волгогр. гос. техн. ун-т. – 12 с.",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "patent"
     },
     {
       "id": "7409e48b1987",
-      "source_type": "patent",
+      "source_type": "unknown",
       "country_standard": "BY",
       "formatted_output": "Заявка RU 2011101270, МПК A61B 17/06 (2006.01). Хирургическая игла : заявлено 12.01.2011 : опубл. 20.07.2012 / Пыжов А. Я., Старых В. С., Новиков В. Э. ; заявитель Кемер. обл. клин. больница. – URL: https://patenton.ru/patent/RU2471438C2.pdf (дата обращения: 01.10.2025).",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "patent"
     },
     {
       "id": "1b9344d7a7f4",
-      "source_type": "patent",
+      "source_type": "unknown",
       "country_standard": "BY",
       "formatted_output": "Патент BY 23536, МПК B26B 27/00 (2006.01). Ультразвуковой нож : № a 20200063 : заявлено 28.02.2020 : опубл. 30.10.2021 / Рубаник В. В., Рубаник В. В. (мл.), Луцко В. Ф., Казьмин А. А., Разов А. И., Остропико Е. С. ; заявитель Ин-т техн. акустики НАН Беларуси. – URL: https://search.ncip.by/database/index.php?pref=inv&lng=ru&page=3&target=41724 (дата обращения: 01.10.2025).",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "patent"
     },
     {
       "id": "b4cb56f1892d",
@@ -634,31 +689,35 @@
     },
     {
       "id": "4d5f846a215a",
-      "source_type": "preprint",
+      "source_type": "catalog",
       "country_standard": "BY",
       "formatted_output": "Белорусские экспортеры, 2023 : [каталог] / Бел.торгово-пром. палата. – Мн. : СтройМедиаПроект, 2023. – 546 с.",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "preprint"
     },
     {
       "id": "9036dcc2f953",
-      "source_type": "preprint",
+      "source_type": "book_1_3_authors",
       "country_standard": "BY",
       "formatted_output": "Липовецкий, М. Трикстеры у Гайдая / М. Липовецкий // Человек с бриллиантовой рукой : к 100-летию Леонида Гайдая / сост. Я. Левченко. – М., 2023. – С. 79–101.",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "preprint"
     },
     {
       "id": "cbc61c6fea9f",
-      "source_type": "preprint",
+      "source_type": "book_1_3_authors",
       "country_standard": "BY",
       "formatted_output": "Арвай, К. Инновации позвоночных животных: от имунной клетки к антителам / К. Арвай // История иммунной системы / К. Арвай ; пер. с нем. С. Борича. – Мн., 2023. – Гл. 4. – С. 101–107.",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "preprint"
     },
     {
       "id": "5dd565759d7a",
-      "source_type": "multivolume_part",
+      "source_type": "journal_article",
       "country_standard": "BY",
       "formatted_output": "Белинский, В. Г. Рассуждение / В. Г. Белинский // Полное собрание сочинений : в 13 т. / В. Г. Белинский. – М., 1953. – Т. 1 : Статьи и рецензии. Художественные произведения, 1829–1835. – С. 15–17.",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "multivolume_part"
     },
     {
       "id": "6bb28ce3e2f8",
@@ -669,10 +728,11 @@
     },
     {
       "id": "dcca7299ebc2",
-      "source_type": "conference",
+      "source_type": "book_4plus_authors",
       "country_standard": "BY",
       "formatted_output": "Муратова, Д. А. Библиотечные документы: реставрация после ремонта / Д. А. Муратова, Л. А. Полтаран // Матэрыялы XX Міжнародных кнігазнаўчых чытанняў, Мінск, 18–19 красавіка 2024 г. / Нац. б-ка Беларусі ; склад.: Т. У. Карнілава, Г. У. Кірэева, Н. В. Мужыла ; рэдкал.: В. Ф. Гігін (старш.) [і інш.]. – Мн., 2024. – С. 291–296.",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "conference"
     },
     {
       "id": "70409e2f7699",
@@ -690,38 +750,43 @@
     },
     {
       "id": "b696ba4ee61d",
-      "source_type": "newspaper_article",
+      "source_type": "collection_article",
       "country_standard": "BY",
       "formatted_output": "Влияние вида посадочного материала на рост лесных культур ели европейской / В. В. Усеня, Е. В. Чурило, М. Н. Мороз, Г. М. Помаз // Проблемы лесоведения и лесоводства : сб. науч. тр. / НАН Беларуси, Ин-т леса. – Гомель, 2023. – Вып. 39. – С. 150–158.",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "newspaper_article"
     },
     {
       "id": "244bac2eb17a",
-      "source_type": "review",
+      "source_type": "journal_article",
       "country_standard": "BY",
       "formatted_output": "Гапоненка, І. А. [Рэцэнзія] / І. А. Гапоненка // Журнал Белорусского государственного университета. Филология. – 2023. – № 1. – С. 109–111. – Рэц. на кн.: Язэп Драздовіч. Моўная і этнаграфічная спадчына : арх. матэрыялы / І. Галуза ; навук. рэд. В. М. Курцова. Мн. : Бел. навука, 2022. – 676 с.",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "review"
     },
     {
       "id": "b4c5b6b4845d",
-      "source_type": "archive",
+      "source_type": "collection_article",
       "country_standard": "BY",
       "formatted_output": "Ермакова, А. М. Тэкст навін у сучасных СМІ / А. М. Ермакова // Тэкст: лінгвістычны і культуралагічны аспекты : зб. навук. арт. / Гомел. дзярж. ун-т, Навук.-даслед. ін-т гісторыі і культуры ўсходнеслав. народаў пры Гомел. дзярж. ун-це ; рэдкал.: А. М. Воінава (гал. рэд.) [і інш.]. – Гомель, 2024. – 1 CD-ROM.",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "archive"
     },
     {
       "id": "b2c0e0377c7f",
-      "source_type": "electronic_resource",
+      "source_type": "book_1_3_authors",
       "country_standard": "BY",
       "formatted_output": "Ватыль, В. Беларусь развивается и идет по пути консолидации общества / В. Ватыль // SB.BY. Беларусь сегодня. – URL: https://www.sb.by/articles/byla-est-i-budet-belarus.html. – Дата публ.: 12.09.2024.",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "electronic_resource"
     },
     {
       "id": "4400169eb138",
-      "source_type": "electronic_resource",
+      "source_type": "law",
       "country_standard": "BY",
       "formatted_output": "Кодекс внутреннего водного транспорта Российской Федерации : 7 марта 2001 г. № 24-ФЗ : принят Гос. Думой 7 февр. 2001 г. : одобр. Советом Федерации 22 февр. 2001 г. : в ред. Федер. закона от 24 июня 2025 г. № 169-ФЗ // КонсультантПлюс. Россия : справ. правовая система (дата обращения: 01.10.2025).",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "electronic_resource"
     },
     {
       "id": "67eaeff5f012",
@@ -746,17 +811,19 @@
     },
     {
       "id": "9bc71610e3a3",
-      "source_type": "law",
+      "source_type": "unknown",
       "country_standard": "BY",
       "formatted_output": "О ведении государственной статистики в 2024 году : приказ Нац. стат. ком. Респ. Беларусь от 15 дек. 2023 г. № 197 // Национальный статистический комитет Республики Беларусь. – URL: https://www.belstat.gov.by/upload-belstat/upload-belstat-word/O-Belstate/prikaz_197_15_12_2023.doc (дата обращения: 01.10.2025).",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "law"
     },
     {
       "id": "a5583dad04bd",
-      "source_type": "law",
+      "source_type": "unknown",
       "country_standard": "BY",
       "formatted_output": "Положение об осуществлении физическими лицами ремесленной деятельности : утв. Указом Президента Респ. Беларусь от 21 авг. 2024 г. № 328 // КонсультантПлюс. Беларусь : справ. правовая система (дата обращения: 01.10.2025).",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "law"
     },
     {
       "id": "1920dd5322b6",
@@ -774,10 +841,11 @@
     },
     {
       "id": "c547e2df4fef",
-      "source_type": "law",
+      "source_type": "book_1_3_authors",
       "country_standard": "BY",
       "formatted_output": "Амельченя, Ю. А. Научно-практический комментарий к закону Республики Беларусь от 13 июля 2012 г. № 419-З «О государственных закупках товаров (работ, услуг)» / Ю. А. Амельченя, О. А. Бакиновская, Н. А. Гуринович. – Мн. : Колорград, 2022. – 399 с.",
-      "source_url": "https://vak.gov.by/node/8026"
+      "source_url": "https://vak.gov.by/node/8026",
+      "old_source_type": "law"
     }
   ]
 }
